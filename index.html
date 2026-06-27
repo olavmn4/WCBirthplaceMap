@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Cup Goal Scorers — Birthplaces</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #111827;
+      color: #e5e7eb;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      background: #1f2937;
+      border-bottom: 1px solid #374151;
+      flex-shrink: 0;
+    }
+
+    .header-main {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 10px 18px;
+      flex-wrap: wrap;
+    }
+
+    .title { font-size: 0.95rem; font-weight: 700; color: #f97316; white-space: nowrap; }
+
+    .controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+
+    .controls input,
+    .controls select {
+      background: #111827;
+      border: 1px solid #374151;
+      border-radius: 5px;
+      color: #e5e7eb;
+      padding: 5px 10px;
+      font-size: 0.82rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .controls input:focus,
+    .controls select:focus { border-color: #f97316; }
+    .controls input::placeholder { color: #6b7280; }
+    .controls input { width: 200px; }
+
+    /* Mode toggle */
+    .mode-toggle { display: flex; border: 1px solid #374151; border-radius: 5px; overflow: hidden; flex-shrink: 0; }
+    .mode-btn {
+      background: transparent; border: none; border-right: 1px solid #374151;
+      color: #9ca3af; padding: 5px 11px; font-size: 0.82rem; cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+    .mode-btn:last-child { border-right: none; }
+    .mode-btn.active { background: #f97316; color: #111827; font-weight: 600; }
+    .mode-btn:hover:not(.active):not(:disabled) { color: #e5e7eb; }
+    .mode-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+    #wc-toggle {
+      background: #111827;
+      border: 1px solid #374151;
+      border-radius: 5px;
+      color: #e5e7eb;
+      padding: 5px 10px;
+      font-size: 0.82rem;
+      cursor: pointer;
+      outline: none;
+      transition: border-color 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    #wc-toggle:hover  { border-color: #f97316; color: #f97316; }
+    #wc-toggle.active { border-color: #f97316; color: #f97316; background: #1c1108; }
+
+    #country-badge {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      background: #1c1108;
+      border: 1px solid #f97316;
+      border-radius: 5px;
+      padding: 4px 10px;
+      font-size: 0.82rem;
+      color: #f97316;
+      font-weight: 600;
+    }
+    #country-badge.on { display: flex; }
+    #country-badge button {
+      background: transparent;
+      border: none;
+      color: #9ca3af;
+      cursor: pointer;
+      font-size: 1rem;
+      line-height: 1;
+      padding: 0 0 0 4px;
+    }
+    #country-badge button:hover { color: #e5e7eb; }
+
+    .stats {
+      margin-left: auto;
+      display: flex;
+      gap: 18px;
+      font-size: 0.78rem;
+      color: #9ca3af;
+      white-space: nowrap;
+    }
+    .stats b { color: #f97316; }
+
+    /* WC chips */
+    #wc-panel {
+      display: none;
+      padding: 10px 18px 12px;
+      border-top: 1px solid #374151;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    #wc-panel.open { display: flex; }
+    .wc-chips { display: flex; flex-wrap: wrap; gap: 4px; flex: 1; }
+    .wc-chip {
+      padding: 2px 7px;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      background: #111827;
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: 600;
+      user-select: none;
+      opacity: 0.32;
+      transition: opacity 0.15s;
+    }
+    .wc-chip:hover { opacity: 0.65; }
+    .wc-chip.on    { opacity: 1; border-color: rgba(255,255,255,0.15); }
+    .wc-quick {
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid #374151;
+      background: transparent;
+      color: #9ca3af;
+      cursor: pointer;
+      transition: color 0.1s, border-color 0.1s;
+    }
+    .wc-quick:hover { color: #e5e7eb; border-color: #6b7280; }
+
+    /* Map */
+    #map-wrap { flex: 1; position: relative; overflow: hidden; }
+    #map { position: absolute; inset: 0; cursor: crosshair; }
+    .leaflet-interactive { cursor: pointer !important; }
+
+    /* Loading indicator */
+    #map-loading {
+      display: none;
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1100;
+      background: rgba(17,24,39,0.9);
+      border: 1px solid #374151;
+      border-radius: 6px;
+      padding: 6px 14px;
+      font-size: 0.78rem;
+      color: #9ca3af;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    /* Legend */
+    #legend {
+      position: absolute;
+      bottom: 30px;
+      right: 10px;
+      z-index: 900;
+      background: rgba(17,24,39,0.88);
+      border: 1px solid #374151;
+      border-radius: 6px;
+      padding: 8px 12px;
+      pointer-events: none;
+      backdrop-filter: blur(4px);
+      transition: right 0.25s ease;
+    }
+    #legend.shifted { right: 316px; }
+    .legend-title { font-size: 0.68rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 5px; }
+    .legend-bar {
+      height: 8px; width: 160px; border-radius: 4px;
+      background: linear-gradient(to right,
+        hsl(220,85%,60%), hsl(265,85%,60%), hsl(305,85%,60%), hsl(345,85%,60%), hsl(25,90%,60%));
+    }
+    .legend-labels { display: flex; justify-content: space-between; font-size: 0.68rem; color: #9ca3af; margin-top: 3px; }
+
+    /* Country panel */
+    #country-panel {
+      position: absolute;
+      top: 0; right: -306px;
+      width: 300px; bottom: 0;
+      z-index: 1000;
+      background: #111827;
+      border-left: 1px solid #374151;
+      display: flex;
+      flex-direction: column;
+      transition: right 0.25s ease;
+    }
+    #country-panel.open { right: 0; }
+    .cp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 13px 16px 11px;
+      border-bottom: 1px solid #374151;
+      background: #1f2937;
+      flex-shrink: 0;
+    }
+    #cp-title { font-size: 1rem; font-weight: 700; color: #f9fafb; }
+    #cp-close {
+      background: transparent;
+      border: 1px solid #374151;
+      border-radius: 4px;
+      color: #9ca3af;
+      cursor: pointer;
+      font-size: 0.78rem;
+      padding: 2px 8px;
+      transition: color 0.1s, border-color 0.1s;
+    }
+    #cp-close:hover { color: #e5e7eb; border-color: #6b7280; }
+    #cp-body { overflow-y: auto; flex: 1; }
+    .cp-section { border-bottom: 1px solid #1f2937; padding-bottom: 10px; }
+    .cp-section:last-child { border-bottom: none; }
+    .cp-section-title {
+      font-size: 0.69rem;
+      font-weight: 700;
+      color: #4b5563;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 12px 16px 6px;
+    }
+    .cp-row {
+      display: flex;
+      cursor: pointer;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 3px 16px;
+      gap: 8px;
+      transition: background 0.1s;
+    }
+    .cp-row:hover { background: rgba(255,255,255,0.04); }
+    .cp-name { font-size: 0.83rem; font-weight: 600; color: #e5e7eb; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-decoration: none; }
+    a.cp-name:hover { text-decoration: underline; color: #f9fafb; }
+    .cp-sub  { font-size: 0.73rem; color: #6b7280; white-space: nowrap; flex-shrink: 0; }
+    .cp-empty { font-size: 0.8rem; color: #374151; font-style: italic; padding: 4px 16px 6px; }
+
+    /* Popup */
+    .leaflet-popup-content-wrapper {
+      background: #1f2937; border: 1px solid #374151; border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.5); color: #e5e7eb;
+    }
+    .leaflet-popup-content { margin: 10px 14px; font-size: 13px; line-height: 1.6; max-height: 320px; overflow-y: auto; }
+    .popup-city { font-weight: 700; font-size: 14px; color: #9ca3af; margin-bottom: 6px; padding-bottom: 5px; border-bottom: 1px solid #374151; }
+    .popup-player { display: flex; align-items: center; gap: 6px; padding: 2px 4px; border-radius: 3px; cursor: pointer; transition: background 0.1s; }
+    .popup-player:hover { background: rgba(255,255,255,0.07); }
+    .popup-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    a.popup-player-name { font-weight: 600; color: #f9fafb; text-decoration: none; }
+    a.popup-player-name:hover { text-decoration: underline; }
+    .popup-player-meta { color: #9ca3af; font-size: 12px; }
+    .leaflet-popup-tip-container { display: none; }
+    .leaflet-popup-close-button { color: #9ca3af !important; font-size: 18px !important; }
+
+    /* No-data */
+    #no-data {
+      display: none; position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      background: #1f2937; border: 1px solid #f97316; border-radius: 10px;
+      padding: 28px 36px; text-align: center; z-index: 1000; max-width: 420px;
+    }
+    #no-data h2   { color: #f97316; margin-bottom: 10px; }
+    #no-data code { background: #111827; padding: 3px 8px; border-radius: 4px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-main">
+      <span class="title">⚽ Men's World Cup — Birthplaces</span>
+      <div class="controls">
+        <div class="mode-toggle">
+          <button class="mode-btn active" id="mode-scorers">Scorers</button>
+          <button class="mode-btn" id="mode-squads">All players</button>
+        </div>
+        <input id="search" type="search" placeholder="Search player, team, or city…" autocomplete="off" />
+        <select id="minGoals">
+          <option value="1">All scorers</option>
+          <option value="2">2+ goals</option>
+          <option value="3">3+ goals</option>
+          <option value="5">5+ goals</option>
+          <option value="10">10+ goals</option>
+        </select>
+        <button id="wc-toggle">World Cups ▾</button>
+        <div id="country-badge">
+          <span id="badge-label"></span>
+          <button id="badge-clear" title="Clear country filter">✕</button>
+        </div>
+      </div>
+      <div class="stats">
+        <span>Players: <b id="s-players">—</b></span>
+        <span id="s-goals-stat">Goals: <b id="s-goals">—</b></span>
+        <span>Nations: <b id="s-nations">—</b></span>
+      </div>
+    </div>
+    <div id="wc-panel">
+      <div class="wc-chips" id="chips-men"></div>
+      <button class="wc-quick" id="all-wc">All</button>
+      <button class="wc-quick" id="none-wc">None</button>
+    </div>
+  </header>
+
+  <div id="map-wrap">
+    <div id="map"></div>
+    <div id="map-loading">Looking up country…</div>
+
+    <div id="country-panel">
+      <div class="cp-header">
+        <span id="cp-title"></span>
+        <button id="cp-close">✕ close</button>
+      </div>
+      <div id="cp-body">
+        <div style="padding:20px 16px;font-size:0.82rem;color:#6b7280">
+          Click anywhere on the map to explore a country.
+        </div>
+      </div>
+    </div>
+
+    <div id="legend">
+      <div class="legend-title">World Cup year</div>
+      <div class="legend-bar"></div>
+      <div class="legend-labels"><span>1930</span><span>1970</span><span>2026</span></div>
+    </div>
+
+    <div id="no-data">
+      <h2>No data yet</h2>
+      <p>Run: <code>python build_data.py</code></p>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="scorers.js"></script>
+  <script src="squads.js"></script>
+  <script>
+    if (typeof SCORERS === "undefined" || SCORERS.length === 0)
+      document.getElementById("no-data").style.display = "block";
+
+    // ── Map ──────────────────────────────────────────────────────────────
+    const map = L.map("map", { center:[25,15], zoom:2, minZoom:2, maxZoom:10 });
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+      attribution: '&copy; OSM &copy; CARTO', subdomains: "abcd", maxZoom: 20,
+    }).addTo(map);
+    const layer = L.layerGroup().addTo(map);
+
+    // player name + team → Leaflet marker; rebuilt on each render()
+    const playerMarkers = new Map();
+    let highlightedKey = null;
+    let clearTimer     = null;
+
+    // ── Color scale ──────────────────────────────────────────────────────
+    const MEN_YEARS = [1930,1934,1938,1950,1954,1958,1962,1966,1970,
+                       1974,1978,1982,1986,1990,1994,1998,2002,2006,
+                       2010,2014,2018,2022,2026];
+    function wcColor(year) {
+      const idx = MEN_YEARS.indexOf(year);
+      const t   = idx < 0 ? 0.5 : idx / (MEN_YEARS.length - 1);
+      const hue = Math.round((220 + t * 165) % 360);
+      return `hsl(${hue},${Math.round(82+t*8)}%,${Math.round(55+t*8)}%)`;
+    }
+
+    // ── Flag emoji ───────────────────────────────────────────────────────
+    function countryFlag(cc) {
+      if (!cc) return "";
+      // UK nations use subdivision tag-sequence flags
+      const sub = { "GB-ENG":"🏴󠁧󠁢󠁥󠁮󠁧󠁿","GB-SCO":"🏴󠁧󠁢󠁳󠁣󠁴󠁿","GB-WAL":"🏴󠁧󠁢󠁷󠁬󠁳󠁿","GB-NIR":"🇬🇧","GB":"🇬🇧" };
+      if (sub[cc]) return sub[cc];
+      // Standard ISO alpha-2 → regional indicator pair
+      if (!/^[A-Z]{2}$/i.test(cc)) return "";
+      const [a, b] = [...cc.toUpperCase()].map(c => 0x1F1E6 + c.charCodeAt(0) - 65);
+      return String.fromCodePoint(a, b);
+    }
+
+    // ── Team → country code ──────────────────────────────────────────────
+    // UK FIFA nations use ISO 3166-2 subdivision codes
+    const TEAM_TO_ISO = {
+      // UK FIFA nations (separate in FIFA, same territory)
+      "England":"GB-ENG","Scotland":"GB-SCO","Wales":"GB-WAL","Northern Ireland":"GB-NIR",
+      // All other men's WC teams
+      "Argentina":"AR","Australia":"AU","Austria":"AT","Belgium":"BE",
+      "Bolivia":"BO","Brazil":"BR","Bulgaria":"BG","Cameroon":"CM",
+      "Canada":"CA","Chile":"CL","China PR":"CN","Colombia":"CO",
+      "Costa Rica":"CR","Croatia":"HR","Cuba":"CU","Czech Republic":"CZ",
+      "Denmark":"DK","Ecuador":"EC","Egypt":"EG","El Salvador":"SV",
+      "France":"FR","Germany":"DE","Ghana":"GH","Greece":"GR",
+      "Haiti":"HT","Honduras":"HN","Hungary":"HU","Indonesia":"ID",
+      "Iran":"IR","Iraq":"IQ","Israel":"IL","Italy":"IT",
+      "Ivory Coast":"CI","Jamaica":"JM","Japan":"JP","Kuwait":"KW",
+      "Mexico":"MX","Morocco":"MA","Netherlands":"NL","New Zealand":"NZ",
+      "Nigeria":"NG","North Korea":"KP","Norway":"NO","Panama":"PA",
+      "Paraguay":"PY","Peru":"PE","Poland":"PL","Portugal":"PT",
+      "Qatar":"QA","Republic of Ireland":"IE","Romania":"RO","Russia":"RU",
+      "Saudi Arabia":"SA","Senegal":"SN","Serbia":"RS","Slovenia":"SI",
+      "South Africa":"ZA","South Korea":"KR","Spain":"ES","Sweden":"SE",
+      "Switzerland":"CH","Togo":"TG","Trinidad and Tobago":"TT",
+      "Tunisia":"TN","Turkey":"TR","Türkiye":"TR","Ukraine":"UA",
+      "United Arab Emirates":"AE","United States":"US","Uruguay":"UY",
+      "Algeria":"DZ","Angola":"AO","Equatorial Guinea":"GQ",
+      "Venezuela":"VE","Guatemala":"GT","Bosnia and Herzegovina":"BA",
+      // Historical → closest modern equivalent
+      "West Germany":"DE","East Germany":"DE","Soviet Union":"RU",
+      "Serbia and Montenegro":"RS","Zaire":"CD",
+      "Democratic Republic of the Congo":"CD",
+      // Dissolved — no single successor
+      "Yugoslavia":null,"Czechoslovakia":null,
+    };
+    function teamToISO(team) {
+      return Object.prototype.hasOwnProperty.call(TEAM_TO_ISO, team)
+        ? TEAM_TO_ISO[team] : null;
+    }
+
+    // ── Tournament filter ────────────────────────────────────────────────
+    const mensData   = (typeof SCORERS !== "undefined" ? SCORERS : []).filter(s => s.gender === "men");
+    const squadsData = (typeof SQUADS  !== "undefined" ? SQUADS  : []).filter(s => s.gender === "men");
+    const hasSquads  = squadsData.length > 0;
+
+    const hasBirthCC = mensData.some(s => s.cc && s.cc.length > 0);
+    const activeWCs  = new Set(MEN_YEARS);
+    let   viewMode   = "scorers";
+
+    function getActiveScorers() {
+      const allOn = activeWCs.size === MEN_YEARS.length;
+      return mensData.filter(s => allOn || activeWCs.has(s.tournament));
+    }
+    function getActiveSquads() {
+      const allOn = activeWCs.size === MEN_YEARS.length;
+      return squadsData.filter(s => allOn || activeWCs.has(s.tournament));
+    }
+
+    const chipsEl = document.getElementById("chips-men");
+    MEN_YEARS.forEach(yr => {
+      const chip = document.createElement("button");
+      chip.className = "wc-chip on";
+      chip.dataset.year = yr;
+      chip.textContent = yr;
+      chip.style.color = wcColor(yr);
+      chip.addEventListener("click", () => {
+        if (activeWCs.has(yr)) { activeWCs.delete(yr); chip.classList.remove("on"); }
+        else                   { activeWCs.add(yr);    chip.classList.add("on");    }
+        updateToggleLabel(); render();
+      });
+      chipsEl.appendChild(chip);
+    });
+
+    document.getElementById("all-wc").addEventListener("click", () => {
+      MEN_YEARS.forEach(y => activeWCs.add(y));
+      document.querySelectorAll(".wc-chip").forEach(c => c.classList.add("on"));
+      updateToggleLabel(); render();
+    });
+    document.getElementById("none-wc").addEventListener("click", () => {
+      activeWCs.clear();
+      document.querySelectorAll(".wc-chip").forEach(c => c.classList.remove("on"));
+      updateToggleLabel(); render();
+    });
+
+    const wcToggle = document.getElementById("wc-toggle");
+    const wcPanel  = document.getElementById("wc-panel");
+    wcToggle.addEventListener("click", () => {
+      const open = wcPanel.classList.toggle("open");
+      wcToggle.textContent = open ? "World Cups ▴" : "World Cups ▾";
+      updateToggleLabel();
+    });
+    function updateToggleLabel() {
+      const open  = wcPanel.classList.contains("open");
+      const arrow = open ? " ▴" : " ▾";
+      const n     = activeWCs.size;
+      wcToggle.textContent = n === MEN_YEARS.length ? `World Cups${arrow}`
+        : n === 1 ? `${[...activeWCs][0]} WC${arrow}`
+                  : `${n} of ${MEN_YEARS.length} WCs${arrow}`;
+      wcToggle.classList.toggle("active", open || n < MEN_YEARS.length);
+    }
+
+    // ── Mode toggle ──────────────────────────────────────────────────────
+    if (!hasSquads) {
+      document.getElementById("mode-squads").disabled = true;
+      document.getElementById("mode-squads").title = "Run build_squads.py first";
+    }
+    function setMode(mode) {
+      viewMode = mode;
+      document.getElementById("mode-scorers").classList.toggle("active", mode === "scorers");
+      document.getElementById("mode-squads").classList.toggle("active", mode === "squads");
+      document.getElementById("minGoals").style.display   = mode === "squads" ? "none" : "";
+      document.getElementById("s-goals-stat").style.display = mode === "squads" ? "none" : "";
+      render();
+      if (selectedCC) buildPanel(selectedCC, selectedName);
+    }
+    document.getElementById("mode-scorers").addEventListener("click", () => setMode("scorers"));
+    document.getElementById("mode-squads").addEventListener("click",  () => { if (hasSquads) setMode("squads"); });
+
+    // ── Country selection ────────────────────────────────────────────────
+    let selectedCC   = null;
+    let selectedName = null;
+    let _clicking    = false;
+
+    const mapLoading   = document.getElementById("map-loading");
+    const countryBadge = document.getElementById("country-badge");
+    const badgeLabel   = document.getElementById("badge-label");
+
+    document.getElementById("badge-clear").addEventListener("click", clearCountry);
+    document.getElementById("cp-close").addEventListener("click",    clearCountry);
+
+    const UK_STATES = { "England":"GB-ENG","Scotland":"GB-SCO","Wales":"GB-WAL","Northern Ireland":"GB-NIR" };
+
+    map.on("click", async (e) => {
+      if (_clicking) return;
+      _clicking = true;
+      mapLoading.style.display = "block";
+      try {
+        const { lat, lng } = e.latlng;
+        const r = await fetch(
+          `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json&zoom=5&accept-language=en`,
+          { headers: { "User-Agent": "WCBirthplaceMap/1.0" } }
+        );
+        if (!r.ok) return;
+        const d   = await r.json();
+        const addr = d.address || {};
+        let cc     = (addr.country_code || "").toUpperCase();
+        let name   = addr.country || "";
+        if (!cc) return;
+
+        // Split UK into FIFA nations
+        if (cc === "GB") {
+          const state = addr.state || addr.region || "";
+          const ukCC  = UK_STATES[state];
+          if (ukCC) { cc = ukCC; name = state; }
+        }
+
+        if (cc === selectedCC) clearCountry();
+        else                   selectCountry(cc, name);
+      } catch (_) {}
+      finally { _clicking = false; mapLoading.style.display = "none"; }
+    });
+
+    function selectCountry(cc, name) {
+      selectedCC   = cc;
+      selectedName = name;
+      const flag = countryFlag(cc);
+      badgeLabel.textContent = `${flag} ${name}`;
+      countryBadge.classList.add("on");
+      document.getElementById("cp-title").textContent = `${flag} ${name}`;
+      document.getElementById("country-panel").classList.add("open");
+      document.getElementById("legend").classList.add("shifted");
+      render();
+      buildPanel(cc, name);
+    }
+
+    function getScorerBirthCC(s) {
+      return (s.cc && s.cc.length > 0) ? s.cc.toUpperCase() : null;
+    }
+
+    function birthMatchesCC(s, cc) {
+      return getScorerBirthCC(s) === cc;
+    }
+
+    function clearCountry() {
+      selectedCC = selectedName = null;
+      countryBadge.classList.remove("on");
+      document.getElementById("country-panel").classList.remove("open");
+      document.getElementById("legend").classList.remove("shifted");
+      render();
+    }
+
+    // ── Country panel ────────────────────────────────────────────────────
+    function fmtYears(years) {
+      return [...new Set(years)].sort().map(y => `'${String(y).slice(2)}`).join(" ");
+    }
+
+    function wikiUrl(name) {
+      return "https://en.wikipedia.org/wiki/" + encodeURIComponent(name.replace(/ /g, "_"));
+    }
+    function escAttr(s) {
+      return s.replace(/&/g, "&amp;").replace(/"/g, "&quot;");
+    }
+
+    function clearHighlightNow() {
+      if (clearTimer) { clearTimeout(clearTimer); clearTimer = null; }
+      if (!highlightedKey) return;
+      highlightedKey = null;
+      layer.eachLayer(m => {
+        m.setStyle({ fillOpacity: 0.78, opacity: 0.95 });
+        if (m._origRadius !== undefined) m.setRadius(m._origRadius);
+      });
+    }
+    function schedClearHighlight() {
+      clearTimer = setTimeout(clearHighlightNow, 60);
+    }
+    function highlightPlayer(pk) {
+      if (clearTimer) { clearTimeout(clearTimer); clearTimer = null; }
+      if (highlightedKey === pk) return;
+      clearHighlightNow();
+      highlightedKey = pk;
+      const target = playerMarkers.get(pk);
+      if (!target) return;
+      layer.eachLayer(m => {
+        if (m === target) {
+          m.setStyle({ fillOpacity: 1, opacity: 1 });
+          m.setRadius(m._origRadius + 3);
+          m.bringToFront();
+        } else {
+          m.setStyle({ fillOpacity: 0.1, opacity: 0.18 });
+        }
+      });
+    }
+
+    function makeRows(list, subFn, hrefFn) {
+      if (!list.length) return `<div class="cp-empty">None</div>`;
+      return list.map(s => {
+        const pk   = escAttr(`${s.player}||${s.team}`);
+        const href = hrefFn ? hrefFn(s) : wikiUrl(s.player);
+        return `<div class="cp-row" data-pk="${pk}">
+          <a class="cp-name" href="${href}" target="_blank" rel="noopener">${s.player}</a>
+          <span class="cp-sub">${subFn(s)}</span>
+        </div>`;
+      }).join("");
+    }
+
+    function buildPanel(cc, name) {
+      if (viewMode === "squads") { buildPanelSquads(cc, name); return; }
+      const flag = countryFlag(cc);
+
+      if (!hasBirthCC) {
+        document.getElementById("cp-body").innerHTML =
+          `<div style="padding:20px 16px;font-size:0.82rem;color:#6b7280;line-height:1.6">
+            Birth country data is not in <b style="color:#9ca3af">scorers.js</b> yet.<br><br>
+            Re-run <code style="background:#1f2937;padding:2px 6px;border-radius:3px;color:#e5e7eb;font-size:0.78rem">python build_data.py</code>
+            to add it — it uses Nominatim reverse geocoding, so it's accurate for islands,
+            coastal cities, and UK nations.
+          </div>`;
+        return;
+      }
+
+      const filtered = getActiveScorers();
+      const byPlayer = new Map();
+      filtered.forEach(s => {
+        const k = `${s.player}||${s.team}`;
+        if (!byPlayer.has(k)) byPlayer.set(k, { ...s, goals: 0, years: [] });
+        const e = byPlayer.get(k);
+        e.goals += s.goals;
+        e.years.push(s.tournament);
+      });
+
+      const bornHerePlayed   = [];
+      const bornAbroadPlayed = [];
+      const bornHereAbroad   = [];
+
+      byPlayer.forEach(s => {
+        const bornHere = birthMatchesCC(s, cc);
+        const playHere = teamToISO(s.team) === cc;
+        if ( bornHere &&  playHere) bornHerePlayed.push(s);
+        if (!bornHere &&  playHere) bornAbroadPlayed.push(s);
+        if ( bornHere && !playHere) bornHereAbroad.push(s);
+      });
+
+      const byGoals = (a, b) => b.goals - a.goals || Math.max(...b.years) - Math.max(...a.years);
+      bornHerePlayed.sort(byGoals);
+      bornAbroadPlayed.sort(byGoals);
+      bornHereAbroad.sort(byGoals);
+
+      const total = bornHerePlayed.length + bornAbroadPlayed.length + bornHereAbroad.length;
+      if (total === 0) {
+        document.getElementById("cp-body").innerHTML =
+          `<div style="padding:20px 16px;font-size:0.82rem;color:#6b7280">
+            No scorers found for <b style="color:#9ca3af">${flag} ${name}</b>.
+          </div>`;
+        return;
+      }
+
+      document.getElementById("cp-body").innerHTML = `
+        <div class="cp-section">
+          <div class="cp-section-title">${flag} Born here · played for ${name} (${bornHerePlayed.length})</div>
+          ${makeRows(bornHerePlayed, s => `${s.goals}g · ${fmtYears(s.years)}`)}
+        </div>
+        <div class="cp-section">
+          <div class="cp-section-title">Born abroad · played for ${flag} ${name} (${bornAbroadPlayed.length})</div>
+          ${makeRows(bornAbroadPlayed, s => {
+            const bcc   = getScorerBirthCC(s);
+            const bflag = countryFlag(bcc);
+            return `${bflag} ${s.city} · ${s.goals}g · ${fmtYears(s.years)}`;
+          })}
+        </div>
+        <div class="cp-section">
+          <div class="cp-section-title">${flag} Born here · played abroad (${bornHereAbroad.length})</div>
+          ${makeRows(bornHereAbroad, s => {
+            const tflag = countryFlag(teamToISO(s.team));
+            return `${tflag} ${s.team} · ${s.goals}g · ${fmtYears(s.years)}`;
+          })}
+        </div>`;
+    }
+
+    function buildPanelSquads(cc, name) {
+      const flag = countryFlag(cc);
+      const byPlayer = new Map();
+      getActiveSquads().forEach(s => {
+        const k = `${s.player}||${s.team}`;
+        if (!byPlayer.has(k)) byPlayer.set(k, { ...s, years: [] });
+        const e = byPlayer.get(k);
+        if (!e.years.includes(s.tournament)) e.years.push(s.tournament);
+      });
+
+      const bornHerePlayed = [], bornAbroadPlayed = [], bornHereAbroad = [];
+      byPlayer.forEach(s => {
+        const bornHere = birthMatchesCC(s, cc);
+        const playHere = teamToISO(s.team) === cc;
+        if ( bornHere &&  playHere) bornHerePlayed.push(s);
+        if (!bornHere &&  playHere) bornAbroadPlayed.push(s);
+        if ( bornHere && !playHere) bornHereAbroad.push(s);
+      });
+
+      const byApps = (a, b) => b.years.length - a.years.length || Math.max(...b.years) - Math.max(...a.years);
+      bornHerePlayed.sort(byApps);
+      bornAbroadPlayed.sort(byApps);
+      bornHereAbroad.sort(byApps);
+
+      const total = bornHerePlayed.length + bornAbroadPlayed.length + bornHereAbroad.length;
+      if (total === 0) {
+        document.getElementById("cp-body").innerHTML =
+          `<div style="padding:20px 16px;font-size:0.82rem;color:#6b7280">No squad data for <b style="color:#9ca3af">${flag} ${name}</b>.</div>`;
+        return;
+      }
+
+      const href = s => wikiUrl(s.wiki ? s.wiki.replace(/_/g, " ") : s.player);
+      document.getElementById("cp-body").innerHTML = `
+        <div class="cp-section">
+          <div class="cp-section-title">${flag} Born here · played for ${name} (${bornHerePlayed.length})</div>
+          ${makeRows(bornHerePlayed, s => fmtYears(s.years), href)}
+        </div>
+        <div class="cp-section">
+          <div class="cp-section-title">Born abroad · played for ${flag} ${name} (${bornAbroadPlayed.length})</div>
+          ${makeRows(bornAbroadPlayed, s => {
+            const bcc = getScorerBirthCC(s);
+            return `${countryFlag(bcc)} ${s.city || "?"} · ${fmtYears(s.years)}`;
+          }, href)}
+        </div>
+        <div class="cp-section">
+          <div class="cp-section-title">${flag} Born here · played abroad (${bornHereAbroad.length})</div>
+          ${makeRows(bornHereAbroad, s => {
+            return `${countryFlag(teamToISO(s.team))} ${s.team} · ${fmtYears(s.years)}`;
+          }, href)}
+        </div>`;
+    }
+
+    // ── Render ───────────────────────────────────────────────────────────
+    function render() {
+      clearHighlightNow();
+      playerMarkers.clear();
+      const query = document.getElementById("search").value.trim().toLowerCase();
+      layer.clearLayers();
+
+      const sq = viewMode === "squads";
+      let filtered = sq ? getActiveSquads() : getActiveScorers();
+
+      if (selectedCC) {
+        filtered = filtered.filter(s =>
+          birthMatchesCC(s, selectedCC) || teamToISO(s.team) === selectedCC
+        );
+      }
+
+      const playerAgg = new Map();
+      filtered.forEach(s => {
+        const k = `${s.player}||${s.team}||${s.lat.toFixed(4)},${s.lon.toFixed(4)}`;
+        if (!playerAgg.has(k)) {
+          playerAgg.set(k, sq
+            ? { ...s, years: [s.tournament] }
+            : { ...s, goals: 0, tourGoals: {} });
+        }
+        const e = playerAgg.get(k);
+        if (sq) { if (!e.years.includes(s.tournament)) e.years.push(s.tournament); }
+        else    { e.goals += s.goals; e.tourGoals[s.tournament] = (e.tourGoals[s.tournament] || 0) + s.goals; }
+      });
+
+      const minGoal = parseInt(document.getElementById("minGoals").value, 10);
+      const visible = [...playerAgg.values()].filter(s => {
+        if (!sq && s.goals < minGoal) return false;
+        if (query && !`${s.player} ${s.team} ${s.city}`.toLowerCase().includes(query)) return false;
+        return true;
+      });
+
+      const byLoc = new Map();
+      visible.forEach(s => {
+        const k = `${s.lat.toFixed(4)},${s.lon.toFixed(4)}`;
+        if (!byLoc.has(k)) byLoc.set(k, { lat: s.lat, lon: s.lon, city: s.city, items: [] });
+        byLoc.get(k).items.push(s);
+      });
+
+      const locList = [...byLoc.values()].map(loc => {
+        const yrs = sq
+          ? loc.items.flatMap(s => s.years)
+          : loc.items.flatMap(s => Object.keys(s.tourGoals).map(Number));
+        return { ...loc, mostRecentYear: Math.max(...yrs) };
+      }).sort((a, b) => a.mostRecentYear - b.mostRecentYear);
+
+      let playerCount = 0, goalCount = 0;
+      const nations = new Set();
+
+      locList.forEach(({ lat, lon, city, items, mostRecentYear }) => {
+        const color  = wcColor(mostRecentYear);
+        const weight = sq
+          ? items.reduce((a, s) => a + s.years.length, 0)
+          : items.reduce((a, s) => a + s.goals, 0);
+        const radius = 3 + Math.sqrt(weight) * (sq ? 1.2 : 1.8);
+
+        const marker = L.circleMarker([lat, lon], {
+          radius, color, fillColor: color, fillOpacity: 0.78, weight: 1.2, opacity: 0.95,
+        });
+        marker._origRadius = radius;
+
+        const sorted = sq
+          ? [...items].sort((a, b) => b.years.length - a.years.length || a.player.localeCompare(b.player))
+          : [...items].sort((a, b) =>
+              b.goals - a.goals ||
+              Math.max(...Object.keys(b.tourGoals).map(Number)) - Math.max(...Object.keys(a.tourGoals).map(Number)));
+
+        sorted.forEach(s => playerMarkers.set(`${s.player}||${s.team}`, marker));
+
+        const rows = sorted.map(s => {
+          const pYear = sq
+            ? Math.max(...s.years)
+            : Math.max(...Object.keys(s.tourGoals).map(Number));
+          const tflag = countryFlag(teamToISO(s.team));
+          const pk    = escAttr(`${s.player}||${s.team}`);
+          const yrs   = sq
+            ? [...s.years].sort().map(y => "'" + String(y).slice(2)).join(" ")
+            : Object.keys(s.tourGoals).map(Number).sort().map(y => "'" + String(y).slice(2)).join(" ");
+          const meta  = sq
+            ? `${tflag} ${s.team} · ${yrs}`
+            : `${tflag} ${s.team} · ${s.goals}g · ${yrs}`;
+          const href  = sq && s.wiki ? wikiUrl(s.wiki.replace(/_/g, " ")) : wikiUrl(s.player);
+          return `<div class="popup-player" data-pk="${pk}">
+            <span class="popup-dot" style="background:${wcColor(pYear)}"></span>
+            <a class="popup-player-name" href="${href}" target="_blank" rel="noopener">${s.player}</a>
+            <span class="popup-player-meta">${meta}</span>
+          </div>`;
+        }).join("");
+
+        marker.bindPopup(`<div class="popup-city">${city}</div>${rows}`, { maxWidth: 300 });
+        const top  = sorted[0];
+        const more = items.length > 1 ? ` +${items.length - 1}` : "";
+        marker.bindTooltip(`<b>${top.player}</b>${more} — ${city}`, { direction: "top", offset: [0, -radius] });
+
+        layer.addLayer(marker);
+        items.forEach(s => { playerCount++; if (!sq) goalCount += s.goals; nations.add(s.team); });
+      });
+
+      document.getElementById("s-players").textContent = playerCount.toLocaleString();
+      document.getElementById("s-goals").textContent   = goalCount.toLocaleString();
+      document.getElementById("s-nations").textContent = nations.size;
+    }
+    if (typeof SCORERS !== "undefined") render();
+    document.getElementById("search").addEventListener("input",   render);
+    document.getElementById("minGoals").addEventListener("change", render);
+
+    // ── Player hover → highlight dot; click name → Wikipedia ────────────
+    document.addEventListener("mouseover", e => {
+      const row = e.target.closest(".popup-player[data-pk], .cp-row[data-pk]");
+      if (!row) return;
+      if (clearTimer) { clearTimeout(clearTimer); clearTimer = null; }
+      highlightPlayer(row.dataset.pk);
+    });
+    document.addEventListener("mouseout", e => {
+      const row = e.target.closest(".popup-player[data-pk], .cp-row[data-pk]");
+      if (!row) return;
+      if (row.contains(e.relatedTarget)) return;
+      schedClearHighlight();
+    });
+  </script>
+</body>
+</html>

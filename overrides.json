@@ -1,0 +1,3456 @@
+{
+  "maxirodriguez": {
+    "player": "Maxi Rodríguez",
+    "team": "Argentina",
+    "goals": 3,
+    "qid": "Q193699",
+    "city": "Rosario",
+    "lat": -32.9468,
+    "lon": -60.6393
+  },
+  "hectorortiz": {
+    "player": "Héctor Ortiz",
+    "team": "Mexico",
+    "goals": 1,
+    "city": "Cuernavaca",
+    "lat": 18.93313,
+    "lon": -99.25996
+  },
+  "ernestovidal": {
+    "player": "Ernesto Vidal",
+    "team": "Uruguay",
+    "goals": 1,
+    "qid": "Q983694",
+    "city": "Buje",
+    "lat": 45.4,
+    "lon": 13.65
+  },
+  "ademir": {
+    "player": "Ademir",
+    "team": "Brazil",
+    "goals": 9,
+    "qid": "Q332012",
+    "city": "Recife",
+    "lat": -8.05389,
+    "lon": -34.88083
+  },
+  "rivellino": {
+    "player": "Rivellino",
+    "team": "Brazil",
+    "goals": 6,
+    "qid": "Q220283",
+    "city": "São Paulo",
+    "lat": -23.55039,
+    "lon": -46.63395
+  },
+  "ennervalencia": {
+    "player": "Enner Valencia",
+    "team": "Ecuador",
+    "goals": 6,
+    "qid": "Q2843080",
+    "city": "San Lorenzo",
+    "lat": 1.28639,
+    "lon": -78.83528
+  },
+  "jisungpark": {
+    "player": "Ji-sung Park",
+    "team": "South Korea",
+    "goals": 3,
+    "qid": "Q50603",
+    "city": "Seoul",
+    "lat": 37.56,
+    "lon": 126.99
+  },
+  "heungminson": {
+    "player": "Heung-min Son",
+    "team": "South Korea",
+    "goals": 3,
+    "qid": "Q439722",
+    "city": "Chuncheon",
+    "lat": 37.87472,
+    "lon": 127.73417
+  },
+  "junghwanahn": {
+    "player": "Jung-hwan Ahn",
+    "team": "South Korea",
+    "goals": 3,
+    "qid": "Q313968",
+    "city": "Paju",
+    "lat": 37.83278,
+    "lon": 126.81694
+  },
+  "youssefennesyri": {
+    "player": "Youssef En-Nesyri",
+    "team": "Morocco",
+    "goals": 3,
+    "qid": "Q26262219",
+    "city": "Fez",
+    "lat": 34.04333,
+    "lon": -5.00333
+  },
+  "jenniferhermoso": {
+    "player": "Jennifer Hermoso",
+    "team": "Spain",
+    "goals": 3,
+    "qid": "Q6178420",
+    "city": "Madrid",
+    "lat": 40.41694,
+    "lon": -3.70333
+  },
+  "ihorbelanov": {
+    "player": "Ihor Belanov",
+    "team": "Soviet Union",
+    "goals": 4,
+    "qid": "Q311410",
+    "city": "Odesa",
+    "lat": 46.47747,
+    "lon": 30.73262
+  },
+  "kylianmbappe": {
+    "player": "Kylian Mbappé",
+    "team": "France",
+    "goals": 12,
+    "qid": "Q21621995",
+    "city": "Paris",
+    "lat": 48.85667,
+    "lon": 2.35222
+  },
+  "goncaloramos": {
+    "player": "Gonçalo Ramos",
+    "team": "Portugal",
+    "goals": 3,
+    "qid": "Q60621615",
+    "city": "Olhão",
+    "lat": 37.02778,
+    "lon": -7.83889
+  },
+  "marcusrashford": {
+    "player": "Marcus Rashford",
+    "team": "England",
+    "goals": 3,
+    "qid": "Q22951255",
+    "city": "Manchester",
+    "lat": 53.46667,
+    "lon": -2.23333
+  },
+  "lucybronze": {
+    "player": "Lucy Bronze",
+    "team": "England",
+    "goals": 3,
+    "qid": "Q6698219",
+    "city": "Berwick-upon-Tweed",
+    "lat": 55.76917,
+    "lon": -2.0025
+  },
+  "codygakpo": {
+    "player": "Cody Gakpo",
+    "team": "Netherlands",
+    "goals": 3,
+    "qid": "Q28801927",
+    "city": "Eindhoven",
+    "lat": 51.43444,
+    "lon": 5.48417
+  },
+  "salemaldawsari": {
+    "player": "Salem Al-Dawsari",
+    "team": "Saudi Arabia",
+    "goals": 3,
+    "qid": "Q3945419",
+    "city": "Riyadh",
+    "lat": 24.65,
+    "lon": 46.71
+  },
+  "pyolhuijin": {
+    "player": "Pyol-hui Jin",
+    "team": "North Korea",
+    "goals": 3,
+    "qid": "Q1593560",
+    "city": "North Korea",
+    "lat": 40.0,
+    "lon": 127.0
+  },
+  "cristianagirelli": {
+    "player": "Cristiana Girelli",
+    "team": "Italy",
+    "goals": 3,
+    "qid": "Q10528954",
+    "city": "Gavardo",
+    "lat": 45.5875,
+    "lon": 10.43889
+  },
+  "olgaletyushova": {
+    "player": "Olga Letyushova",
+    "team": "Russia",
+    "goals": 3,
+    "qid": "Q4260312",
+    "city": "Voronezh",
+    "lat": 51.67167,
+    "lon": 39.21056
+  },
+  "miootani": {
+    "player": "Mio Otani",
+    "team": "Japan",
+    "goals": 3,
+    "qid": "Q11439102",
+    "city": "Shiga Prefecture",
+    "lat": 35.00436,
+    "lon": 135.8685
+  },
+  "julianalvarez": {
+    "player": "Julián Álvarez",
+    "team": "Argentina",
+    "goals": 4,
+    "qid": "Q59381180",
+    "city": "Calchín",
+    "lat": -31.66667,
+    "lon": -63.2
+  },
+  "bukayosaka": {
+    "player": "Bukayo Saka",
+    "team": "England",
+    "goals": 3,
+    "qid": "Q59306386",
+    "city": "Ealing",
+    "lat": 51.5111,
+    "lon": -0.3058
+  },
+  "richarlison": {
+    "player": "Richarlison",
+    "team": "Brazil",
+    "goals": 3,
+    "qid": "Q20806743",
+    "city": "Nova Venécia",
+    "lat": -18.71083,
+    "lon": -40.40083
+  },
+  "breelembolo": {
+    "player": "Breel Embolo",
+    "team": "Switzerland",
+    "goals": 2,
+    "qid": "Q15956282",
+    "city": "Yaoundé",
+    "lat": 3.85778,
+    "lon": 11.51806
+  },
+  "choguesung": {
+    "player": "Cho Gue-sung",
+    "team": "South Korea",
+    "goals": 2,
+    "qid": "Q69696822",
+    "city": "Ansan",
+    "lat": 37.32361,
+    "lon": 126.82194
+  },
+  "ferrantorres": {
+    "player": "Ferran Torres",
+    "team": "Spain",
+    "goals": 2,
+    "qid": "Q44297797",
+    "city": "Foios",
+    "lat": 39.53861,
+    "lon": -0.35667
+  },
+  "giorgiandearrascaeta": {
+    "player": "Giorgian De Arrascaeta",
+    "team": "Uruguay",
+    "goals": 2,
+    "qid": "Q13578003",
+    "city": "Nuevo Berlín",
+    "lat": -32.97917,
+    "lon": -58.05278
+  },
+  "kaihavertz": {
+    "player": "Kai Havertz",
+    "team": "Germany",
+    "goals": 2,
+    "qid": "Q27310755",
+    "city": "Aachen",
+    "lat": 50.77621,
+    "lon": 6.08379
+  },
+  "mehditaremi": {
+    "player": "Mehdi Taremi",
+    "team": "Iran",
+    "goals": 2,
+    "qid": "Q17070837",
+    "city": "Bushehr",
+    "lat": 28.96889,
+    "lon": 50.83667
+  },
+  "mohammedkudus": {
+    "player": "Mohammed Kudus",
+    "team": "Ghana",
+    "goals": 2,
+    "qid": "Q56877051",
+    "city": "Accra",
+    "lat": 5.55602,
+    "lon": -0.1969
+  },
+  "achrafdari": {
+    "player": "Achraf Dari",
+    "team": "Morocco",
+    "goals": 1,
+    "qid": "Q60616722",
+    "city": "Casablanca",
+    "lat": 33.59917,
+    "lon": -7.62
+  },
+  "alexismacallister": {
+    "player": "Alexis Mac Allister",
+    "team": "Argentina",
+    "goals": 1,
+    "qid": "Q33297140",
+    "city": "Santa Rosa",
+    "lat": -36.62028,
+    "lon": -64.29056
+  },
+  "alphonsodavies": {
+    "player": "Alphonso Davies",
+    "team": "Canada",
+    "goals": 1,
+    "qid": "Q23540953",
+    "city": "Buduburam",
+    "lat": 5.52314,
+    "lon": -0.47718
+  },
+  "andreaschristensen": {
+    "player": "Andreas Christensen",
+    "team": "Denmark",
+    "goals": 1,
+    "qid": "Q16063229",
+    "city": "Lillerød",
+    "lat": 55.8708,
+    "lon": 12.356
+  },
+  "aotanaka": {
+    "player": "Ao Tanaka",
+    "team": "Japan",
+    "goals": 1,
+    "qid": "Q27920148",
+    "city": "Miyamae-ku",
+    "lat": 35.58917,
+    "lon": 139.57861
+  },
+  "aurelientchouameni": {
+    "player": "Aurélien Tchouaméni",
+    "team": "France",
+    "goals": 1,
+    "qid": "Q46951844",
+    "city": "Rouen",
+    "lat": 49.44306,
+    "lon": 1.1025
+  },
+  "bambadieng": {
+    "player": "Bamba Dieng",
+    "team": "Senegal",
+    "goals": 1,
+    "qid": "Q105426667",
+    "city": "Pikine",
+    "lat": 14.744,
+    "lon": -17.40206
+  },
+  "boulayedia": {
+    "player": "Boulaye Dia",
+    "team": "Senegal",
+    "goals": 1,
+    "qid": "Q57603663",
+    "city": "Oyonnax",
+    "lat": 46.25556,
+    "lon": 5.655
+  },
+  "brunopetkovic": {
+    "player": "Bruno Petković",
+    "team": "Croatia",
+    "goals": 1,
+    "qid": "Q14951576",
+    "city": "Metković",
+    "lat": 43.05,
+    "lon": 17.65
+  },
+  "dusanvlahovic": {
+    "player": "Dušan Vlahović",
+    "team": "Serbia",
+    "goals": 1,
+    "qid": "Q23762815",
+    "city": "Belgrade",
+    "lat": 44.81778,
+    "lon": 20.45694
+  },
+  "enzofernandez": {
+    "player": "Enzo Fernández",
+    "team": "Argentina",
+    "goals": 1,
+    "qid": "Q96105248",
+    "city": "General San Martín",
+    "lat": -34.57718,
+    "lon": -58.53764
+  },
+  "famaradiedhiou": {
+    "player": "Famara Diédhiou",
+    "team": "Senegal",
+    "goals": 1,
+    "qid": "Q17350546",
+    "city": "Saint-Louis",
+    "lat": 16.03333,
+    "lon": -16.5
+  },
+  "frenkiedejong": {
+    "player": "Frenkie de Jong",
+    "team": "Netherlands",
+    "goals": 1,
+    "qid": "Q19898898",
+    "city": "Arkel",
+    "lat": 51.8639,
+    "lon": 4.9944
+  },
+  "gavi": {
+    "player": "Gavi",
+    "team": "Spain",
+    "goals": 1,
+    "qid": "Q108111889",
+    "city": "Los Palacios y Villafranca",
+    "lat": 37.16,
+    "lon": -5.92361
+  },
+  "hajiwright": {
+    "player": "Haji Wright",
+    "team": "United States",
+    "goals": 1,
+    "qid": "Q19787021",
+    "city": "Los Angeles",
+    "lat": 34.05223,
+    "lon": -118.24368
+  },
+  "heechanhwang": {
+    "player": "Hee-chan Hwang",
+    "team": "South Korea",
+    "goals": 1,
+    "qid": "Q18551518",
+    "city": "Chuncheon",
+    "lat": 37.87472,
+    "lon": 127.73417
+  },
+  "henrymartin": {
+    "player": "Henry Martín",
+    "team": "Mexico",
+    "goals": 1,
+    "qid": "Q18719813",
+    "city": "Mérida",
+    "lat": 20.97,
+    "lon": -89.62
+  },
+  "ismailasarr": {
+    "player": "Ismaïla Sarr",
+    "team": "Senegal",
+    "goals": 1,
+    "qid": "Q26924482",
+    "city": "Saint-Louis",
+    "lat": 16.03333,
+    "lon": -16.5
+  },
+  "jackgrealish": {
+    "player": "Jack Grealish",
+    "team": "England",
+    "goals": 1,
+    "qid": "Q16056053",
+    "city": "Birmingham",
+    "lat": 52.48,
+    "lon": -1.9025
+  },
+  "keysherfuller": {
+    "player": "Keysher Fuller",
+    "team": "Costa Rica",
+    "goals": 1,
+    "qid": "Q50674620",
+    "city": "Limón",
+    "lat": 10.00222,
+    "lon": -83.08404
+  },
+  "lovromajer": {
+    "player": "Lovro Majer",
+    "team": "Croatia",
+    "goals": 1,
+    "qid": "Q28137504",
+    "city": "Zagreb",
+    "lat": 45.81306,
+    "lon": 15.97722
+  },
+  "lucaspaqueta": {
+    "player": "Lucas Paquetá",
+    "team": "Brazil",
+    "goals": 1,
+    "qid": "Q30089624",
+    "city": "Rio de Janeiro",
+    "lat": -22.91111,
+    "lon": -43.20556
+  },
+  "manuelakanji": {
+    "player": "Manuel Akanji",
+    "team": "Switzerland",
+    "goals": 1,
+    "qid": "Q19938984",
+    "city": "Neftenbach",
+    "lat": 47.52833,
+    "lon": 8.66806
+  },
+  "marcoasensio": {
+    "player": "Marco Asensio",
+    "team": "Spain",
+    "goals": 1,
+    "qid": "Q16148978",
+    "city": "Calvià",
+    "lat": 39.56667,
+    "lon": 2.51667
+  },
+  "mislavorsic": {
+    "player": "Mislav Oršić",
+    "team": "Croatia",
+    "goals": 1,
+    "qid": "Q16234878",
+    "city": "Zagreb",
+    "lat": 45.81306,
+    "lon": 15.97722
+  },
+  "mitchellduke": {
+    "player": "Mitchell Duke",
+    "team": "Australia",
+    "goals": 1,
+    "qid": "Q5393901",
+    "city": "Liverpool",
+    "lat": -33.92306,
+    "lon": 150.915
+  },
+  "mohammedmuntari": {
+    "player": "Mohammed Muntari",
+    "team": "Qatar",
+    "goals": 1,
+    "qid": "Q18705783",
+    "city": "Kumasi",
+    "lat": 6.7,
+    "lon": -1.625
+  },
+  "piotrzielinski": {
+    "player": "Piotr Zieliński",
+    "team": "Poland",
+    "goals": 1,
+    "qid": "Q7197034",
+    "city": "Ząbkowice Śląskie",
+    "lat": 50.58969,
+    "lon": 16.81239
+  },
+  "raminrezaeian": {
+    "player": "Ramin Rezaeian",
+    "team": "Iran",
+    "goals": 1,
+    "qid": "Q7289588",
+    "city": "Sari",
+    "lat": 36.56583,
+    "lon": 53.05972
+  },
+  "randalkolomuani": {
+    "player": "Randal Kolo Muani",
+    "team": "France",
+    "goals": 1,
+    "qid": "Q59655998",
+    "city": "Bondy",
+    "lat": 48.90278,
+    "lon": 2.48361
+  },
+  "raphaelguerreiro": {
+    "player": "Raphaël Guerreiro",
+    "team": "Portugal",
+    "goals": 1,
+    "qid": "Q4241680",
+    "city": "Le Blanc-Mesnil",
+    "lat": 48.93861,
+    "lon": 2.46111
+  },
+  "remofreuler": {
+    "player": "Remo Freuler",
+    "team": "Switzerland",
+    "goals": 1,
+    "qid": "Q16595441",
+    "city": "Ennenda",
+    "lat": 47.03361,
+    "lon": 9.0775
+  },
+  "ricardohorta": {
+    "player": "Ricardo Horta",
+    "team": "Portugal",
+    "goals": 1,
+    "qid": "Q14258335",
+    "city": "Sobreda",
+    "lat": 38.64961,
+    "lon": -9.18977
+  },
+  "romainsaiss": {
+    "player": "Romain Saïss",
+    "team": "Morocco",
+    "goals": 1,
+    "qid": "Q3440768",
+    "city": "Bourg-de-Péage",
+    "lat": 45.03778,
+    "lon": 5.05
+  },
+  "rouzbehcheshmi": {
+    "player": "Rouzbeh Cheshmi",
+    "team": "Iran",
+    "goals": 1,
+    "qid": "Q15981797",
+    "city": "Tehran",
+    "lat": 35.68889,
+    "lon": 51.38972
+  },
+  "salehalshehri": {
+    "player": "Saleh Al-Shehri",
+    "team": "Saudi Arabia",
+    "goals": 1,
+    "qid": "Q7403894",
+    "city": "Jeddah",
+    "lat": 21.54278,
+    "lon": 39.17278
+  },
+  "yeltsintejeda": {
+    "player": "Yeltsin Tejeda",
+    "team": "Costa Rica",
+    "goals": 1,
+    "qid": "Q4022676",
+    "city": "Limón",
+    "lat": 10.00222,
+    "lon": -83.08404
+  },
+  "younggwonkim": {
+    "player": "Young-gwon Kim",
+    "team": "South Korea",
+    "goals": 1,
+    "qid": "Q168530",
+    "city": "Jeonju",
+    "lat": 35.82194,
+    "lon": 127.14889
+  },
+  "zakariaaboukhlal": {
+    "player": "Zakaria Aboukhlal",
+    "team": "Morocco",
+    "goals": 1,
+    "qid": "Q56257819",
+    "city": "Rotterdam",
+    "lat": 51.92,
+    "lon": 4.48
+  },
+  "rafaelleao": {
+    "player": "Rafael Leão",
+    "team": "Portugal",
+    "goals": 2,
+    "qid": "Q30055335",
+    "city": "Almada",
+    "lat": 38.68028,
+    "lon": -9.15833
+  },
+  "ritsudoan": {
+    "player": "Ritsu Dōan",
+    "team": "Japan",
+    "goals": 2,
+    "qid": "Q20630956",
+    "city": "Amagasaki",
+    "lat": 34.73383,
+    "lon": 135.40633
+  },
+  "carlossoler": {
+    "player": "Carlos Soler",
+    "team": "Spain",
+    "goals": 1,
+    "qid": "Q26707913",
+    "city": "Valencia",
+    "lat": 39.47,
+    "lon": -0.37639
+  },
+  "christianpulisic": {
+    "player": "Christian Pulisic",
+    "team": "United States",
+    "goals": 1,
+    "qid": "Q22279773",
+    "city": "Hershey",
+    "lat": 40.27833,
+    "lon": -76.65111
+  },
+  "daizenmaeda": {
+    "player": "Daizen Maeda",
+    "team": "Japan",
+    "goals": 1,
+    "qid": "Q27990906",
+    "city": "Taishi",
+    "lat": 34.51872,
+    "lon": 135.64764
+  },
+  "daniolmo": {
+    "player": "Dani Olmo",
+    "team": "Spain",
+    "goals": 1,
+    "qid": "Q19560313",
+    "city": "Terrassa",
+    "lat": 41.56111,
+    "lon": 2.00806
+  },
+  "denzeldumfries": {
+    "player": "Denzel Dumfries",
+    "team": "Netherlands",
+    "goals": 1,
+    "qid": "Q19882816",
+    "city": "Rotterdam",
+    "lat": 51.92,
+    "lon": 4.48
+  },
+  "jeancharlescastelletto": {
+    "player": "Jean-Charles Castelletto",
+    "team": "Cameroon",
+    "goals": 1,
+    "qid": "Q15820881",
+    "city": "Clamart",
+    "lat": 48.80083,
+    "lon": 2.26194
+  },
+  "joaofelix": {
+    "player": "João Félix",
+    "team": "Portugal",
+    "goals": 1,
+    "qid": "Q27049064",
+    "city": "Viseu",
+    "lat": 40.6575,
+    "lon": -7.91389
+  },
+  "joskogvardiol": {
+    "player": "Joško Gvardiol",
+    "team": "Croatia",
+    "goals": 1,
+    "qid": "Q73400656",
+    "city": "Zagreb",
+    "lat": 45.81306,
+    "lon": 15.97722
+  },
+  "juanpablovargas": {
+    "player": "Juan Pablo Vargas",
+    "team": "Costa Rica",
+    "goals": 1,
+    "qid": "Q33126551",
+    "city": "Grecia",
+    "lat": 10.06931,
+    "lon": -84.31358
+  },
+  "judebellingham": {
+    "player": "Jude Bellingham",
+    "team": "England",
+    "goals": 1,
+    "qid": "Q66241169",
+    "city": "Stourbridge",
+    "lat": 52.458,
+    "lon": -2.148
+  },
+  "kalidoukoulibaly": {
+    "player": "Kalidou Koulibaly",
+    "team": "Senegal",
+    "goals": 1,
+    "qid": "Q3192187",
+    "city": "Saint-Dié-des-Vosges",
+    "lat": 48.28417,
+    "lon": 6.94917
+  },
+  "mohammedsalisu": {
+    "player": "Mohammed Salisu",
+    "team": "Ghana",
+    "goals": 1,
+    "qid": "Q59915117",
+    "city": "Accra",
+    "lat": 5.55602,
+    "lon": -0.1969
+  },
+  "moisescaicedo": {
+    "player": "Moisés Caicedo",
+    "team": "Ecuador",
+    "goals": 1,
+    "qid": "Q87715532",
+    "city": "Santo Domingo",
+    "lat": -0.25417,
+    "lon": -79.17194
+  },
+  "nahuelmolina": {
+    "player": "Nahuel Molina",
+    "team": "Argentina",
+    "goals": 1,
+    "qid": "Q22082590",
+    "city": "Embalse",
+    "lat": -32.20452,
+    "lon": -64.40048
+  },
+  "osmanbukari": {
+    "player": "Osman Bukari",
+    "team": "Ghana",
+    "goals": 1,
+    "qid": "Q55997480",
+    "city": "Accra",
+    "lat": 5.55602,
+    "lon": -0.1969
+  },
+  "theohernandez": {
+    "player": "Théo Hernandez",
+    "team": "France",
+    "goals": 1,
+    "qid": "Q23703372",
+    "city": "Marseille",
+    "lat": 43.29667,
+    "lon": 5.37639
+  },
+  "timothyweah": {
+    "player": "Timothy Weah",
+    "team": "United States",
+    "goals": 1,
+    "qid": "Q31871265",
+    "city": "Brooklyn",
+    "lat": 40.65083,
+    "lon": -73.94972
+  },
+  "viniciusjunior": {
+    "player": "Vinícius Júnior",
+    "team": "Brazil",
+    "goals": 1,
+    "qid": "Q28973866",
+    "city": "São Gonçalo",
+    "lat": -22.82694,
+    "lon": -43.05389
+  },
+  "yerrymina": {
+    "player": "Yerry Mina",
+    "team": "Colombia",
+    "goals": 3,
+    "qid": "Q16648816",
+    "city": "Guachené",
+    "lat": 3.13361,
+    "lon": -76.3925
+  },
+  "sergioaguero": {
+    "player": "Sergio Agüero",
+    "team": "Argentina",
+    "goals": 2,
+    "qid": "Q119562",
+    "city": "Buenos Aires",
+    "lat": -34.59972,
+    "lon": -58.38194
+  },
+  "adnanjanuzaj": {
+    "player": "Adnan Januzaj",
+    "team": "Belgium",
+    "goals": 1,
+    "qid": "Q14558450",
+    "city": "Brussels",
+    "lat": 50.84667,
+    "lon": 4.35167
+  },
+  "aleksandrgolovin": {
+    "player": "Aleksandr Golovin",
+    "team": "Russia",
+    "goals": 1,
+    "qid": "Q15065431",
+    "city": "Kaltan",
+    "lat": 53.51667,
+    "lon": 87.26667
+  },
+  "anterebic": {
+    "player": "Ante Rebić",
+    "team": "Croatia",
+    "goals": 1,
+    "qid": "Q3209607",
+    "city": "Split",
+    "lat": 43.51,
+    "lon": 16.44
+  },
+  "benjaminpavard": {
+    "player": "Benjamin Pavard",
+    "team": "France",
+    "goals": 1,
+    "qid": "Q19599124",
+    "city": "Maubeuge",
+    "lat": 50.27694,
+    "lon": 3.9725
+  },
+  "delealli": {
+    "player": "Dele Alli",
+    "team": "England",
+    "goals": 1,
+    "qid": "Q10553748",
+    "city": "Milton Keynes",
+    "lat": 52.03333,
+    "lon": -0.76667
+  },
+  "dylanbronn": {
+    "player": "Dylan Bronn",
+    "team": "Tunisia",
+    "goals": 1,
+    "qid": "Q26405549",
+    "city": "Cannes",
+    "lat": 43.5525,
+    "lon": 7.02139
+  },
+  "emilforsberg": {
+    "player": "Emil Forsberg",
+    "team": "Sweden",
+    "goals": 1,
+    "qid": "Q5371234",
+    "city": "Sundsvall",
+    "lat": 62.39551,
+    "lon": 17.28599
+  },
+  "fakhreddinebenyoussef": {
+    "player": "Fakhreddine Ben Youssef",
+    "team": "Tunisia",
+    "goals": 1,
+    "qid": "Q3064692",
+    "city": "Tunis",
+    "lat": 36.80083,
+    "lon": 10.18
+  },
+  "ferjanisassi": {
+    "player": "Ferjani Sassi",
+    "team": "Tunisia",
+    "goals": 1,
+    "qid": "Q16636036",
+    "city": "Aryanah",
+    "lat": 36.8625,
+    "lon": 10.19556
+  },
+  "hirvinglozano": {
+    "player": "Hirving Lozano",
+    "team": "Mexico",
+    "goals": 1,
+    "qid": "Q17633812",
+    "city": "Mexico City",
+    "lat": 19.35377,
+    "lon": -99.13589
+  },
+  "janbednarek": {
+    "player": "Jan Bednarek",
+    "team": "Poland",
+    "goals": 1,
+    "qid": "Q16212492",
+    "city": "Słupca",
+    "lat": 52.3,
+    "lon": 17.86667
+  },
+  "javierhernandez": {
+    "player": "Javier Hernández",
+    "team": "Mexico",
+    "goals": 1,
+    "qid": "Q165125",
+    "city": "Guadalajara",
+    "lat": 20.67639,
+    "lon": -103.34222
+  },
+  "jesselingard": {
+    "player": "Jesse Lingard",
+    "team": "England",
+    "goals": 1,
+    "qid": "Q6186603",
+    "city": "Warrington",
+    "lat": 53.38732,
+    "lon": -2.60288
+  },
+  "josegimenez": {
+    "player": "José Giménez",
+    "team": "Uruguay",
+    "goals": 1,
+    "qid": "Q13634114",
+    "city": "Canelones",
+    "lat": -34.52494,
+    "lon": -56.28143
+  },
+  "kendallwaston": {
+    "player": "Kendall Waston",
+    "team": "Costa Rica",
+    "goals": 1,
+    "city": "Limón",
+    "lat": 10.09991,
+    "lon": -83.34319
+  },
+  "khalidboutaib": {
+    "player": "Khalid Boutaïb",
+    "team": "Morocco",
+    "goals": 1,
+    "qid": "Q10544544",
+    "city": "Bagnols-sur-Cèze",
+    "lat": 44.1625,
+    "lon": 4.62
+  },
+  "ludwigaugustinsson": {
+    "player": "Ludwig Augustinsson",
+    "team": "Sweden",
+    "goals": 1,
+    "qid": "Q4806248",
+    "city": "Stockholm",
+    "lat": 59.32944,
+    "lon": 18.06861
+  },
+  "divockorigi": {
+    "player": "Divock Origi",
+    "team": "Belgium",
+    "goals": 1,
+    "qid": "Q4254043",
+    "city": "Ostend",
+    "lat": 51.22583,
+    "lon": 2.91944
+  },
+  "georgiossamaras": {
+    "player": "Georgios Samaras",
+    "team": "Greece",
+    "goals": 1,
+    "qid": "Q202404",
+    "city": "Heraklion",
+    "lat": 35.34028,
+    "lon": 25.13444
+  },
+  "jacheolkoo": {
+    "player": "Ja-cheol Koo",
+    "team": "South Korea",
+    "goals": 1,
+    "qid": "Q348543",
+    "city": "Chungju",
+    "lat": 37.01778,
+    "lon": 127.87722
+  },
+  "juliangreen": {
+    "player": "Julian Green",
+    "team": "United States",
+    "goals": 1,
+    "qid": "Q15241424",
+    "city": "Tampa",
+    "lat": 27.9475,
+    "lon": -82.45861
+  },
+  "keunholee": {
+    "player": "Keun-ho Lee",
+    "team": "South Korea",
+    "goals": 1,
+    "qid": "Q494266",
+    "city": "Incheon",
+    "lat": 37.46389,
+    "lon": 126.64861
+  },
+  "chungyonglee": {
+    "player": "Chung-yong Lee",
+    "team": "South Korea",
+    "goals": 2,
+    "qid": "Q217104",
+    "city": "Seoul",
+    "lat": 37.56,
+    "lon": 126.99
+  },
+  "jungsoolee": {
+    "player": "Jung-soo Lee",
+    "team": "South Korea",
+    "goals": 2,
+    "qid": "Q213079",
+    "city": "Gimhae",
+    "lat": 35.23417,
+    "lon": 128.88111
+  },
+  "tiago": {
+    "player": "Tiago",
+    "team": "Portugal",
+    "goals": 2,
+    "qid": "Q210944",
+    "city": "Viana do Castelo",
+    "lat": 41.7,
+    "lon": -8.83333
+  },
+  "chuyoungpark": {
+    "player": "Chu-young Park",
+    "team": "South Korea",
+    "goals": 1,
+    "qid": "Q210928",
+    "city": "Daegu",
+    "lat": 35.87167,
+    "lon": 128.60167
+  },
+  "simao": {
+    "player": "Simão",
+    "team": "Portugal",
+    "goals": 1,
+    "qid": "Q203665",
+    "city": "Vila Real",
+    "lat": 41.29528,
+    "lon": -7.74611
+  },
+  "ivankaviedes": {
+    "player": "Ivan Kaviedes",
+    "team": "Ecuador",
+    "goals": 1,
+    "city": "Santo Domingo de los Colorados",
+    "lat": -0.24982,
+    "lon": -79.17193
+  },
+  "chonggugsong": {
+    "player": "Chong-gug Song",
+    "team": "South Korea",
+    "goals": 1,
+    "city": "Danyang County",
+    "lat": 36.985,
+    "lon": 128.36278
+  },
+  "eulyonglee": {
+    "player": "Eul-yong Lee",
+    "team": "South Korea",
+    "goals": 1,
+    "city": "Taebaek",
+    "lat": 37.17306,
+    "lon": 128.98611
+  },
+  "jorgeluiscampos": {
+    "player": "Jorge Luis Campos",
+    "team": "Paraguay",
+    "goals": 1,
+    "qid": "Q2722399",
+    "city": "Asunción",
+    "lat": -25.28,
+    "lon": -57.63444
+  },
+  "kihyeonseol": {
+    "player": "Ki-hyeon Seol",
+    "team": "South Korea",
+    "goals": 1,
+    "city": "Jeongseon County",
+    "lat": 37.37917,
+    "lon": 128.66472
+  },
+  "mauriciowright": {
+    "player": "Mauricio Wright",
+    "team": "Costa Rica",
+    "goals": 1,
+    "qid": "Q705668",
+    "city": "Salitrillos",
+    "lat": 9.8525,
+    "lon": -84.09056
+  },
+  "seokjuha": {
+    "player": "Seok-ju Ha",
+    "team": "South Korea",
+    "goals": 1,
+    "qid": "Q12601620",
+    "city": "Pyongyang",
+    "lat": 39.01667,
+    "lon": 125.7475
+  },
+  "yousufalthunayan": {
+    "player": "Yousuf Al-Thunayan",
+    "team": "Saudi Arabia",
+    "goals": 1,
+    "qid": "Q2440373",
+    "city": "Riyadh",
+    "lat": 24.65,
+    "lon": 46.71
+  },
+  "myungbohong": {
+    "player": "Myung-bo Hong",
+    "team": "South Korea",
+    "goals": 2,
+    "qid": "Q313940",
+    "city": "Seoul",
+    "lat": 37.56,
+    "lon": 126.99
+  },
+  "danpetrescu": {
+    "player": "Dan Petrescu",
+    "team": "Romania",
+    "goals": 1,
+    "qid": "Q1159141",
+    "city": "Bucharest",
+    "lat": 44.41336,
+    "lon": 26.09778
+  },
+  "hermangaviria": {
+    "player": "Hermán Gaviria",
+    "team": "Colombia",
+    "goals": 1,
+    "qid": "Q81227",
+    "city": "Carepa",
+    "lat": 7.75806,
+    "lon": -76.65528
+  },
+  "lotharmatthaus": {
+    "player": "Lothar Matthäus",
+    "team": "West Germany",
+    "goals": 4,
+    "qid": "Q36386",
+    "city": "Erlangen",
+    "lat": 49.5925,
+    "lon": 11.005
+  },
+  "gabibalint": {
+    "player": "Gabi Balint",
+    "team": "Romania",
+    "goals": 2,
+    "qid": "Q459203",
+    "city": "Sângeorz-Băi",
+    "lat": 47.37,
+    "lon": 24.68
+  },
+  "khalidismail": {
+    "player": "Khalid Ismaïl",
+    "team": "United Arab Emirates",
+    "goals": 1,
+    "qid": "Q3814928",
+    "city": "United Arab Emirates",
+    "lat": 24.4,
+    "lon": 54.3
+  },
+  "leoclijsters": {
+    "player": "Leo Clijsters",
+    "team": "Belgium",
+    "goals": 1,
+    "qid": "Q557289",
+    "city": "Opitter",
+    "lat": 51.1172,
+    "lon": 5.6442
+  },
+  "eloy": {
+    "player": "Eloy",
+    "team": "Spain",
+    "goals": 1,
+    "qid": "Q2757511",
+    "city": "Béthune",
+    "lat": 50.53095,
+    "lon": 2.63933
+  },
+  "jungmoohuh": {
+    "player": "Jung-moo Huh",
+    "team": "South Korea",
+    "goals": 1,
+    "city": "Jindo County",
+    "lat": 34.48306,
+    "lon": 126.26194
+  },
+  "manuelnegrete": {
+    "player": "Manuel Negrete",
+    "team": "Mexico",
+    "goals": 1,
+    "qid": "Q1387961",
+    "city": "Ciudad Altamirano",
+    "lat": 18.3582,
+    "lon": -100.66965
+  },
+  "pavelyakovenko": {
+    "player": "Pavel Yakovenko",
+    "team": "Soviet Union",
+    "goals": 1,
+    "qid": "Q431750",
+    "city": "Nikopol",
+    "lat": 47.56667,
+    "lon": 34.4
+  },
+  "hectorzelaya": {
+    "player": "Héctor Zelaya",
+    "team": "Honduras",
+    "goals": 1,
+    "qid": "Q2527671",
+    "city": "Trinidad",
+    "lat": 15.14315,
+    "lon": -88.23572
+  },
+  "khorenhovhannisyan": {
+    "player": "Khoren Hovhannisyan",
+    "team": "Soviet Union",
+    "goals": 1,
+    "qid": "Q718626",
+    "city": "Yerevan",
+    "lat": 40.18139,
+    "lon": 44.51444
+  },
+  "hassanroshan": {
+    "player": "Hassan Roshan",
+    "team": "Iran",
+    "goals": 1,
+    "qid": "Q2736000",
+    "city": "Tehran",
+    "lat": 35.68889,
+    "lon": 51.38972
+  },
+  "mokhtardhouib": {
+    "player": "Mokhtar Dhouib",
+    "team": "Tunisia",
+    "goals": 1,
+    "qid": "Q777204",
+    "city": "Sfax",
+    "lat": 34.74,
+    "lon": 10.76
+  },
+  "zico": {
+    "player": "Zico",
+    "team": "Brazil",
+    "goals": 1,
+    "qid": "Q47526",
+    "city": "Rio de Janeiro",
+    "lat": -22.91111,
+    "lon": -43.20556
+  },
+  "dinkodermendzhiev": {
+    "player": "Dinko Dermendzhiev",
+    "team": "Bulgaria",
+    "goals": 1,
+    "qid": "Q2444179",
+    "city": "Plovdiv",
+    "lat": 42.14209,
+    "lon": 24.74145
+  },
+  "houmanejarir": {
+    "player": "Houmane Jarir",
+    "team": "Morocco",
+    "goals": 1,
+    "qid": "Q3807326",
+    "city": "Casablanca",
+    "lat": 33.59917,
+    "lon": -7.62
+  },
+  "amancio": {
+    "player": "Amancio",
+    "team": "Spain",
+    "goals": 1,
+    "qid": "Q453653",
+    "city": "A Coruña",
+    "lat": 43.37386,
+    "lon": -8.40003
+  },
+  "anatoliybanishevskiy": {
+    "player": "Anatoliy Banishevskiy",
+    "team": "Soviet Union",
+    "goals": 1,
+    "qid": "Q487655",
+    "city": "Baku",
+    "lat": 40.36666,
+    "lon": 49.83518
+  },
+  "adelardo": {
+    "player": "Adelardo",
+    "team": "Spain",
+    "goals": 1,
+    "qid": "Q354150",
+    "city": "Badajoz",
+    "lat": 38.87789,
+    "lon": -6.97061
+  },
+  "antoniorada": {
+    "player": "Antonio Rada",
+    "team": "Colombia",
+    "goals": 1,
+    "qid": "Q3620082",
+    "city": "Sabanalarga",
+    "lat": 6.84833,
+    "lon": -75.81694
+  },
+  "jorgelinoromero": {
+    "player": "Jorge Lino Romero",
+    "team": "Paraguay",
+    "goals": 2,
+    "qid": "Q3810076",
+    "city": "Luque",
+    "lat": -25.27,
+    "lon": -57.48722
+  },
+  "maryanwisnieski": {
+    "player": "Maryan Wisnieski",
+    "team": "France",
+    "goals": 2,
+    "qid": "Q964973",
+    "city": "Calonne-Ricouart",
+    "lat": 50.48694,
+    "lon": 2.48361
+  },
+  "burhansargun": {
+    "player": "Burhan Sargun",
+    "team": "Turkey",
+    "goals": 3,
+    "qid": "Q1016283",
+    "city": "Ankara",
+    "lat": 39.93576,
+    "lon": 32.83869
+  },
+  "julinho": {
+    "player": "Julinho",
+    "team": "Brazil",
+    "goals": 2,
+    "qid": "Q523520",
+    "city": "São Paulo",
+    "lat": -23.55039,
+    "lon": -46.63395
+  },
+  "romeu": {
+    "player": "Romeu",
+    "team": "Brazil",
+    "goals": 3,
+    "qid": "Q2714436",
+    "city": "Jundiaí",
+    "lat": -23.18639,
+    "lon": -46.88417
+  },
+  "fryderykscherfke": {
+    "player": "Fryderyk Scherfke",
+    "team": "Poland",
+    "goals": 1,
+    "qid": "Q69223",
+    "city": "Poznań",
+    "lat": 52.40833,
+    "lon": 16.93361
+  },
+  "hakimziyech": {
+    "player": "Hakim Ziyech",
+    "team": "Morocco",
+    "goals": 1,
+    "qid": "Q327456",
+    "city": "Dronten",
+    "lat": 52.52417,
+    "lon": 5.7125
+  },
+  "diegocosta": {
+    "player": "Diego Costa",
+    "team": "Spain",
+    "goals": 3,
+    "qid": "Q459707",
+    "city": "Lagarto",
+    "lat": -10.91694,
+    "lon": -37.65
+  },
+  "luissuarez": {
+    "player": "Luis Suárez",
+    "team": "Uruguay",
+    "goals": 2,
+    "qid": "Q26517",
+    "city": "Salto",
+    "lat": -31.38892,
+    "lon": -57.96089
+  },
+  "gonzalohiguain": {
+    "player": "Gonzalo Higuaín",
+    "team": "Argentina",
+    "goals": 1,
+    "qid": "Q483846",
+    "city": "Brest",
+    "lat": 48.39,
+    "lon": -4.48694
+  },
+  "jorgevaldivia": {
+    "player": "Jorge Valdivia",
+    "team": "Chile",
+    "goals": 1,
+    "qid": "Q360782",
+    "city": "Maracay",
+    "lat": 10.24694,
+    "lon": -67.59583
+  },
+  "cacau": {
+    "player": "Cacau",
+    "team": "Germany",
+    "goals": 1,
+    "qid": "Q57148",
+    "city": "São Paulo",
+    "lat": -23.55039,
+    "lon": -46.63395
+  },
+  "markgonzalez": {
+    "player": "Mark González",
+    "team": "Chile",
+    "goals": 1,
+    "qid": "Q213124",
+    "city": "Durban",
+    "lat": -29.85833,
+    "lon": 31.025
+  },
+  "marenmeinert": {
+    "player": "Maren Meinert",
+    "team": "Germany",
+    "goals": 4,
+    "qid": "Q442670",
+    "city": "Duisburg",
+    "lat": 51.43222,
+    "lon": 6.76111
+  },
+  "emmanuelolisadebe": {
+    "player": "Emmanuel Olisadebe",
+    "team": "Poland",
+    "goals": 1,
+    "qid": "Q354346",
+    "city": "Warri",
+    "lat": 5.51667,
+    "lon": 5.75
+  },
+  "emrebelozoglu": {
+    "player": "Emre Belözoğlu",
+    "team": "Turkey",
+    "goals": 1,
+    "qid": "Q202569",
+    "city": "Istanbul",
+    "lat": 41.01,
+    "lon": 28.96028
+  },
+  "ivanhasek": {
+    "player": "Ivan Hašek",
+    "team": "Czechoslovakia",
+    "goals": 1,
+    "qid": "Q31376",
+    "city": "Městec Králové",
+    "lat": 50.20724,
+    "lon": 15.29766
+  },
+  "pele": {
+    "player": "Pelé",
+    "team": "Brazil",
+    "goals": 4,
+    "qid": "Q12897",
+    "city": "Três Corações",
+    "lat": -21.73472,
+    "lon": -45.25444
+  },
+  "jozsefbozsik": {
+    "player": "József Bozsik",
+    "team": "Hungary",
+    "goals": 1,
+    "qid": "Q318752",
+    "city": "Kispest",
+    "lat": 47.4522,
+    "lon": 19.1478
+  },
+  "baltazar": {
+    "player": "Baltazar",
+    "team": "Brazil",
+    "goals": 1,
+    "qid": "Q1378184",
+    "city": "Santos",
+    "lat": -23.9336,
+    "lon": -46.3286
+  },
+  "ronaldo": {
+    "player": "Ronaldo",
+    "team": "Brazil",
+    "goals": 8,
+    "qid": "Q529207",
+    "city": "Rio de Janeiro",
+    "lat": -22.91111,
+    "lon": -43.20556
+  },
+  "kaka": {
+    "player": "Kaká",
+    "team": "Brazil",
+    "goals": 1,
+    "qid": "Q531814",
+    "city": "Gama",
+    "lat": -16.01944,
+    "lon": -48.06694
+  },
+  "andreapirlo": {
+    "player": "Andrea Pirlo",
+    "team": "Italy",
+    "goals": 1,
+    "qid": "Q43926",
+    "city": "Brescia",
+    "lat": 45.53889,
+    "lon": 10.22028
+  },
+  "davidbeckham": {
+    "player": "David Beckham",
+    "team": "England",
+    "goals": 1,
+    "qid": "Q10520",
+    "city": "London",
+    "lat": 51.50722,
+    "lon": -0.1275
+  },
+  "joecole": {
+    "player": "Joe Cole",
+    "team": "England",
+    "goals": 1,
+    "qid": "Q184946",
+    "city": "London",
+    "lat": 51.50722,
+    "lon": -0.1275
+  },
+  "fernandomorientes": {
+    "player": "Fernando Morientes",
+    "team": "Spain",
+    "goals": 2,
+    "qid": "Q45567",
+    "city": "Cáceres",
+    "lat": 39.47306,
+    "lon": -6.37111
+  },
+  "khaliloufadiga": {
+    "player": "Khalilou Fadiga",
+    "team": "Senegal",
+    "goals": 1,
+    "qid": "Q381378",
+    "city": "Paris",
+    "lat": 48.85667,
+    "lon": 2.35222
+  },
+  "khalilou": {
+    "player": "Khalilou Fadiga",
+    "team": "Senegal",
+    "goals": 1,
+    "qid": "Q381378",
+    "city": "Paris",
+    "lat": 48.85667,
+    "lon": 2.35222
+  },
+  "papaboubadiop": {
+    "player": "Papa Bouba Diop",
+    "team": "Senegal",
+    "goals": 3,
+    "qid": "Q313753",
+    "city": "Dakar",
+    "lat": 14.67256,
+    "lon": -17.432
+  },
+  "roquesantacruz": {
+    "player": "Roque Santa Cruz",
+    "team": "Paraguay",
+    "goals": 1,
+    "qid": "Q152492",
+    "city": "Asunción",
+    "lat": -25.28,
+    "lon": -57.63444
+  },
+  "ebbesand": {
+    "player": "Ebbe Sand",
+    "team": "Denmark",
+    "goals": 1,
+    "qid": "Q313913",
+    "city": "Aalborg",
+    "lat": 57.05,
+    "lon": 9.91667
+  },
+  "michaellaudrup": {
+    "player": "Michael Laudrup",
+    "team": "Denmark",
+    "goals": 1,
+    "qid": "Q188720",
+    "city": "Frederiksberg",
+    "lat": 55.6779,
+    "lon": 12.5327
+  },
+  "andreasmoller": {
+    "player": "Andreas Möller",
+    "team": "Germany",
+    "goals": 1,
+    "qid": "Q155919",
+    "city": "Frankfurt",
+    "lat": 50.11056,
+    "lon": 8.68222
+  },
+  "diegomaradona": {
+    "player": "Diego Maradona",
+    "team": "Argentina",
+    "goals": 5,
+    "qid": "Q17515",
+    "city": "Lanús Partido",
+    "lat": -34.7,
+    "lon": -58.4
+  },
+  "romario": {
+    "player": "Romário",
+    "team": "Brazil",
+    "goals": 5,
+    "qid": "Q178649",
+    "city": "Rio de Janeiro",
+    "lat": -22.91111,
+    "lon": -43.20556
+  },
+  "johanncruyff": {
+    "player": "Johan Cruyff",
+    "team": "Netherlands",
+    "goals": 3,
+    "qid": "Q17163",
+    "city": "Amsterdam",
+    "lat": 52.36667,
+    "lon": 4.88333
+  },
+  "johancruyff": {
+    "player": "Johan Cruyff",
+    "team": "Netherlands",
+    "goals": 3,
+    "qid": "Q17163",
+    "city": "Amsterdam",
+    "lat": 52.36667,
+    "lon": 4.88333
+  },
+  "paulbreitner": {
+    "player": "Paul Breitner",
+    "team": "West Germany",
+    "goals": 3,
+    "qid": "Q44458",
+    "city": "Munich",
+    "lat": 48.1375,
+    "lon": 11.575
+  },
+  "osvaldoardiles": {
+    "player": "Osvaldo Ardiles",
+    "team": "Argentina",
+    "goals": 1,
+    "qid": "Q310373",
+    "city": "Córdoba",
+    "lat": -31.41667,
+    "lon": -64.18333
+  },
+  "fritzwalter": {
+    "player": "Fritz Walter",
+    "team": "West Germany",
+    "goals": 3,
+    "qid": "Q22717",
+    "city": "Kaiserslautern",
+    "lat": 49.44472,
+    "lon": 7.76889
+  },
+  "zeroberto": {
+    "player": "Zé Roberto",
+    "team": "Brazil",
+    "goals": 1,
+    "qid": "Q57167",
+    "city": "São Paulo",
+    "lat": -23.55039,
+    "lon": -46.63395
+  },
+  "philippesenderos": {
+    "player": "Philippe Senderos",
+    "team": "Switzerland",
+    "goals": 1,
+    "qid": "Q187450",
+    "city": "Geneva",
+    "lat": 46.2,
+    "lon": 6.15
+  },
+  "laszlokiss": {
+    "player": "László Kiss",
+    "team": "Hungary",
+    "goals": 3,
+    "qid": "Q1111896",
+    "city": "Taszár",
+    "lat": 46.37616,
+    "lon": 17.90581
+  },
+  "karolycsapo": {
+    "player": "Károly Csapó",
+    "team": "Hungary",
+    "goals": 1,
+    "qid": "Q838670",
+    "city": "Agyagosszergény",
+    "lat": 47.60924,
+    "lon": 16.94037
+  },
+  "tobireath": {
+    "player": "Tobin Heath",
+    "team": "United States",
+    "goals": 1,
+    "qid": "Q445796",
+    "city": "Basking Ridge",
+    "lat": 40.7062,
+    "lon": -74.5493
+  },
+  "tobinheath": {
+    "player": "Tobin Heath",
+    "team": "United States",
+    "goals": 1,
+    "qid": "Q445796",
+    "city": "Basking Ridge",
+    "lat": 40.7062,
+    "lon": -74.5493
+  },
+  "walterschachner": {
+    "player": "Walter Schachner",
+    "team": "Austria",
+    "goals": 2,
+    "qid": "Q686910",
+    "city": "Leoben",
+    "lat": 47.38167,
+    "lon": 15.09722
+  },
+  "josefkostalekk": {
+    "player": "Josef Košťálek",
+    "team": "Czechoslovakia",
+    "goals": 1,
+    "qid": "Q1378744",
+    "city": "Kladno",
+    "lat": 50.14306,
+    "lon": 14.10528
+  },
+  "luisregueiro": {
+    "player": "Luis Regueiro",
+    "team": "Spain",
+    "goals": 1,
+    "qid": "Q704337",
+    "city": "Irun",
+    "lat": 43.33781,
+    "lon": -1.78881
+  },
+  "uminutdavala": {
+    "player": "Ümit Davala",
+    "team": "Turkey",
+    "goals": 2,
+    "qid": "Q312494",
+    "city": "Mannheim",
+    "lat": 49.48778,
+    "lon": 8.46611
+  },
+  "umitdavala": {
+    "player": "Ümit Davala",
+    "team": "Turkey",
+    "goals": 2,
+    "qid": "Q312494",
+    "city": "Mannheim",
+    "lat": 49.48778,
+    "lon": 8.46611
+  },
+  "robbieearle": {
+    "player": "Robbie Earle",
+    "team": "Jamaica",
+    "goals": 1,
+    "qid": "Q975790",
+    "city": "Newcastle-under-Lyme",
+    "lat": 53.0109,
+    "lon": -2.2278
+  },
+  "sinha": {
+    "player": "Sinha",
+    "team": "Mexico",
+    "goals": 1,
+    "qid": "Q204548",
+    "city": "Itajá",
+    "lat": -19.06694,
+    "lon": -51.54389
+  },
+  "maredmeinert": {
+    "player": "Maren Meinert",
+    "team": "Germany",
+    "goals": 4,
+    "qid": "Q442670",
+    "city": "Duisburg",
+    "lat": 51.43222,
+    "lon": 6.76111
+  },
+  "juanito": {
+    "player": "Juanito",
+    "team": "Spain",
+    "goals": 1,
+    "qid": "Q464652",
+    "city": "Fuengirola",
+    "lat": 36.54167,
+    "lon": -4.625
+  },
+  "fred": {
+    "player": "Fred",
+    "team": "Brazil",
+    "goals": 1,
+    "qid": "Q312772",
+    "city": "Teófilo Otoni",
+    "lat": -17.85778,
+    "lon": -41.505
+  },
+  "sasailic": {
+    "player": "Saša Ilić",
+    "team": "Serbia and Montenegro",
+    "goals": 1,
+    "qid": "Q316737",
+    "city": "Požarevac",
+    "lat": 44.62,
+    "lon": 21.18972
+  },
+  "pepe": {
+    "player": "Pepe",
+    "team": "Portugal",
+    "goals": 1,
+    "qid": "Q29561",
+    "city": "Maceió",
+    "lat": -9.66583,
+    "lon": -35.735
+  },
+  "josefkostalek": {
+    "player": "Josef Košťálek",
+    "team": "Czechoslovakia",
+    "goals": 1,
+    "qid": "Q1378744",
+    "city": "Kladno",
+    "lat": 50.14306,
+    "lon": 14.10528
+  },
+  "milanjovanovic": {
+    "player": "Milan Jovanović",
+    "team": "Serbia",
+    "goals": 1,
+    "qid": "Q208433",
+    "city": "Bajina Bašta",
+    "lat": 43.97306,
+    "lon": 19.55972
+  },
+  "leonidas": {
+    "player": "Leônidas",
+    "team": "Brazil",
+    "goals": 7,
+    "qid": "Q311739",
+    "city": "Rio de Janeiro",
+    "lat": -22.91111,
+    "lon": -43.20556
+  },
+  "eder": {
+    "player": "Éder",
+    "team": "Brazil",
+    "goals": 2,
+    "qid": "Q273766",
+    "city": "Vespasiano",
+    "lat": -19.69194,
+    "lon": -43.92278
+  },
+  "luischavez": {
+    "player": "Luis Chávez",
+    "team": "Mexico",
+    "goals": 1,
+    "city": "Cihuatlán",
+    "lat": 19.26328,
+    "lon": -104.60497
+  },
+  "paikseungho": {
+    "player": "Paik Seung-ho",
+    "team": "South Korea",
+    "goals": 1,
+    "city": "서울특별시",
+    "lat": 37.56668,
+    "lon": 126.97829
+  },
+  "philfoden": {
+    "player": "Phil Foden",
+    "team": "England",
+    "goals": 1,
+    "city": "Stockport",
+    "lat": 53.4079,
+    "lon": -2.16024
+  },
+  "sergejmilinkovicsavic": {
+    "player": "Sergej Milinković-Savić",
+    "team": "Serbia",
+    "goals": 1,
+    "city": "Lleida",
+    "lat": 41.61476,
+    "lon": 0.62678
+  },
+  "strahinjapavlovic": {
+    "player": "Strahinja Pavlović",
+    "team": "Serbia",
+    "goals": 1,
+    "city": "Шабац",
+    "lat": 44.75715,
+    "lon": 19.6954
+  },
+  "takumaasano": {
+    "player": "Takuma Asano",
+    "team": "Japan",
+    "goals": 1,
+    "city": "菰野町",
+    "lat": 35.01999,
+    "lon": 136.50729
+  },
+  "mariofernandes": {
+    "player": "Mário Fernandes",
+    "team": "Russia",
+    "goals": 1,
+    "city": "São Caetano do Sul",
+    "lat": -23.61959,
+    "lon": -46.56883
+  },
+  "salmanalfaraj": {
+    "player": "Salman Al-Faraj",
+    "team": "Saudi Arabia",
+    "goals": 1,
+    "city": "المدينة المنورة",
+    "lat": 24.47115,
+    "lon": 39.61112
+  },
+  "yurygazinsky": {
+    "player": "Yury Gazinsky",
+    "team": "Russia",
+    "goals": 1,
+    "city": "городской округ Комсомольск-на-Амуре",
+    "lat": 50.5618,
+    "lon": 136.99951
+  },
+  "andreassamaris": {
+    "player": "Andreas Samaris",
+    "team": "Greece",
+    "goals": 1,
+    "city": "Πάτρα",
+    "lat": 38.24624,
+    "lon": 21.73508
+  },
+  "yunnamji": {
+    "player": "Yun-nam Ji",
+    "team": "North Korea",
+    "goals": 1,
+    "city": "이천",
+    "lat": 35.92954,
+    "lon": 128.24818
+  },
+  "andriyrusol": {
+    "player": "Andriy Rusol",
+    "team": "Ukraine",
+    "goals": 1,
+    "city": "Кропивницький",
+    "lat": 48.51058,
+    "lon": 32.26563
+  },
+  "chunsoolee": {
+    "player": "Chun-soo Lee",
+    "team": "South Korea",
+    "goals": 1,
+    "city": "인천광역시",
+    "lat": 37.456,
+    "lon": 126.7052
+  },
+  "flavio": {
+    "player": "Flávio",
+    "team": "Angola",
+    "goals": 1,
+    "city": "Luanda",
+    "lat": -8.82727,
+    "lon": 13.24395
+  },
+  "gilberto": {
+    "player": "Gilberto",
+    "team": "Brazil",
+    "goals": 1,
+    "city": "Rio de Janeiro",
+    "lat": -22.91101,
+    "lon": -43.20937
+  },
+  "sangchulyoo": {
+    "player": "Sang-chul Yoo",
+    "team": "South Korea",
+    "goals": 1,
+    "city": "서울특별시",
+    "lat": 37.56668,
+    "lon": 126.97829
+  },
+  "sunhonghwang": {
+    "player": "Sun-hong Hwang",
+    "team": "South Korea",
+    "goals": 1,
+    "city": "예산군",
+    "lat": 36.6809,
+    "lon": 126.84487
+  },
+  "tebohomokoena": {
+    "player": "Teboho Mokoena",
+    "team": "South Africa",
+    "goals": 1,
+    "city": "Boipatong",
+    "lat": -26.67,
+    "lon": 27.85278
+  },
+  "andiherzog": {
+    "player": "Andi Herzog",
+    "team": "Austria",
+    "goals": 1,
+    "city": "Wien",
+    "lat": 48.20835,
+    "lon": 16.3725
+  },
+  "miguelangelbenitez": {
+    "player": "Miguel Ángel Benítez",
+    "team": "Paraguay",
+    "goals": 1,
+    "city": "Trinidad",
+    "lat": -27.12882,
+    "lon": -55.70439
+  },
+  "philippealbert": {
+    "player": "Philippe Albert",
+    "team": "Belgium",
+    "goals": 2,
+    "city": "Bouillon",
+    "lat": 49.79498,
+    "lon": 5.06725
+  },
+  "johnharoldlozano": {
+    "player": "John Harold Lozano",
+    "team": "Colombia",
+    "goals": 1,
+    "city": "Cali",
+    "lat": 3.41084,
+    "lon": -76.58121
+  },
+  "josepguardiola": {
+    "player": "Josep Guardiola",
+    "team": "Spain",
+    "goals": 1,
+    "city": "Santpedor",
+    "lat": 41.78476,
+    "lon": 1.83869
+  },
+  "jungwonseo": {
+    "player": "Jung-won Seo",
+    "team": "South Korea",
+    "goals": 1,
+    "city": "광주시",
+    "lat": 37.42908,
+    "lon": 127.25519
+  },
+  "marciosantos": {
+    "player": "Márcio Santos",
+    "team": "Brazil",
+    "goals": 1,
+    "city": "São Paulo",
+    "lat": -23.55065,
+    "lon": -46.63338
+  },
+  "kwanhwangbo": {
+    "player": "Kwan Hwangbo",
+    "team": "South Korea",
+    "goals": 1,
+    "city": "대구광역시",
+    "lat": 35.8713,
+    "lon": 128.6018
+  },
+  "ronaldgonzalezbrenes": {
+    "player": "Rónald González Brenes",
+    "team": "Costa Rica",
+    "goals": 1,
+    "city": "San Carlos",
+    "lat": 10.62037,
+    "lon": -84.42582
+  },
+  "juliocesarromero": {
+    "player": "Julio César Romero",
+    "team": "Paraguay",
+    "goals": 2,
+    "city": "Luque",
+    "lat": -25.26654,
+    "lon": -57.49269
+  },
+  "ahmedradhi": {
+    "player": "Ahmed Radhi",
+    "team": "Iraq",
+    "goals": 1,
+    "city": "بغداد",
+    "lat": 33.30617,
+    "lon": 44.38722
+  },
+  "changsunpark": {
+    "player": "Chang-sun Park",
+    "team": "South Korea",
+    "goals": 1,
+    "city": "김해시",
+    "lat": 35.22791,
+    "lon": 128.88954
+  },
+  "diamantino": {
+    "player": "Diamantino",
+    "team": "Portugal",
+    "goals": 1,
+    "city": "Moita",
+    "lat": 38.6524,
+    "lon": -8.99353
+  },
+  "jongbookim": {
+    "player": "Jong-boo Kim",
+    "team": "South Korea",
+    "goals": 1,
+    "city": "통영시",
+    "lat": 34.85425,
+    "lon": 128.4332
+  },
+  "soonhochoi": {
+    "player": "Soon-ho Choi",
+    "team": "South Korea",
+    "goals": 1,
+    "city": "청주시",
+    "lat": 36.64212,
+    "lon": 127.48917
+  },
+  "falcao": {
+    "player": "Falcão",
+    "team": "Brazil",
+    "goals": 3,
+    "city": "Abelardo Luz",
+    "lat": -26.57059,
+    "lon": -52.32803
+  },
+  "aleksandrchivadze": {
+    "player": "Aleksandr Chivadze",
+    "team": "Soviet Union",
+    "goals": 1,
+    "city": "სტეფანწმინდა",
+    "lat": 42.65799,
+    "lon": 44.64081
+  },
+  "alexandreczerniatynski": {
+    "player": "Alexandre Czerniatynski",
+    "team": "Belgium",
+    "goals": 1,
+    "city": "Charleroi",
+    "lat": 50.41162,
+    "lon": 4.44453
+  },
+  "antoniolaing": {
+    "player": "Antonio Laing",
+    "team": "Honduras",
+    "goals": 1,
+    "city": "Puerto Cortés",
+    "lat": 15.85146,
+    "lon": -87.94267
+  },
+  "dani": {
+    "player": "Dani",
+    "team": "Spain",
+    "goals": 1,
+    "city": "Sopuerta",
+    "lat": 43.25482,
+    "lon": -3.17037
+  },
+  "joseluisgonzalez": {
+    "player": "José Luis González",
+    "team": "Mexico",
+    "goals": 1,
+    "city": "Ciudad de México",
+    "lat": 19.32077,
+    "lon": -99.15147
+  },
+  "luiscubilla": {
+    "player": "Luis Cubilla",
+    "team": "Uruguay",
+    "goals": 1,
+    "city": "Paysandú",
+    "lat": -32.32173,
+    "lon": -58.08921
+  },
+  "maouhoubghazouani": {
+    "player": "Maouhoub Ghazouani",
+    "team": "Morocco",
+    "goals": 1,
+    "city": "Hay Mohammadi ⵃⴰⵢ ⵎⵓⵃⴰⵎⴰⴷⵉ حي المحمدي",
+    "lat": 33.58414,
+    "lon": -7.55696
+  },
+  "robertochalle": {
+    "player": "Roberto Challe",
+    "team": "Peru",
+    "goals": 1,
+    "city": "Lima",
+    "lat": -12.04598,
+    "lon": -77.03059
+  },
+  "tomturesson": {
+    "player": "Tom Turesson",
+    "team": "Sweden",
+    "goals": 1,
+    "city": "Östervåla",
+    "lat": 60.18093,
+    "lon": 17.17808
+  },
+  "vitalykhmelnitsky": {
+    "player": "Vitaly Khmelnitsky",
+    "team": "Soviet Union",
+    "goals": 1,
+    "city": "Оріхів",
+    "lat": 47.57544,
+    "lon": 35.78555
+  },
+  "josetorres": {
+    "player": "José Torres",
+    "team": "Portugal",
+    "goals": 3,
+    "city": "Torres Novas",
+    "lat": 39.47962,
+    "lon": -8.53955
+  },
+  "seungzinpak": {
+    "player": "Seung-zin Pak",
+    "team": "North Korea",
+    "goals": 2,
+    "city": "원산시",
+    "lat": 39.17259,
+    "lon": 127.42842
+  },
+  "dongwoonli": {
+    "player": "Dong-woon Li",
+    "team": "North Korea",
+    "goals": 1,
+    "city": "평양시",
+    "lat": 39.0168,
+    "lon": 125.74736
+  },
+  "dooikpak": {
+    "player": "Doo-ik Pak",
+    "team": "North Korea",
+    "goals": 1,
+    "city": "평양시",
+    "lat": 39.0168,
+    "lon": 125.74736
+  },
+  "manuelsanchis": {
+    "player": "Manuel Sanchís",
+    "team": "Spain",
+    "goals": 1,
+    "city": "Alberic",
+    "lat": 39.11644,
+    "lon": -0.52018
+  },
+  "rildo": {
+    "player": "Rildo",
+    "team": "Brazil",
+    "goals": 1,
+    "city": "Recife",
+    "lat": -8.05849,
+    "lon": -34.88482
+  },
+  "seungkookyang": {
+    "player": "Seung-kook Yang",
+    "team": "North Korea",
+    "goals": 1,
+    "city": "평양시",
+    "lat": 39.0168,
+    "lon": 125.74736
+  },
+  "amarildo": {
+    "player": "Amarildo",
+    "team": "Brazil",
+    "goals": 3,
+    "city": "Campos dos Goytacazes",
+    "lat": -21.7546,
+    "lon": -41.3242
+  },
+  "alekseimamykin": {
+    "player": "Aleksei Mamykin",
+    "team": "Soviet Union",
+    "goals": 1,
+    "city": "Михайлов",
+    "lat": 54.23019,
+    "lon": 39.02746
+  },
+  "amletofrignani": {
+    "player": "Amleto Frignani",
+    "team": "Italy",
+    "goals": 1,
+    "city": "Carpi",
+    "lat": 44.78357,
+    "lon": 10.88545
+  },
+  "chico": {
+    "player": "Chico",
+    "team": "Brazil",
+    "goals": 4,
+    "city": "Uruguaiana",
+    "lat": -29.75607,
+    "lon": -57.08675
+  },
+  "jair": {
+    "player": "Jair",
+    "team": "Brazil",
+    "goals": 2,
+    "city": "Quatis",
+    "lat": -22.36259,
+    "lon": -44.24951
+  },
+  "andresprieto": {
+    "player": "Andrés Prieto",
+    "team": "Chile",
+    "goals": 1,
+    "city": "Santiago",
+    "lat": -33.4377,
+    "lon": -70.65107
+  },
+  "alfredo": {
+    "player": "Alfredo",
+    "team": "Brazil",
+    "goals": 1,
+    "city": "Rio de Janeiro",
+    "lat": -22.91101,
+    "lon": -43.20937
+  },
+  "peracio": {
+    "player": "Perácio",
+    "team": "Brazil",
+    "goals": 3,
+    "city": "Nova Lima",
+    "lat": -19.98541,
+    "lon": -43.84707
+  },
+  "roberto": {
+    "player": "Roberto",
+    "team": "Brazil",
+    "goals": 1,
+    "city": "Niterói",
+    "lat": -22.8884,
+    "lon": -43.1147
+  },
+  "abdulrahmanfawzi": {
+    "player": "Abdulrahman Fawzi",
+    "team": "Egypt",
+    "goals": 2,
+    "city": "بورسعيد",
+    "lat": 31.26324,
+    "lon": 32.3055
+  },
+  "aldodonelli": {
+    "player": "Aldo Donelli",
+    "team": "United States",
+    "goals": 1,
+    "city": "Morgan",
+    "lat": 40.35424,
+    "lon": -80.13978
+  },
+  "moderato": {
+    "player": "Moderato",
+    "team": "Brazil",
+    "goals": 2,
+    "city": "Alegrete",
+    "lat": -29.79017,
+    "lon": -55.79486
+  },
+  "luissouzaferreira": {
+    "player": "Luis Souza Ferreira",
+    "team": "Peru",
+    "goals": 1,
+    "city": "Lima",
+    "lat": -12.04598,
+    "lon": -77.03059
+  },
+  "moussawague": {
+    "player": "Moussa Wagué",
+    "team": "Senegal",
+    "goals": 1,
+    "city": "Bignona",
+    "lat": 12.80113,
+    "lon": -16.22897
+  },
+  "nadhirbenbouali": {
+    "player": "Nadhir Benbouali",
+    "team": "Algeria",
+    "goals": 1,
+    "qid": "Q112654639",
+    "city": "Chlef",
+    "lat": 36.16472,
+    "lon": 1.33167
+  },
+  "aminegouiri": {
+    "player": "Amine Gouiri",
+    "team": "Algeria",
+    "goals": 1,
+    "qid": "Q30045780",
+    "city": "Bourgoin-Jallieu",
+    "lat": 45.59083,
+    "lon": 5.27917
+  },
+  "nestoryirankunda": {
+    "player": "Nestory Irankunda",
+    "team": "Australia",
+    "goals": 1,
+    "qid": "Q110486192",
+    "city": "Kigoma",
+    "lat": -4.88333,
+    "lon": 29.63333
+  },
+  "connormetcalfe": {
+    "player": "Connor Metcalfe",
+    "team": "Australia",
+    "goals": 1,
+    "qid": "Q51213832",
+    "city": "Newcastle",
+    "lat": -32.91667,
+    "lon": 151.75
+  },
+  "romanoschmid": {
+    "player": "Romano Schmid",
+    "team": "Austria",
+    "goals": 1,
+    "qid": "Q30080273",
+    "city": "Graz",
+    "lat": 47.07083,
+    "lon": 15.43861
+  },
+  "erminmahmic": {
+    "player": "Ermin Mahmić",
+    "team": "Bosnia and Herzegovina",
+    "goals": 2,
+    "qid": "Q123139564",
+    "city": "Wels",
+    "lat": 48.15,
+    "lon": 14.01667
+  },
+  "kerimalajbegovic": {
+    "player": "Kerim Alajbegović",
+    "team": "Bosnia and Herzegovina",
+    "goals": 1,
+    "qid": "Q130741313",
+    "city": "Cologne",
+    "lat": 50.94222,
+    "lon": 6.95778
+  },
+  "jovolukic": {
+    "player": "Jovo Lukić",
+    "team": "Bosnia and Herzegovina",
+    "goals": 1,
+    "qid": "Q96182876",
+    "city": "Banja Luka",
+    "lat": 44.7725,
+    "lon": 17.1925
+  },
+  "matheuscunha": {
+    "player": "Matheus Cunha",
+    "team": "Brazil",
+    "goals": 3,
+    "qid": "Q35831063",
+    "city": "João Pessoa",
+    "lat": -7.12,
+    "lon": -34.88
+  },
+  "jonathandavid": {
+    "player": "Jonathan David",
+    "team": "Canada",
+    "goals": 3,
+    "qid": "Q56085180",
+    "city": "Brooklyn",
+    "lat": 40.65083,
+    "lon": -73.94972
+  },
+  "cylelarin": {
+    "player": "Cyle Larin",
+    "team": "Canada",
+    "goals": 2,
+    "qid": "Q16935084",
+    "city": "Brampton",
+    "lat": 43.68333,
+    "lon": -79.76667
+  },
+  "promisedavid": {
+    "player": "Promise David",
+    "team": "Canada",
+    "goals": 1,
+    "qid": "Q112988067",
+    "city": "Brampton",
+    "lat": 43.68333,
+    "lon": -79.76667
+  },
+  "nathansaliba": {
+    "player": "Nathan Saliba",
+    "team": "Canada",
+    "goals": 1,
+    "qid": "Q116908746",
+    "city": "Longueuil",
+    "lat": 45.51408,
+    "lon": -73.43803
+  },
+  "kevinpina": {
+    "player": "Kevin Pina",
+    "team": "Cape Verde",
+    "goals": 1,
+    "qid": "Q108395046",
+    "city": "Praia",
+    "lat": 14.91772,
+    "lon": -23.50916
+  },
+  "heliovarela": {
+    "player": "Hélio Varela",
+    "team": "Cape Verde",
+    "goals": 1,
+    "qid": "Q121907216",
+    "city": "Almada",
+    "lat": 38.68028,
+    "lon": -9.15833
+  },
+  "jamintoncampaz": {
+    "player": "Jaminton Campaz",
+    "team": "Colombia",
+    "goals": 1,
+    "qid": "Q30050934",
+    "city": "Tumaco",
+    "lat": 1.80667,
+    "lon": -78.76472
+  },
+  "luisdiaz": {
+    "player": "Luis Díaz",
+    "team": "Colombia",
+    "goals": 1,
+    "qid": "Q28531111",
+    "city": "Barrancas",
+    "lat": 10.95583,
+    "lon": -72.79194
+  },
+  "danielmunoz": {
+    "player": "Daniel Muñoz",
+    "team": "Colombia",
+    "goals": 2,
+    "qid": "Q56703599",
+    "city": "Amalfi",
+    "lat": 6.90917,
+    "lon": -75.07667
+  },
+  "martinbaturina": {
+    "player": "Martin Baturina",
+    "team": "Croatia",
+    "goals": 1,
+    "qid": "Q107446975",
+    "city": "Split",
+    "lat": 43.51,
+    "lon": 16.44
+  },
+  "antebudimir": {
+    "player": "Ante Budimir",
+    "team": "Croatia",
+    "goals": 1,
+    "qid": "Q17505049",
+    "city": "Zenica",
+    "lat": 44.20167,
+    "lon": 17.90389
+  },
+  "petarmusa": {
+    "player": "Petar Musa",
+    "team": "Croatia",
+    "goals": 1,
+    "qid": "Q84810924",
+    "city": "Zagreb",
+    "lat": 45.81306,
+    "lon": 15.97722
+  },
+  "livanocomenencia": {
+    "player": "Livano Comenencia",
+    "team": "Curaçao",
+    "goals": 1,
+    "qid": "Q108800542",
+    "city": "Breda",
+    "lat": 51.58889,
+    "lon": 4.77583
+  },
+  "michalsadilek": {
+    "player": "Michal Sadílek",
+    "team": "Czech Republic",
+    "goals": 1,
+    "qid": "Q28801942",
+    "city": "Uherské Hradiště",
+    "lat": 49.06976,
+    "lon": 17.45969
+  },
+  "yoanewissa": {
+    "player": "Yoane Wissa",
+    "team": "DR Congo",
+    "goals": 1,
+    "qid": "Q28101965",
+    "city": "Épinay-sous-Sénart",
+    "lat": 48.69306,
+    "lon": 2.51583
+  },
+  "nilsonangulo": {
+    "player": "Nilson Angulo",
+    "team": "Ecuador",
+    "goals": 1,
+    "qid": "Q109301509",
+    "city": "Quito",
+    "lat": -0.22,
+    "lon": -78.5125
+  },
+  "gonzaloplata": {
+    "player": "Gonzalo Plata",
+    "team": "Ecuador",
+    "goals": 1,
+    "qid": "Q60842120",
+    "city": "Guayaquil",
+    "lat": -2.19,
+    "lon": -79.8875
+  },
+  "emamashour": {
+    "player": "Emam Ashour",
+    "team": "Egypt",
+    "goals": 1,
+    "qid": "Q64681287",
+    "city": "Mansoura",
+    "lat": 31.05,
+    "lon": 31.38333
+  },
+  "trezeguet": {
+    "player": "Trézéguet",
+    "team": "Egypt",
+    "goals": 1,
+    "qid": "Q6734350",
+    "city": "Kafr el-Sheikh",
+    "lat": 31.1,
+    "lon": 30.95
+  },
+  "mostafaziko": {
+    "player": "Mostafa Ziko",
+    "team": "Egypt",
+    "goals": 1,
+    "city": "Monufia Governorate",
+    "lat": 30.52,
+    "lon": 30.99
+  },
+  "bradleybarcola": {
+    "player": "Bradley Barcola",
+    "team": "France",
+    "goals": 1,
+    "qid": "Q99670930",
+    "city": "Villeurbanne",
+    "lat": 45.76611,
+    "lon": 4.87944
+  },
+  "ousmanedembele": {
+    "player": "Ousmane Dembélé",
+    "team": "France",
+    "goals": 1,
+    "qid": "Q20851003",
+    "city": "Vernon",
+    "lat": 49.09167,
+    "lon": 1.485
+  },
+  "denizundav": {
+    "player": "Deniz Undav",
+    "team": "Germany",
+    "goals": 3,
+    "qid": "Q55955918",
+    "city": "Varel",
+    "lat": 53.39694,
+    "lon": 8.13611
+  },
+  "nathanielbrown": {
+    "player": "Nathaniel Brown",
+    "team": "Germany",
+    "goals": 1,
+    "qid": "Q122351097",
+    "city": "Amberg",
+    "lat": 49.44444,
+    "lon": 11.84833
+  },
+  "jamalmusiala": {
+    "player": "Jamal Musiala",
+    "team": "Germany",
+    "goals": 1,
+    "qid": "Q96072055",
+    "city": "Stuttgart",
+    "lat": 48.7775,
+    "lon": 9.18
+  },
+  "felixnmecha": {
+    "player": "Felix Nmecha",
+    "team": "Germany",
+    "goals": 1,
+    "qid": "Q60889488",
+    "city": "Hamburg",
+    "lat": 53.55,
+    "lon": 10.0
+  },
+  "leroysane": {
+    "player": "Leroy Sané",
+    "team": "Germany",
+    "goals": 1,
+    "qid": "Q16499882",
+    "city": "Essen",
+    "lat": 51.45083,
+    "lon": 7.01306
+  },
+  "nicoschlotterbeck": {
+    "player": "Nico Schlotterbeck",
+    "team": "Germany",
+    "goals": 1,
+    "qid": "Q62015814",
+    "city": "Waiblingen",
+    "lat": 48.83028,
+    "lon": 9.31694
+  },
+  "calebyirenkyi": {
+    "player": "Caleb Yirenkyi",
+    "team": "Ghana",
+    "goals": 1,
+    "city": "Bechem",
+    "lat": 7.08778,
+    "lon": -2.0246
+  },
+  "wilsonisidor": {
+    "player": "Wilson Isidor",
+    "team": "Haiti",
+    "goals": 1,
+    "qid": "Q58484930",
+    "city": "Rennes",
+    "lat": 48.11417,
+    "lon": -1.68083
+  },
+  "mohammadmohebi": {
+    "player": "Mohammad Mohebi",
+    "team": "Iran",
+    "goals": 1,
+    "qid": "Q65515898",
+    "city": "Bushehr",
+    "lat": 28.96889,
+    "lon": 50.83667
+  },
+  "aymenhussein": {
+    "player": "Aymen Hussein",
+    "team": "Iraq",
+    "goals": 1,
+    "qid": "Q21066439",
+    "city": "Hawija",
+    "lat": 35.32325,
+    "lon": 43.77399
+  },
+  "nicolaspepe": {
+    "player": "Nicolas Pépé",
+    "team": "Ivory Coast",
+    "goals": 2,
+    "qid": "Q20641306",
+    "city": "Mantes-la-Jolie",
+    "lat": 48.99056,
+    "lon": 1.71667
+  },
+  "amaddiallo": {
+    "player": "Amad Diallo",
+    "team": "Ivory Coast",
+    "goals": 1,
+    "qid": "Q72603655",
+    "city": "Abidjan",
+    "lat": 5.33639,
+    "lon": -4.02667
+  },
+  "franckkessie": {
+    "player": "Franck Kessié",
+    "team": "Ivory Coast",
+    "goals": 1,
+    "qid": "Q18044401",
+    "city": "Ouragahio",
+    "lat": 6.41667,
+    "lon": -5.91667
+  },
+  "daichikamada": {
+    "player": "Daichi Kamada",
+    "team": "Japan",
+    "goals": 2,
+    "city": "Ehime Prefecture",
+    "lat": 33.84139,
+    "lon": 132.76556
+  },
+  "ayaseueda": {
+    "player": "Ayase Ueda",
+    "team": "Japan",
+    "goals": 2,
+    "qid": "Q62085431",
+    "city": "Mito",
+    "lat": 36.36583,
+    "lon": 140.47125
+  },
+  "junyaito": {
+    "player": "Junya Itō",
+    "team": "Japan",
+    "goals": 1,
+    "qid": "Q21913126",
+    "city": "Yokosuka",
+    "lat": 35.28131,
+    "lon": 139.67208
+  },
+  "keitonakamura": {
+    "player": "Keito Nakamura",
+    "team": "Japan",
+    "goals": 1,
+    "qid": "Q45819496",
+    "city": "Abiko",
+    "lat": 35.86422,
+    "lon": 140.02839
+  },
+  "aliolwan": {
+    "player": "Ali Olwan",
+    "team": "Jordan",
+    "goals": 1,
+    "qid": "Q107130635",
+    "city": "Amman",
+    "lat": 31.93098,
+    "lon": 35.92608
+  },
+  "nizaralrashdan": {
+    "player": "Nizar Al-Rashdan",
+    "team": "Jordan",
+    "goals": 1,
+    "qid": "Q124302622",
+    "city": "Irbid",
+    "lat": 32.55556,
+    "lon": 35.85
+  },
+  "julianquinones": {
+    "player": "Julián Quiñones",
+    "team": "Mexico",
+    "goals": 2,
+    "qid": "Q22082627",
+    "city": "Magüí Payán",
+    "lat": 1.76583,
+    "lon": -78.18278
+  },
+  "mateochavez": {
+    "player": "Mateo Chávez",
+    "team": "Mexico",
+    "goals": 1,
+    "qid": "Q124420330",
+    "city": "Monterrey",
+    "lat": 25.68444,
+    "lon": -100.31806
+  },
+  "alvarofidalgo": {
+    "player": "Álvaro Fidalgo",
+    "team": "Mexico",
+    "goals": 1,
+    "qid": "Q98092491",
+    "city": "Oviedo",
+    "lat": 43.3625,
+    "lon": -5.85028
+  },
+  "luisromo": {
+    "player": "Luis Romo",
+    "team": "Mexico",
+    "goals": 1,
+    "city": "Los Mochis",
+    "lat": 25.79281,
+    "lon": -108.99019
+  },
+  "ismaelsaibari": {
+    "player": "Ismael Saibari",
+    "team": "Morocco",
+    "goals": 3,
+    "qid": "Q98784065",
+    "city": "Terrassa",
+    "lat": 41.56111,
+    "lon": 2.00806
+  },
+  "achrafhakimi": {
+    "player": "Achraf Hakimi",
+    "team": "Morocco",
+    "goals": 1,
+    "qid": "Q26932598",
+    "city": "Madrid",
+    "lat": 40.41694,
+    "lon": -3.70333
+  },
+  "soufianerahimi": {
+    "player": "Soufiane Rahimi",
+    "team": "Morocco",
+    "goals": 1,
+    "qid": "Q56247602",
+    "city": "Casablanca",
+    "lat": 33.59917,
+    "lon": -7.62
+  },
+  "gessimeyassine": {
+    "player": "Gessime Yassine",
+    "team": "Morocco",
+    "goals": 1,
+    "qid": "Q126436400",
+    "city": "Salon-de-Provence",
+    "lat": 43.64056,
+    "lon": 5.09722
+  },
+  "brianbrobbey": {
+    "player": "Brian Brobbey",
+    "team": "Netherlands",
+    "goals": 3,
+    "qid": "Q57456997",
+    "city": "Amsterdam",
+    "lat": 52.36667,
+    "lon": 4.88333
+  },
+  "crysenciosummerville": {
+    "player": "Crysencio Summerville",
+    "team": "Netherlands",
+    "goals": 2,
+    "qid": "Q60664537",
+    "city": "Rotterdam",
+    "lat": 51.92,
+    "lon": 4.48
+  },
+  "janpaulvanhecke": {
+    "player": "Jan Paul van Hecke",
+    "team": "Netherlands",
+    "goals": 1,
+    "qid": "Q66828825",
+    "city": "Arnemuiden",
+    "lat": 51.5,
+    "lon": 3.66667
+  },
+  "elijahjust": {
+    "player": "Elijah Just",
+    "team": "New Zealand",
+    "goals": 2,
+    "qid": "Q64031850",
+    "city": "Palmerston North",
+    "lat": -40.35491,
+    "lon": 175.60951
+  },
+  "finnsurman": {
+    "player": "Finn Surman",
+    "team": "New Zealand",
+    "goals": 1,
+    "qid": "Q109968695",
+    "city": "Christchurch",
+    "lat": -43.53111,
+    "lon": 172.63611
+  },
+  "erlinghaaland": {
+    "player": "Erling Haaland",
+    "team": "Norway",
+    "goals": 4,
+    "qid": "Q28967995",
+    "city": "Leeds",
+    "lat": 53.7975,
+    "lon": -1.54361
+  },
+  "leostigard": {
+    "player": "Leo Østigård",
+    "team": "Norway",
+    "goals": 1,
+    "city": "Molde Municipality",
+    "lat": 62.73333,
+    "lon": 7.18333
+  },
+  "marcusholmgrenpedersen": {
+    "player": "Marcus Holmgren Pedersen",
+    "team": "Norway",
+    "goals": 1,
+    "qid": "Q59268631",
+    "city": "Hammerfest",
+    "lat": 70.66336,
+    "lon": 23.68209
+  },
+  "matiasgalarza": {
+    "player": "Matías Galarza",
+    "team": "Paraguay",
+    "goals": 1,
+    "qid": "Q106804819",
+    "city": "Asunción",
+    "lat": -25.28,
+    "lon": -57.63444
+  },
+  "nunomendes": {
+    "player": "Nuno Mendes",
+    "team": "Portugal",
+    "goals": 1,
+    "qid": "Q96396963",
+    "city": "Sintra",
+    "lat": 38.79736,
+    "lon": -9.39042
+  },
+  "joaoneves": {
+    "player": "João Neves",
+    "team": "Portugal",
+    "goals": 1,
+    "qid": "Q113551733",
+    "city": "Tavira",
+    "lat": 37.13085,
+    "lon": -7.6506
+  },
+  "hassanalhaydos": {
+    "player": "Hassan Al-Haydos",
+    "team": "Qatar",
+    "goals": 1,
+    "qid": "Q5679556",
+    "city": "Doha",
+    "lat": 25.28611,
+    "lon": 51.52944
+  },
+  "abdulelahalamri": {
+    "player": "Abdulelah Al-Amri",
+    "team": "Saudi Arabia",
+    "goals": 1,
+    "qid": "Q30308980",
+    "city": "Ta'if",
+    "lat": 21.26667,
+    "lon": 40.41667
+  },
+  "johnmcginn": {
+    "player": "John McGinn",
+    "team": "Scotland",
+    "goals": 1,
+    "qid": "Q10547335",
+    "city": "Glasgow",
+    "lat": 55.86111,
+    "lon": -4.25
+  },
+  "ibrahimmbaye": {
+    "player": "Ibrahim Mbaye",
+    "team": "Senegal",
+    "goals": 1,
+    "qid": "Q129088593",
+    "city": "Trappes",
+    "lat": 48.77667,
+    "lon": 2.00167
+  },
+  "thapelomaseko": {
+    "player": "Thapelo Maseko",
+    "team": "South Africa",
+    "goals": 1,
+    "qid": "Q124173111",
+    "city": "Sebokeng",
+    "lat": -26.57694,
+    "lon": 27.84056
+  },
+  "hwanginbeom": {
+    "player": "Hwang In-beom",
+    "team": "South Korea",
+    "goals": 1,
+    "qid": "Q19603924",
+    "city": "Daejeon",
+    "lat": 36.35,
+    "lon": 127.385
+  },
+  "ohhyeongyu": {
+    "player": "Oh Hyeon-gyu",
+    "team": "South Korea",
+    "goals": 1,
+    "qid": "Q63344470",
+    "city": "Namyangju",
+    "lat": 37.63667,
+    "lon": 127.21417
+  },
+  "mikeloyarzabal": {
+    "player": "Mikel Oyarzabal",
+    "team": "Spain",
+    "goals": 2,
+    "qid": "Q21195147",
+    "city": "Eibar",
+    "lat": 43.18428,
+    "lon": -2.47327
+  },
+  "lamineyamal": {
+    "player": "Lamine Yamal",
+    "team": "Spain",
+    "goals": 1,
+    "qid": "Q113704154",
+    "city": "Esplugues de Llobregat",
+    "lat": 41.37667,
+    "lon": 2.08583
+  },
+  "yasinayari": {
+    "player": "Yasin Ayari",
+    "team": "Sweden",
+    "goals": 2,
+    "qid": "Q103979811",
+    "city": "Solna",
+    "lat": 59.36004,
+    "lon": 18.00086
+  },
+  "anthonyelanga": {
+    "player": "Anthony Elanga",
+    "team": "Sweden",
+    "goals": 2,
+    "qid": "Q106805131",
+    "city": "Hyllie",
+    "lat": 55.56139,
+    "lon": 12.97556
+  },
+  "viktorgyokeres": {
+    "player": "Viktor Gyökeres",
+    "team": "Sweden",
+    "goals": 1,
+    "qid": "Q47075606",
+    "city": "Hägerstens församling",
+    "lat": 59.304,
+    "lon": 18.00158
+  },
+  "alexanderisak": {
+    "player": "Alexander Isak",
+    "team": "Sweden",
+    "goals": 1,
+    "qid": "Q23759917",
+    "city": "Stockholm",
+    "lat": 59.32944,
+    "lon": 18.06861
+  },
+  "mattiassvanberg": {
+    "player": "Mattias Svanberg",
+    "team": "Sweden",
+    "goals": 1,
+    "qid": "Q23915221",
+    "city": "Malmö",
+    "lat": 55.58333,
+    "lon": 13.0
+  },
+  "johanmanzambi": {
+    "player": "Johan Manzambi",
+    "team": "Switzerland",
+    "goals": 3,
+    "qid": "Q125376751",
+    "city": "Geneva",
+    "lat": 46.2,
+    "lon": 6.15
+  },
+  "rubenvargas": {
+    "player": "Rubén Vargas",
+    "team": "Switzerland",
+    "goals": 2,
+    "qid": "Q38053896",
+    "city": "Adligenswil",
+    "lat": 47.07056,
+    "lon": 8.365
+  },
+  "hazemmastouri": {
+    "player": "Hazem Mastouri",
+    "team": "Tunisia",
+    "goals": 1,
+    "qid": "Q134699960",
+    "city": "Tunis",
+    "lat": 36.80083,
+    "lon": 10.18
+  },
+  "omarrekik": {
+    "player": "Omar Rekik",
+    "team": "Tunisia",
+    "goals": 1,
+    "qid": "Q96678415",
+    "city": "Helmond",
+    "lat": 51.47968,
+    "lon": 5.65559
+  },
+  "kaanayhan": {
+    "player": "Kaan Ayhan",
+    "team": "Turkey",
+    "goals": 1,
+    "qid": "Q3191617",
+    "city": "Gelsenkirchen",
+    "lat": 51.51028,
+    "lon": 7.09417
+  },
+  "ardaguler": {
+    "player": "Arda Güler",
+    "team": "Turkey",
+    "goals": 1,
+    "qid": "Q108159340",
+    "city": "Altındağ",
+    "lat": 39.94583,
+    "lon": 32.85611
+  },
+  "barsalperylmaz": {
+    "player": "Barış Alper Yılmaz",
+    "team": "Turkey",
+    "goals": 1,
+    "qid": "Q107352615",
+    "city": "İkizdere",
+    "lat": 40.77722,
+    "lon": 40.56083
+  },
+  "folarinbalogun": {
+    "player": "Folarin Balogun",
+    "team": "United States",
+    "goals": 2,
+    "qid": "Q101035007",
+    "city": "New York City",
+    "lat": 40.71278,
+    "lon": -74.00611
+  },
+  "sebastianberhalter": {
+    "player": "Sebastian Berhalter",
+    "team": "United States",
+    "goals": 1,
+    "qid": "Q86301356",
+    "city": "London",
+    "lat": 51.50722,
+    "lon": -0.1275
+  },
+  "giovannireyna": {
+    "player": "Giovanni Reyna",
+    "team": "United States",
+    "goals": 1,
+    "qid": "Q75019636",
+    "city": "Sunderland",
+    "lat": 54.90444,
+    "lon": -1.38111
+  },
+  "austontrusty": {
+    "player": "Auston Trusty",
+    "team": "United States",
+    "goals": 1,
+    "qid": "Q24007335",
+    "city": "Media",
+    "lat": 39.91889,
+    "lon": -75.38917
+  },
+  "maximilianoaraujo": {
+    "player": "Maximiliano Araújo",
+    "team": "Uruguay",
+    "goals": 2,
+    "qid": "Q58011167",
+    "city": "Montevideo",
+    "lat": -34.90592,
+    "lon": -56.19131
+  },
+  "agustincanobbio": {
+    "player": "Agustín Canobbio",
+    "team": "Uruguay",
+    "goals": 1,
+    "qid": "Q26838705",
+    "city": "Montevideo",
+    "lat": -34.90592,
+    "lon": -56.19131
+  },
+  "abbosbekfayzullaev": {
+    "player": "Abbosbek Fayzullaev",
+    "team": "Uzbekistan",
+    "goals": 1,
+    "qid": "Q117280421",
+    "city": "Sirdaryo",
+    "lat": 40.85,
+    "lon": 68.66667
+  },
+  "isidorodiaz": {
+    "player": "Isidoro Díaz",
+    "team": "Mexico",
+    "goals": 1,
+    "city": "Acatlán de Juárez Municipality",
+    "lat": 20.43333,
+    "lon": -103.61667
+  },
+  "jesperolsen": {
+    "player": "Jesper Olsen",
+    "team": "Denmark",
+    "goals": 3,
+    "city": "Faxe Municipality",
+    "lat": 55.26667,
+    "lon": 12.2
+  },
+  "ovegrahn": {
+    "player": "Ove Grahn",
+    "team": "Sweden",
+    "goals": 1,
+    "city": "Hjo Municipality",
+    "lat": 58.3,
+    "lon": 14.28333
+  },
+  "junichiinamoto": {
+    "player": "Junichi Inamoto",
+    "team": "Japan",
+    "goals": 2,
+    "city": "Kagoshima Prefecture",
+    "lat": 31.56,
+    "lon": 130.55806
+  },
+  "havardflo": {
+    "player": "Håvard Flo",
+    "team": "Norway",
+    "goals": 1,
+    "city": "Stryn Municipality",
+    "lat": 61.83861,
+    "lon": 6.86278
+  },
+  "toreandreflo": {
+    "player": "Tore André Flo",
+    "team": "Norway",
+    "goals": 1,
+    "city": "Stryn Municipality",
+    "lat": 61.83861,
+    "lon": 6.86278
+  },
+  "rauljimenez": {
+    "player": "Raúl Jiménez",
+    "team": "Mexico",
+    "goals": 1,
+    "city": "Tepeji del Río de Ocampo Municipality",
+    "lat": 19.90528,
+    "lon": -99.34167
+  },
+  "kjetilrekdal": {
+    "player": "Kjetil Rekdal",
+    "team": "Norway",
+    "goals": 1,
+    "city": "Vestnes Municipality",
+    "lat": 62.58444,
+    "lon": 7.01833
+  },
+  "robertogayon": {
+    "player": "Roberto Gayón",
+    "team": "Mexico",
+    "goals": 1,
+    "city": "Área Metropolitana de San José",
+    "lat": 9.93277,
+    "lon": -84.07961
+  },
+  "joejordan": {
+    "player": "Joe Jordan",
+    "team": "Scotland",
+    "goals": 4,
+    "city": "Cleland",
+    "lat": 55.80443,
+    "lon": -3.91073
+  },
+  "fahadalghesheyan": {
+    "player": "Fahad Al-Ghesheyan",
+    "team": "Saudi Arabia",
+    "goals": 1,
+    "city": "الرياض",
+    "lat": 24.63892,
+    "lon": 46.71601
+  },
+  "tomasfernandez": {
+    "player": "Tomás Fernández",
+    "team": "Cuba",
+    "goals": 1,
+    "city": "Santander",
+    "lat": 43.46189,
+    "lon": -3.81003
+  },
+  "renebader": {
+    "player": "René Bader",
+    "team": "Switzerland",
+    "goals": 1,
+    "city": "Basel",
+    "lat": 47.55811,
+    "lon": 7.58783
+  },
+  "rolfwuthrich": {
+    "player": "Rolf Wüthrich",
+    "team": "Switzerland",
+    "goals": 1,
+    "city": "Zürich",
+    "lat": 47.37445,
+    "lon": 8.54104
+  },
+  "alikaabi": {
+    "player": "Ali Kaabi",
+    "team": "Tunisia",
+    "goals": 1,
+    "city": "تونس",
+    "lat": 36.80021,
+    "lon": 10.18578
+  },
+  "desiredoue": {
+    "player": "Désiré Doué",
+    "team": "France",
+    "goals": 1,
+    "qid": "Q112170256",
+    "city": "Angers",
+    "lat": 47.47278,
+    "lon": -0.55556
+  },
+  "theloaasgaard": {
+    "player": "Thelo Aasgaard",
+    "team": "Norway",
+    "goals": 1,
+    "qid": "Q100711783",
+    "city": "Liverpool",
+    "lat": 53.40722,
+    "lon": -2.99167
+  },
+  "papegueye": {
+    "player": "Pape Gueye",
+    "team": "Senegal",
+    "goals": 2,
+    "qid": "Q45935395",
+    "city": "Montreuil",
+    "lat": 48.86028,
+    "lon": 2.44306
+  },
+  "habibdiarra": {
+    "player": "Habib Diarra",
+    "team": "Senegal",
+    "goals": 1,
+    "qid": "Q108924143",
+    "city": "Guédiawaye",
+    "lat": 14.77236,
+    "lon": -17.38844
+  },
+  "ilimanndiaye": {
+    "player": "Iliman Ndiaye",
+    "team": "Senegal",
+    "goals": 1,
+    "qid": "Q105956269",
+    "city": "Rouen",
+    "lat": 49.44306,
+    "lon": 1.1025
+  }
+}
