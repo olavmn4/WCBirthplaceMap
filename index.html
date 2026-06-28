@@ -394,28 +394,40 @@
     }
 
     let hoveredCountry = null;
+
+    function addHoverLayer(geojson) {
+      L.geoJSON(geojson, {
+        pane: "countryPane",
+        style: { fillColor: "#ffffff", fillOpacity: 0, weight: 0 },
+        onEachFeature: (_, lyr) => {
+          lyr.on({
+            mouseover: () => {
+              if (hoveredCountry) hoveredCountry.setStyle({ fillOpacity: 0 });
+              hoveredCountry = lyr;
+              lyr.setStyle({ fillOpacity: 0.08 });
+            },
+            mouseout: () => {
+              lyr.setStyle({ fillOpacity: 0 });
+              if (hoveredCountry === lyr) hoveredCountry = null;
+            },
+          });
+        },
+      }).addTo(map);
+    }
+
+    // World countries — exclude UK (numeric id 826), replaced by uk_nations.geojson
     fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json")
       .then(r => r.json())
       .then(world => {
         const geojson = fixAntimeridian(topojson.feature(world, world.objects.countries));
-        L.geoJSON(geojson, {
-          pane: "countryPane",
-          style: { fillColor: "#ffffff", fillOpacity: 0, weight: 0, interactive: true },
-          onEachFeature: (_, lyr) => {
-            lyr.on({
-              mouseover: () => {
-                if (hoveredCountry) hoveredCountry.setStyle({ fillOpacity: 0 });
-                hoveredCountry = lyr;
-                lyr.setStyle({ fillOpacity: 0.08 });
-              },
-              mouseout: () => {
-                lyr.setStyle({ fillOpacity: 0 });
-                if (hoveredCountry === lyr) hoveredCountry = null;
-              },
-            });
-          },
-        }).addTo(map);
+        geojson.features = geojson.features.filter(f => f.id !== "826");
+        addHoverLayer(geojson);
       });
+
+    // UK nations as separate features (England, Scotland, Wales, Northern Ireland)
+    fetch("uk_nations.geojson")
+      .then(r => r.json())
+      .then(addHoverLayer);
 
     const layer = L.layerGroup().addTo(map);
 
