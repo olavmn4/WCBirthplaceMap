@@ -828,6 +828,19 @@
         e.years.push(s.tournament);
       });
 
+      // Augment born-here sections with squad players who have 0 goals
+      if (hasSquads) {
+        getActiveSquads().forEach(s => {
+          const bornHere = birthMatchesCC(s, cc);
+          const playHere = teamToISO(s.team) === cc;
+          if (!bornHere && !playHere) return;
+          const k = `${s.player}||${s.team}`;
+          if (!byPlayer.has(k)) byPlayer.set(k, { ...s, goals: 0, years: [] });
+          const e = byPlayer.get(k);
+          if (!e.years.includes(s.tournament)) e.years.push(s.tournament);
+        });
+      }
+
       const bornHerePlayed   = [];
       const bornAbroadPlayed = [];
       const bornHereAbroad   = [];
@@ -857,7 +870,7 @@
       document.getElementById("cp-body").innerHTML = `
         <div class="cp-section">
           <div class="cp-section-title">${flag} Born here · played for ${name} (${bornHerePlayed.length})</div>
-          ${makeRows(bornHerePlayed, s => `${s.goals}g · ${fmtYears(s.years)}`)}
+          ${makeRows(bornHerePlayed, s => s.goals > 0 ? `${s.goals}g · ${fmtYears(s.years)}` : fmtYears(s.years))}
         </div>
         <div class="cp-section">
           <div class="cp-section-title">Born abroad · played for ${flag} ${name} (${bornAbroadPlayed.length})</div>
@@ -871,7 +884,7 @@
           <div class="cp-section-title">${flag} Born here · played abroad (${bornHereAbroad.length})</div>
           ${makeRows(bornHereAbroad, s => {
             const tflag = countryFlag(teamToISO(s.team));
-            return `${tflag} ${s.team} · ${s.goals}g · ${fmtYears(s.years)}`;
+            return `${tflag} ${s.team} · ${s.goals > 0 ? s.goals + "g · " : ""}${fmtYears(s.years)}`;
           })}
         </div>`;
     }
