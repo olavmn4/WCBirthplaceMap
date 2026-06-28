@@ -393,13 +393,46 @@
       return geojson;
     }
 
+    // ISO numeric → alpha-2 for all WC-relevant countries
+    const NUMERIC_TO_ISO = {
+      "012":"DZ","024":"AO","032":"AR","036":"AU","040":"AT","056":"BE",
+      "068":"BO","070":"BA","076":"BR","100":"BG","120":"CM","124":"CA",
+      "132":"CV","152":"CL","156":"CN","170":"CO","180":"CD","188":"CR",
+      "191":"HR","192":"CU","203":"CZ","208":"DK","218":"EC","226":"GQ",
+      "250":"FR","276":"DE","288":"GH","300":"GR","320":"GT","332":"HT",
+      "340":"HN","348":"HU","352":"IS","360":"ID","364":"IR","368":"IQ",
+      "372":"IE","376":"IL","380":"IT","384":"CI","388":"JM","392":"JP",
+      "400":"JO","408":"KP","410":"KR","414":"KW","484":"MX","504":"MA",
+      "528":"NL","554":"NZ","566":"NG","578":"NO","591":"PA","600":"PY",
+      "604":"PE","616":"PL","620":"PT","634":"QA","642":"RO","643":"RU",
+      "682":"SA","686":"SN","688":"RS","703":"SK","705":"SI","710":"ZA",
+      "724":"ES","752":"SE","756":"CH","768":"TG","780":"TT","784":"AE",
+      "788":"TN","792":"TR","804":"UA","840":"US","858":"UY","860":"UZ",
+      "862":"VE",
+    };
+
+    // Canonical display name for a given ISO alpha-2
+    function isoToName(cc) {
+      const overrides = {
+        "DE":"Germany","RU":"Russia","RS":"Serbia","CD":"DR Congo",
+        "TR":"Türkiye","ID":"Indonesia","CZ":"Czech Republic",
+        "GB-ENG":"England","GB-SCO":"Scotland","GB-WAL":"Wales","GB-NIR":"Northern Ireland",
+      };
+      if (overrides[cc]) return overrides[cc];
+      for (const [name, code] of Object.entries(TEAM_TO_ISO)) {
+        if (code === cc) return name;
+      }
+      return cc;
+    }
+
     let hoveredCountry = null;
 
-    function addHoverLayer(geojson) {
+    // ccFn(feature) → ISO alpha-2; if omitted, uses NUMERIC_TO_ISO on feature.id
+    function addHoverLayer(geojson, ccFn) {
       L.geoJSON(geojson, {
         pane: "countryPane",
         style: { fillColor: "#ffffff", fillOpacity: 0, weight: 0 },
-        onEachFeature: (_, lyr) => {
+        onEachFeature: (feature, lyr) => {
           lyr.on({
             mouseover: () => {
               if (hoveredCountry) hoveredCountry.setStyle({ fillOpacity: 0 });
@@ -410,24 +443,37 @@
               lyr.setStyle({ fillOpacity: 0 });
               if (hoveredCountry === lyr) hoveredCountry = null;
             },
+            click: () => {
+              const cc = ccFn
+                ? ccFn(feature)
+                : NUMERIC_TO_ISO[String(feature.id).padStart(3, "0")];
+              if (!cc) return;
+              if (cc === selectedCC) clearCountry();
+              else selectCountry(cc, isoToName(cc));
+            },
           });
         },
       }).addTo(map);
     }
+
+    const UK_ONS_TO_ISO = {
+      "E92000001":"GB-ENG","N92000002":"GB-NIR",
+      "S92000003":"GB-SCO","W92000004":"GB-WAL",
+    };
 
     // World countries — exclude UK (numeric id 826), replaced by uk_nations.geojson
     fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json")
       .then(r => r.json())
       .then(world => {
         const geojson = fixAntimeridian(topojson.feature(world, world.objects.countries));
-        geojson.features = geojson.features.filter(f => f.id !== "826");
+        geojson.features = geojson.features.filter(f => String(f.id) !== "826");
         addHoverLayer(geojson);
       });
 
     // UK nations as separate features (England, Scotland, Wales, Northern Ireland)
     fetch("uk_nations.geojson")
       .then(r => r.json())
-      .then(addHoverLayer);
+      .then(gj => addHoverLayer(gj, f => UK_ONS_TO_ISO[f.properties.CTRY22CD]));
 
     const layer = L.layerGroup().addTo(map);
 
