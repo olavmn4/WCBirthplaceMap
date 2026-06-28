@@ -81099,11 +81099,11 @@ const SQUADS = [
     "team": "Argentina",
     "tournament": 2006,
     "gender": "men",
-    "city": "Central",
-    "lat": 22.28194,
-    "lon": 114.15806,
+    "city": "Rosario, Argentina",
+    "lat": -32.94682,
+    "lon": -60.63932,
     "wiki": "Maxi_Rodríguez",
-    "cc": "CN"
+    "cc": "AR"
   },
   {
     "player": "Lionel Messi",
@@ -88194,11 +88194,11 @@ const SQUADS = [
     "team": "Argentina",
     "tournament": 2010,
     "gender": "men",
-    "city": "Central",
-    "lat": 22.28194,
-    "lon": 114.15806,
+    "city": "Rosario, Argentina",
+    "lat": -32.94682,
+    "lon": -60.63932,
     "wiki": "Maxi_Rodríguez",
-    "cc": "CN"
+    "cc": "AR"
   },
   {
     "player": "Mariano Andújar",
@@ -100140,11 +100140,11 @@ const SQUADS = [
     "team": "Argentina",
     "tournament": 2014,
     "gender": "men",
-    "city": "Central",
-    "lat": 22.28194,
-    "lon": 114.15806,
+    "city": "Rosario, Argentina",
+    "lat": -32.94682,
+    "lon": -60.63932,
     "wiki": "Maxi_Rodríguez",
-    "cc": "CN"
+    "cc": "AR"
   },
   {
     "player": "Agustín Orión",
@@ -108709,11 +108709,11 @@ const SQUADS = [
     "team": "South Korea",
     "tournament": 2018,
     "gender": "men",
-    "city": "Anyang",
-    "lat": 36.09561,
-    "lon": 114.34614,
+    "city": "Anyang, Gyeonggi, South Korea",
+    "lat": 37.3944,
+    "lon": 126.9569,
     "wiki": "Ju_Se-jong",
-    "cc": "CN"
+    "cc": "KR"
   },
   {
     "player": "Kim Shin-wook",
