@@ -42,7 +42,7 @@
     .controls select {
       background: #111827;
       border: 1px solid #374151;
-      border-radius: 5px;
+      border-radius: 0;
       color: #e5e7eb;
       padding: 5px 10px;
       font-size: 0.82rem;
@@ -55,7 +55,7 @@
     .controls input { width: 200px; }
 
     /* Mode toggle */
-    .mode-toggle { display: flex; border: 1px solid #374151; border-radius: 5px; overflow: hidden; flex-shrink: 0; }
+    .mode-toggle { display: flex; border: 1px solid #374151; border-radius: 0; overflow: hidden; flex-shrink: 0; }
     .mode-btn {
       background: transparent; border: none; border-right: 1px solid #374151;
       color: #9ca3af; padding: 5px 11px; font-size: 0.82rem; cursor: pointer;
@@ -69,7 +69,7 @@
     #wc-toggle {
       background: #111827;
       border: 1px solid #374151;
-      border-radius: 5px;
+      border-radius: 0;
       color: #e5e7eb;
       padding: 5px 10px;
       font-size: 0.82rem;
@@ -87,7 +87,7 @@
       gap: 6px;
       background: #1c1108;
       border: 1px solid #f97316;
-      border-radius: 5px;
+      border-radius: 0;
       padding: 4px 10px;
       font-size: 0.82rem;
       color: #f97316;
@@ -128,7 +128,7 @@
     .wc-chips { display: flex; flex-wrap: wrap; gap: 4px; flex: 1; }
     .wc-chip {
       padding: 2px 7px;
-      border-radius: 4px;
+      border-radius: 0;
       border: 1px solid transparent;
       background: #111827;
       cursor: pointer;
@@ -143,7 +143,7 @@
     .wc-quick {
       font-size: 0.72rem;
       padding: 2px 8px;
-      border-radius: 4px;
+      border-radius: 0;
       border: 1px solid #374151;
       background: transparent;
       color: #9ca3af;
@@ -167,7 +167,7 @@
       z-index: 1100;
       background: rgba(17,24,39,0.9);
       border: 1px solid #374151;
-      border-radius: 6px;
+      border-radius: 0;
       padding: 6px 14px;
       font-size: 0.78rem;
       color: #9ca3af;
@@ -183,7 +183,7 @@
       z-index: 900;
       background: rgba(17,24,39,0.88);
       border: 1px solid #374151;
-      border-radius: 6px;
+      border-radius: 0;
       padding: 8px 12px;
       pointer-events: none;
       backdrop-filter: blur(4px);
@@ -191,7 +191,7 @@
     }
     #legend.shifted { right: 316px; }
     .legend-title { font-size: 0.68rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 5px; }
-    .legend-bar { height: 8px; width: 160px; border-radius: 4px; }
+    .legend-bar { height: 8px; width: 160px; border-radius: 0; }
     .legend-labels { display: flex; justify-content: space-between; font-size: 0.68rem; color: #9ca3af; margin-top: 3px; }
 
     /* Country panel */
@@ -220,7 +220,7 @@
     #cp-close {
       background: transparent;
       border: 1px solid #374151;
-      border-radius: 4px;
+      border-radius: 0;
       color: #9ca3af;
       cursor: pointer;
       font-size: 0.78rem;
@@ -256,12 +256,12 @@
 
     /* Popup */
     .leaflet-popup-content-wrapper {
-      background: #1f2937; border: 1px solid #374151; border-radius: 8px;
+      background: #1f2937; border: 1px solid #374151; border-radius: 0;
       box-shadow: 0 4px 16px rgba(0,0,0,0.5); color: #e5e7eb;
     }
     .leaflet-popup-content { margin: 10px 14px; font-size: 13px; line-height: 1.6; max-height: 320px; overflow-y: auto; }
     .popup-city { font-weight: 700; font-size: 14px; color: #9ca3af; margin-bottom: 6px; padding-bottom: 5px; border-bottom: 1px solid #374151; }
-    .popup-player { display: flex; align-items: center; gap: 6px; padding: 2px 4px; border-radius: 3px; cursor: pointer; transition: background 0.1s; }
+    .popup-player { display: flex; align-items: center; gap: 6px; padding: 2px 4px; border-radius: 0; cursor: pointer; transition: background 0.1s; }
     .popup-player:hover { background: rgba(255,255,255,0.07); }
     .popup-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
     a.popup-player-name { font-weight: 600; color: #f9fafb; text-decoration: none; }
@@ -274,11 +274,11 @@
     #no-data {
       display: none; position: absolute; top: 50%; left: 50%;
       transform: translate(-50%,-50%);
-      background: #1f2937; border: 1px solid #f97316; border-radius: 10px;
+      background: #1f2937; border: 1px solid #f97316; border-radius: 0;
       padding: 28px 36px; text-align: center; z-index: 1000; max-width: 420px;
     }
     #no-data h2   { color: #f97316; margin-bottom: 10px; }
-    #no-data code { background: #111827; padding: 3px 8px; border-radius: 4px; font-size: 0.9rem; }
+    #no-data code { background: #111827; padding: 3px 8px; border-radius: 0; font-size: 0.9rem; }
   </style>
 </head>
 <body>
@@ -308,7 +308,7 @@
           <option value="green">Green</option>
           <option value="custom">Custom color</option>
         </select>
-        <input type="color" id="customColor" value="#3b82f6" title="Pick color" style="display:none;width:32px;height:28px;padding:2px;border-radius:5px;border:1px solid #374151;background:#111827;cursor:pointer;">
+        <input type="color" id="customColor" value="#3b82f6" title="Pick color" style="display:none;width:32px;height:28px;padding:2px;border-radius: 0;border:1px solid #374151;background:#111827;cursor:pointer;">
         <select id="dotSize">
           <option value="scaled">Scaled dots</option>
           <option value="uniform">Uniform dots</option>
@@ -761,7 +761,7 @@
         document.getElementById("cp-body").innerHTML =
           `<div style="padding:20px 16px;font-size:0.82rem;color:#6b7280;line-height:1.6">
             Birth country data is not in <b style="color:#9ca3af">scorers.js</b> yet.<br><br>
-            Re-run <code style="background:#1f2937;padding:2px 6px;border-radius:3px;color:#e5e7eb;font-size:0.78rem">python build_data.py</code>
+            Re-run <code style="background:#1f2937;padding:2px 6px;border-radius: 0;color:#e5e7eb;font-size:0.78rem">python build_data.py</code>
             to add it — it uses Nominatim reverse geocoding, so it's accurate for islands,
             coastal cities, and UK nations.
           </div>`;
