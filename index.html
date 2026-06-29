@@ -596,8 +596,12 @@
     }
 
     const layer    = L.layerGroup().addTo(map);
+    // Arc pane sits below countryPane (350) so its canvas never blocks hover events
+    map.createPane("arcPane");
+    map.getPane("arcPane").style.zIndex = 340;
+    map.getPane("arcPane").style.pointerEvents = "none";
     const arcLayer = L.layerGroup().addTo(map);
-    const arcRenderer = L.canvas({ padding: 0.5 });
+    const arcRenderer = L.canvas({ padding: 0.5, pane: "arcPane" });
 
     // player name + team → Leaflet marker; rebuilt on each render()
     const playerMarkers = new Map();
