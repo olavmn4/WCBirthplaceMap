@@ -88,12 +88,12 @@
     }
 
     #feedback-btn {
-      position: absolute; bottom: 6px; left: 220px; z-index: 1000;
-      background: transparent; border: none; color: rgba(255,255,255,0.25);
-      font-size: 0.65rem; padding: 0; cursor: pointer;
-      transition: color 0.15s;
+      position: absolute; bottom: 22px; left: 8px; z-index: 1000;
+      background: #1f2937; border: 1px solid #374151; color: #6b7280;
+      font-size: 0.72rem; padding: 4px 10px; cursor: pointer;
+      transition: color 0.15s, border-color 0.15s;
     }
-    #feedback-btn:hover { color: rgba(255,255,255,0.55); }
+    #feedback-btn:hover { color: #e5e7eb; border-color: #6b7280; }
 
     #feedback-modal {
       display: none; position: fixed; inset: 0; z-index: 9000;
@@ -530,6 +530,7 @@
     }
 
     let hoveredCountry = null;
+    const ccLayerMap = new Map(); // cc → layer, for arc destination highlights
 
     // ccFn(feature) → ISO alpha-2; if omitted, uses NUMERIC_TO_ISO on feature.id
     function addHoverLayer(geojson, ccFn) {
@@ -537,25 +538,28 @@
         pane: "countryPane",
         style: { fillColor: "#ffffff", fillOpacity: 0, weight: 0 },
         onEachFeature: (feature, lyr) => {
+          const cc = ccFn
+            ? ccFn(feature)
+            : NUMERIC_TO_ISO[String(feature.id).padStart(3, "0")];
+          if (cc) ccLayerMap.set(cc, lyr);
           let outTimer = null;
           lyr.on({
             mouseover: () => {
               if (outTimer) { clearTimeout(outTimer); outTimer = null; }
-              if (hoveredCountry && hoveredCountry !== lyr) hoveredCountry.setStyle({ fillOpacity: 0 });
+              if (hoveredCountry && hoveredCountry !== lyr) {
+                hoveredCountry.setStyle({ fillOpacity: hoveredCountry._arcHighlight || 0 });
+              }
               hoveredCountry = lyr;
               lyr.setStyle({ fillOpacity: 0.08 });
             },
             mouseout: () => {
               outTimer = setTimeout(() => {
-                lyr.setStyle({ fillOpacity: 0 });
+                lyr.setStyle({ fillOpacity: lyr._arcHighlight || 0 });
                 if (hoveredCountry === lyr) hoveredCountry = null;
                 outTimer = null;
               }, 50);
             },
             click: (e) => {
-              const cc = ccFn
-                ? ccFn(feature)
-                : NUMERIC_TO_ISO[String(feature.id).padStart(3, "0")];
               if (!cc) return;
               L.DomEvent.stopPropagation(e);
               if (cc === selectedCC) clearCountry();
@@ -1226,6 +1230,13 @@
 
     function renderArcs() {
       arcLayer.clearLayers();
+      // Clear any previous arc destination highlights
+      ccLayerMap.forEach(lyr => {
+        if (lyr._arcHighlight) {
+          lyr._arcHighlight = 0;
+          lyr.setStyle({ fillOpacity: 0 });
+        }
+      });
       if (!selectedCC) return;
       const sq = viewMode === "squads";
       const source = sq ? getActiveSquads() : getActiveScorers();
@@ -1240,15 +1251,30 @@
         if (!cap) return;
         const key = `${s.lat.toFixed(3)},${s.lon.toFixed(3)}|${s.team}`;
         const yr = s.tournament;
+        const tcc = teamToISO(s.team);
         if (!arcMap.has(key) || arcMap.get(key).year < yr)
-          arcMap.set(key, { lat: s.lat, lon: s.lon, cap, year: yr });
+          arcMap.set(key, { lat: s.lat, lon: s.lon, cap, year: yr, tcc });
+      });
+      // Collect max year per destination cc for highlight color
+      const destHighlight = new Map(); // tcc → max year
+      arcMap.forEach(({ tcc, year }) => {
+        if (!tcc) return;
+        if (!destHighlight.has(tcc) || destHighlight.get(tcc) < year)
+          destHighlight.set(tcc, year);
       });
       arcMap.forEach(({ lat, lon, cap, year }) => {
         const pts = curvedArcPoints(lat, lon, cap[0], cap[1]);
         L.polyline(pts, {
-          color: wcColor(year), weight: 1.2, opacity: 0.55,
+          color: wcColor(year), weight: 1.2, opacity: 0.2,
           renderer: arcRenderer, interactive: false,
         }).addTo(arcLayer);
+      });
+      // Subtly highlight destination countries
+      destHighlight.forEach((year, tcc) => {
+        const lyr = ccLayerMap.get(tcc);
+        if (!lyr) return;
+        lyr._arcHighlight = 0.05;
+        lyr.setStyle({ fillColor: wcColor(year), fillOpacity: 0.05 });
       });
     }
 
