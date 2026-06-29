@@ -310,6 +310,21 @@
     .leaflet-popup-tip-container { display: none; }
     .leaflet-popup-close-button { color: #9ca3af !important; font-size: 18px !important; }
 
+    @media (max-width: 700px) {
+      .header-main { gap: 8px; padding: 8px 10px; }
+      .controls { gap: 6px; }
+      .controls input { width: 100%; }
+      /* Hide less-essential controls on mobile */
+      #colorScheme, #customColor, #dotSize, #dotScale { display: none !important; }
+      .stats { margin-left: 0; width: 100%; gap: 10px; }
+      /* Country panel goes full-width */
+      #country-panel { width: 100%; right: -100%; }
+      #legend.shifted { right: 10px; }
+      /* Legend moves up slightly so it doesn't sit on top of attribution */
+      #legend { bottom: 42px; }
+      #feedback-btn { bottom: 28px; }
+    }
+
     /* No-data */
     #no-data {
       display: none; position: absolute; top: 50%; left: 50%;
