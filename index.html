@@ -873,7 +873,6 @@
       document.getElementById("minGoals").style.display   = mode === "squads" ? "none" : "";
       document.getElementById("s-goals-stat").style.display = mode === "squads" ? "none" : "";
       render();
-      if (selectedCC) buildPanel(selectedCC, selectedName);
     }
     document.getElementById("mode-scorers").addEventListener("click", () => setMode("scorers"));
     document.getElementById("mode-squads").addEventListener("click",  () => { if (hasSquads) setMode("squads"); });
@@ -937,7 +936,6 @@
       document.getElementById("country-panel").classList.add("open");
       document.getElementById("legend").classList.add("shifted");
       render();
-      buildPanel(cc, name);
     }
 
     function getScorerBirthCC(s) {
@@ -1256,6 +1254,7 @@
       document.getElementById("s-goals").textContent   = goalCount.toLocaleString();
       document.getElementById("s-nations").textContent = nations.size;
       renderArcs();
+      if (selectedCC) buildPanel(selectedCC, selectedName);
     }
 
     function renderArcs() {
