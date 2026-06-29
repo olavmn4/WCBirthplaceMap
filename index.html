@@ -480,15 +480,20 @@
         pane: "countryPane",
         style: { fillColor: "#ffffff", fillOpacity: 0, weight: 0 },
         onEachFeature: (feature, lyr) => {
+          let outTimer = null;
           lyr.on({
             mouseover: () => {
-              if (hoveredCountry) hoveredCountry.setStyle({ fillOpacity: 0 });
+              if (outTimer) { clearTimeout(outTimer); outTimer = null; }
+              if (hoveredCountry && hoveredCountry !== lyr) hoveredCountry.setStyle({ fillOpacity: 0 });
               hoveredCountry = lyr;
               lyr.setStyle({ fillOpacity: 0.08 });
             },
             mouseout: () => {
-              lyr.setStyle({ fillOpacity: 0 });
-              if (hoveredCountry === lyr) hoveredCountry = null;
+              outTimer = setTimeout(() => {
+                lyr.setStyle({ fillOpacity: 0 });
+                if (hoveredCountry === lyr) hoveredCountry = null;
+                outTimer = null;
+              }, 50);
             },
             click: (e) => {
               const cc = ccFn
