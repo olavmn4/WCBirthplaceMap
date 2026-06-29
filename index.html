@@ -365,6 +365,7 @@
   <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
   <script src="scorers.js"></script>
   <script src="squads.js"></script>
+  <script src="uk_nations.js"></script>
   <script>
     if (typeof SCORERS === "undefined" || SCORERS.length === 0)
       document.getElementById("no-data").style.display = "block";
@@ -524,9 +525,9 @@
       });
 
     // UK nations as separate features (England, Scotland, Wales, Northern Ireland)
-    fetch("uk_nations.geojson")
-      .then(r => r.json())
-      .then(gj => addHoverLayer(gj, f => UK_ONS_TO_ISO[f.properties.CTRY22CD]));
+    if (typeof UK_NATIONS !== "undefined") {
+      addHoverLayer(UK_NATIONS, f => UK_ONS_TO_ISO[f.properties.CTRY22CD]);
+    }
 
     const layer = L.layerGroup().addTo(map);
 
