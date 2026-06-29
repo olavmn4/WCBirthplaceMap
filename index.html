@@ -50,7 +50,7 @@
       transition: border-color 0.15s;
     }
     .controls input:focus,
-    .controls select:focus { border-color: #f97316; }
+    .controls select:focus { border-color: #38bdf8; }
     .controls input::placeholder { color: #6b7280; }
     .controls input { width: 200px; }
 
@@ -62,7 +62,7 @@
       transition: background 0.15s, color 0.15s;
     }
     .mode-btn:last-child { border-right: none; }
-    .mode-btn.active { background: #f97316; color: #111827; font-weight: 600; }
+    .mode-btn.active { background: #38bdf8; color: #111827; font-weight: 600; }
     .mode-btn:hover:not(.active):not(:disabled) { color: #e5e7eb; }
     .mode-btn:disabled { opacity: 0.35; cursor: not-allowed; }
 
@@ -78,8 +78,8 @@
       transition: border-color 0.15s, color 0.15s;
       white-space: nowrap;
     }
-    #wc-toggle:hover  { border-color: #f97316; color: #f97316; }
-    #wc-toggle.active { border-color: #f97316; color: #f97316; background: #1c1108; }
+    #wc-toggle:hover  { border-color: #38bdf8; color: #38bdf8; }
+    #wc-toggle.active { border-color: #38bdf8; color: #38bdf8; background: #082f49; }
 
     #attribution {
       position: absolute; bottom: 6px; left: 8px; z-index: 1000;
@@ -112,12 +112,12 @@
       font-size: 0.83rem; resize: vertical; min-height: 110px;
       font-family: inherit; outline: none;
     }
-    #feedback-box textarea:focus { border-color: #f97316; }
+    #feedback-box textarea:focus { border-color: #38bdf8; }
     #feedback-actions { display: flex; gap: 8px; margin-top: 10px; justify-content: flex-end; }
     #feedback-cancel { background: transparent; border: 1px solid #374151; color: #9ca3af; padding: 6px 14px; cursor: pointer; font-size: 0.82rem; }
     #feedback-cancel:hover { border-color: #6b7280; color: #e5e7eb; }
-    #feedback-submit { background: #f97316; border: none; color: #111827; padding: 6px 16px; cursor: pointer; font-size: 0.82rem; font-weight: 600; }
-    #feedback-submit:hover { background: #fb923c; }
+    #feedback-submit { background: #38bdf8; border: none; color: #111827; padding: 6px 16px; cursor: pointer; font-size: 0.82rem; font-weight: 600; }
+    #feedback-submit:hover { background: #7dd3fc; }
     #feedback-submit:disabled { opacity: 0.5; cursor: not-allowed; }
     #feedback-thanks { display: none; text-align: center; padding: 16px 0 4px; color: #9ca3af; font-size: 0.85rem; }
 
@@ -125,12 +125,12 @@
       display: none;
       align-items: center;
       gap: 6px;
-      background: #1c1108;
-      border: 1px solid #f97316;
+      background: #082f49;
+      border: 1px solid #38bdf8;
       border-radius: 0;
       padding: 4px 10px;
       font-size: 0.82rem;
-      color: #f97316;
+      color: #38bdf8;
       font-weight: 600;
     }
     #country-badge.on { display: flex; }
@@ -153,7 +153,7 @@
       color: #9ca3af;
       white-space: nowrap;
     }
-    .stats b { color: #f97316; }
+    .stats b { color: #38bdf8; }
 
     /* WC chips */
     #wc-panel {
@@ -314,10 +314,10 @@
     #no-data {
       display: none; position: absolute; top: 50%; left: 50%;
       transform: translate(-50%,-50%);
-      background: #1f2937; border: 1px solid #f97316; border-radius: 0;
+      background: #1f2937; border: 1px solid #38bdf8; border-radius: 0;
       padding: 28px 36px; text-align: center; z-index: 1000; max-width: 420px;
     }
-    #no-data h2   { color: #f97316; margin-bottom: 10px; }
+    #no-data h2   { color: #38bdf8; margin-bottom: 10px; }
     #no-data code { background: #111827; padding: 3px 8px; border-radius: 0; font-size: 0.9rem; }
   </style>
 </head>
@@ -353,7 +353,7 @@
           <option value="scaled">Scaled dots</option>
           <option value="uniform">Uniform dots</option>
         </select>
-        <input type="range" id="dotScale" min="0.3" max="3" step="0.1" value="1" title="Dot size" style="width:72px;accent-color:#f97316;cursor:pointer;">
+        <input type="range" id="dotScale" min="0.3" max="3" step="0.1" value="1" title="Dot size" style="width:72px;accent-color:#38bdf8;cursor:pointer;">
         <button id="wc-toggle">World Cups ▾</button>
         <div id="country-badge">
           <span id="badge-label"></span>
