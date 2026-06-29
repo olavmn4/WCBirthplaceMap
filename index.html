@@ -66,7 +66,7 @@
     .mode-btn:hover:not(.active):not(:disabled) { color: #e5e7eb; }
     .mode-btn:disabled { opacity: 0.35; cursor: not-allowed; }
 
-    #wc-toggle {
+    #wc-toggle, #arcs-toggle {
       background: #111827;
       border: 1px solid #374151;
       border-radius: 0;
@@ -78,8 +78,14 @@
       transition: border-color 0.15s, color 0.15s;
       white-space: nowrap;
     }
-    #wc-toggle:hover  { border-color: #f97316; color: #f97316; }
-    #wc-toggle.active { border-color: #f97316; color: #f97316; background: #1c1108; }
+    #wc-toggle:hover, #arcs-toggle:hover   { border-color: #f97316; color: #f97316; }
+    #wc-toggle.active, #arcs-toggle.active { border-color: #f97316; color: #f97316; background: #1c1108; }
+
+    #attribution {
+      position: absolute; bottom: 6px; left: 8px; z-index: 1000;
+      font-size: 0.65rem; color: rgba(255,255,255,0.25);
+      pointer-events: none; user-select: none;
+    }
 
     #country-badge {
       display: none;
@@ -314,6 +320,7 @@
           <option value="uniform">Uniform dots</option>
         </select>
         <input type="range" id="dotScale" min="0.3" max="3" step="0.1" value="1" title="Dot size" style="width:72px;accent-color:#f97316;cursor:pointer;">
+        <button id="arcs-toggle">Arcs</button>
         <button id="wc-toggle">World Cups ▾</button>
         <div id="country-badge">
           <span id="badge-label"></span>
@@ -348,6 +355,8 @@
         </div>
       </div>
     </div>
+
+    <div id="attribution">Squad &amp; birthplace data: Wikipedia · Wikidata &nbsp;|&nbsp; Scorer data: FIFA &nbsp;|&nbsp; Borders: Natural Earth · ONS</div>
 
     <div id="legend">
       <div class="legend-title">World Cup year</div>
@@ -529,7 +538,10 @@
       addHoverLayer(UK_NATIONS, f => UK_ONS_TO_ISO[f.properties.CTRY22CD]);
     }
 
-    const layer = L.layerGroup().addTo(map);
+    const layer    = L.layerGroup().addTo(map);
+    const arcLayer = L.layerGroup().addTo(map);
+    const arcRenderer = L.canvas({ padding: 0.5 });
+    let showArcs = false;
 
     // player name + team → Leaflet marker; rebuilt on each render()
     const playerMarkers = new Map();
@@ -647,6 +659,62 @@
       // Dissolved — no single successor
       "Yugoslavia":null,"Czechoslovakia":null,
     };
+
+    const TEAM_CAPITALS = {
+      "England":[51.507,-0.128],"Scotland":[55.953,-3.188],"Wales":[51.482,-3.179],"Northern Ireland":[54.597,-5.930],
+      "Argentina":[-34.604,-58.382],"Australia":[-35.308,149.124],"Austria":[48.208,16.374],"Belgium":[50.850,4.352],
+      "Bolivia":[-16.500,-68.119],"Brazil":[-15.780,-47.929],"Bulgaria":[42.698,23.322],"Cameroon":[3.867,11.517],
+      "Canada":[45.422,-75.697],"Chile":[-33.449,-70.669],"China PR":[39.904,116.407],"Colombia":[4.711,-74.072],
+      "Costa Rica":[9.928,-84.091],"Croatia":[45.815,15.982],"Cuba":[23.114,-82.367],"Czech Republic":[50.076,14.438],
+      "Denmark":[55.676,12.568],"Ecuador":[-0.230,-78.524],"Egypt":[30.044,31.236],"El Salvador":[13.693,-89.218],
+      "France":[48.857,2.352],"Germany":[52.520,13.405],"Ghana":[5.560,-0.206],"Greece":[37.984,23.728],
+      "Haiti":[18.594,-72.307],"Honduras":[14.082,-87.207],"Hungary":[47.498,19.040],"Indonesia":[-6.209,106.846],
+      "Iran":[35.689,51.389],"Iraq":[33.315,44.366],"Israel":[31.768,35.214],"Italy":[41.903,12.496],
+      "Ivory Coast":[5.348,-4.011],"Jamaica":[17.997,-76.794],"Japan":[35.676,139.650],"Kuwait":[29.376,47.977],
+      "Mexico":[19.433,-99.133],"Morocco":[34.021,-6.842],"Netherlands":[52.368,4.904],"New Zealand":[-41.287,174.776],
+      "Nigeria":[9.058,7.495],"North Korea":[39.039,125.763],"Norway":[59.914,10.752],"Panama":[8.994,-79.520],
+      "Paraguay":[-25.287,-57.647],"Peru":[-12.046,-77.043],"Poland":[52.230,21.012],"Portugal":[38.717,-9.133],
+      "Qatar":[25.285,51.531],"Republic of Ireland":[53.350,-6.260],"Romania":[44.427,26.103],"Russia":[55.756,37.617],
+      "Saudi Arabia":[24.688,46.722],"Senegal":[14.717,-17.468],"Serbia":[44.787,20.449],"Slovenia":[46.057,14.506],
+      "South Africa":[-25.746,28.188],"South Korea":[37.567,126.978],"Spain":[40.417,-3.704],"Sweden":[59.329,18.069],
+      "Switzerland":[46.948,7.447],"Togo":[6.138,1.212],"Trinidad and Tobago":[10.692,-61.223],"Tunisia":[36.819,10.166],
+      "Turkey":[39.933,32.860],"Türkiye":[39.933,32.860],"Ukraine":[50.450,30.523],"United Arab Emirates":[24.454,54.377],
+      "United States":[38.895,-77.036],"Uruguay":[-34.901,-56.165],"Algeria":[36.737,3.087],"Angola":[-8.837,13.234],
+      "Equatorial Guinea":[3.750,8.737],"Venezuela":[10.481,-66.904],"Guatemala":[14.635,-90.507],
+      "Bosnia and Herzegovina":[43.856,18.413],"Curaçao":[12.108,-68.932],"Cape Verde":[14.931,-23.513],
+      "Iceland":[64.127,-21.817],"Jordan":[31.957,35.946],"Slovakia":[48.149,17.108],"Uzbekistan":[41.300,69.240],
+      "West Germany":[52.520,13.405],"East Germany":[52.520,13.405],"Soviet Union":[55.756,37.617],
+      "Serbia and Montenegro":[44.787,20.449],"Zaire":[-4.322,15.322],"DR Congo":[-4.322,15.322],
+      "Democratic Republic of the Congo":[-4.322,15.322],"Dutch East Indies":[-6.209,106.846],"FR Yugoslavia":[44.787,20.449],
+      "Scotland":[55.953,-3.188],
+    };
+
+    function isBornAbroad(s) {
+      const bcc = s.cc;
+      if (!bcc) return false;
+      const tcc = teamToISO(s.team);
+      if (!tcc) return false;
+      const norm = cc => cc.startsWith("GB-") ? "GB" : cc;
+      return norm(bcc) !== norm(tcc);
+    }
+
+    function curvedArcPoints(lat1, lon1, lat2, lon2) {
+      const mlat = (lat1 + lat2) / 2, mlon = (lon1 + lon2) / 2;
+      const dlat = lat2 - lat1, dlon = lon2 - lon1;
+      const len = Math.sqrt(dlat * dlat + dlon * dlon);
+      if (len < 0.01) return [[lat1, lon1], [lat2, lon2]];
+      const offset = len * 0.22;
+      const clat = mlat + (-dlon / len) * offset;
+      const clon = mlon + (dlat  / len) * offset;
+      const pts = [];
+      for (let i = 0; i <= 40; i++) {
+        const t = i / 40, mt = 1 - t;
+        pts.push([mt*mt*lat1 + 2*mt*t*clat + t*t*lat2,
+                  mt*mt*lon1 + 2*mt*t*clon + t*t*lon2]);
+      }
+      return pts;
+    }
+
     function teamToISO(team) {
       return Object.prototype.hasOwnProperty.call(TEAM_TO_ISO, team)
         ? TEAM_TO_ISO[team] : null;
@@ -1067,7 +1135,7 @@
         marker._origRadius = radius;
 
         const sorted = sq
-          ? [...items].sort((a, b) => b.years.length - a.years.length || a.player.localeCompare(b.player))
+          ? [...items].sort((a, b) => b.years.length - a.years.length || Math.max(...b.years) - Math.max(...a.years))
           : [...items].sort((a, b) =>
               b.goals - a.goals ||
               Math.max(...Object.keys(b.tourGoals).map(Number)) - Math.max(...Object.keys(a.tourGoals).map(Number)));
@@ -1107,9 +1175,37 @@
       document.getElementById("s-players").textContent = playerCount.toLocaleString();
       document.getElementById("s-goals").textContent   = goalCount.toLocaleString();
       document.getElementById("s-nations").textContent = nations.size;
+      renderArcs();
     }
+
+    function renderArcs() {
+      arcLayer.clearLayers();
+      if (!showArcs) return;
+      const sq = viewMode === "squads";
+      const source = sq ? getActiveSquads() : getActiveScorers();
+      const seen = new Set();
+      source.forEach(s => {
+        if (!isBornAbroad(s)) return;
+        const cap = TEAM_CAPITALS[s.team];
+        if (!cap) return;
+        const key = `${s.lat.toFixed(3)},${s.lon.toFixed(3)}|${s.team}`;
+        if (seen.has(key)) return;
+        seen.add(key);
+        const pts = curvedArcPoints(s.lat, s.lon, cap[0], cap[1]);
+        L.polyline(pts, {
+          color: "#ffffff", weight: 0.7, opacity: 0.18,
+          renderer: arcRenderer, interactive: false,
+        }).addTo(arcLayer);
+      });
+    }
+
     updateLegendBar();
     if (hasSquads) setMode("squads"); else if (typeof SCORERS !== "undefined") render();
+    document.getElementById("arcs-toggle").addEventListener("click", () => {
+      showArcs = !showArcs;
+      document.getElementById("arcs-toggle").classList.toggle("active", showArcs);
+      renderArcs();
+    });
     document.getElementById("search").addEventListener("input",   render);
     document.getElementById("minGoals").addEventListener("change", render);
     document.getElementById("colorScheme").addEventListener("change", e => {
