@@ -887,7 +887,7 @@
         const addr = d.address || {};
         let cc     = (addr.country_code || "").toUpperCase();
         let name   = addr.country || "";
-        if (!cc) return;
+        if (!cc) { if (selectedCC) clearCountry(); return; }
 
         // Split UK into FIFA nations
         if (cc === "GB") {
