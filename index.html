@@ -547,14 +547,20 @@
             mouseover: () => {
               if (outTimer) { clearTimeout(outTimer); outTimer = null; }
               if (hoveredCountry && hoveredCountry !== lyr) {
-                hoveredCountry.setStyle({ fillOpacity: hoveredCountry._arcHighlight || 0 });
+                hoveredCountry.setStyle({
+                  fillColor: hoveredCountry._arcFillColor || "#ffffff",
+                  fillOpacity: hoveredCountry._arcHighlight || 0,
+                });
               }
               hoveredCountry = lyr;
-              lyr.setStyle({ fillOpacity: 0.08 });
+              lyr.setStyle({ fillColor: "#ffffff", fillOpacity: 0.08 });
             },
             mouseout: () => {
               outTimer = setTimeout(() => {
-                lyr.setStyle({ fillOpacity: lyr._arcHighlight || 0 });
+                lyr.setStyle({
+                  fillColor: lyr._arcFillColor || "#ffffff",
+                  fillOpacity: lyr._arcHighlight || 0,
+                });
                 if (hoveredCountry === lyr) hoveredCountry = null;
                 outTimer = null;
               }, 50);
@@ -1234,7 +1240,8 @@
       ccLayerMap.forEach(lyr => {
         if (lyr._arcHighlight) {
           lyr._arcHighlight = 0;
-          lyr.setStyle({ fillOpacity: 0 });
+          lyr._arcFillColor = null;
+          lyr.setStyle({ fillColor: "#ffffff", fillOpacity: 0 });
         }
       });
       if (!selectedCC) return;
@@ -1273,8 +1280,10 @@
       destHighlight.forEach((year, tcc) => {
         const lyr = ccLayerMap.get(tcc);
         if (!lyr) return;
+        const color = wcColor(year);
         lyr._arcHighlight = 0.05;
-        lyr.setStyle({ fillColor: wcColor(year), fillOpacity: 0.05 });
+        lyr._arcFillColor = color;
+        lyr.setStyle({ fillColor: color, fillOpacity: 0.05 });
       });
     }
 
