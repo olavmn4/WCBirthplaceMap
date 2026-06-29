@@ -317,8 +317,13 @@
       /* Hide less-essential controls on mobile */
       #colorScheme, #customColor, #dotSize, #dotScale { display: none !important; }
       .stats { margin-left: 0; width: 100%; gap: 10px; }
-      /* Country panel goes full-width */
-      #country-panel { width: 100%; right: -100%; }
+      /* Country panel slides up as a bottom sheet */
+      #country-panel {
+        width: 100%; top: auto; right: 0;
+        height: 55%; bottom: -55%;
+        transition: bottom 0.25s ease;
+      }
+      #country-panel.open { right: 0; bottom: 0; }
       #legend.shifted { right: 10px; }
       /* Legend moves up slightly so it doesn't sit on top of attribution */
       #legend { bottom: 42px; }
