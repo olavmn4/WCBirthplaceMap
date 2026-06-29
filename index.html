@@ -1302,10 +1302,12 @@
       updateLegendBar();
       render();
     });
+    let colorTimer = null;
     document.getElementById("customColor").addEventListener("input", e => {
       COLOR_SCHEMES.custom.hue = hexToHue(e.target.value);
       updateLegendBar();
-      render();
+      clearTimeout(colorTimer);
+      colorTimer = setTimeout(render, 120);
     });
     document.getElementById("dotSize").addEventListener("change", e => {
       scaleDots = e.target.value === "scaled";
