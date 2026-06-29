@@ -66,7 +66,7 @@
     .mode-btn:hover:not(.active):not(:disabled) { color: #e5e7eb; }
     .mode-btn:disabled { opacity: 0.35; cursor: not-allowed; }
 
-    #wc-toggle, #arcs-toggle {
+    #wc-toggle {
       background: #111827;
       border: 1px solid #374151;
       border-radius: 0;
@@ -78,14 +78,48 @@
       transition: border-color 0.15s, color 0.15s;
       white-space: nowrap;
     }
-    #wc-toggle:hover, #arcs-toggle:hover   { border-color: #f97316; color: #f97316; }
-    #wc-toggle.active, #arcs-toggle.active { border-color: #f97316; color: #f97316; background: #1c1108; }
+    #wc-toggle:hover  { border-color: #f97316; color: #f97316; }
+    #wc-toggle.active { border-color: #f97316; color: #f97316; background: #1c1108; }
 
     #attribution {
       position: absolute; bottom: 6px; left: 8px; z-index: 1000;
       font-size: 0.65rem; color: rgba(255,255,255,0.25);
       pointer-events: none; user-select: none;
     }
+
+    #feedback-btn {
+      position: absolute; bottom: 28px; right: 10px; z-index: 1000;
+      background: #1f2937; border: 1px solid #374151; color: #6b7280;
+      font-size: 0.72rem; padding: 4px 10px; cursor: pointer;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    #feedback-btn:hover { color: #e5e7eb; border-color: #6b7280; }
+
+    #feedback-modal {
+      display: none; position: fixed; inset: 0; z-index: 9000;
+      background: rgba(0,0,0,0.55); align-items: center; justify-content: center;
+    }
+    #feedback-modal.open { display: flex; }
+    #feedback-box {
+      background: #111827; border: 1px solid #374151;
+      width: 100%; max-width: 420px; padding: 24px; position: relative;
+    }
+    #feedback-box h3 { margin: 0 0 6px; font-size: 1rem; color: #e5e7eb; font-weight: 600; }
+    #feedback-box p  { margin: 0 0 14px; font-size: 0.8rem; color: #6b7280; }
+    #feedback-box textarea {
+      width: 100%; box-sizing: border-box; background: #1f2937;
+      border: 1px solid #374151; color: #e5e7eb; padding: 10px;
+      font-size: 0.83rem; resize: vertical; min-height: 110px;
+      font-family: inherit; outline: none;
+    }
+    #feedback-box textarea:focus { border-color: #f97316; }
+    #feedback-actions { display: flex; gap: 8px; margin-top: 10px; justify-content: flex-end; }
+    #feedback-cancel { background: transparent; border: 1px solid #374151; color: #9ca3af; padding: 6px 14px; cursor: pointer; font-size: 0.82rem; }
+    #feedback-cancel:hover { border-color: #6b7280; color: #e5e7eb; }
+    #feedback-submit { background: #f97316; border: none; color: #111827; padding: 6px 16px; cursor: pointer; font-size: 0.82rem; font-weight: 600; }
+    #feedback-submit:hover { background: #fb923c; }
+    #feedback-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+    #feedback-thanks { display: none; text-align: center; padding: 16px 0 4px; color: #9ca3af; font-size: 0.85rem; }
 
     #country-badge {
       display: none;
@@ -320,7 +354,6 @@
           <option value="uniform">Uniform dots</option>
         </select>
         <input type="range" id="dotScale" min="0.3" max="3" step="0.1" value="1" title="Dot size" style="width:72px;accent-color:#f97316;cursor:pointer;">
-        <button id="arcs-toggle">Arcs</button>
         <button id="wc-toggle">World Cups ▾</button>
         <div id="country-badge">
           <span id="badge-label"></span>
@@ -357,6 +390,7 @@
     </div>
 
     <div id="attribution">Squad &amp; birthplace data: Wikipedia · Wikidata &nbsp;|&nbsp; Scorer data: FIFA &nbsp;|&nbsp; Borders: Natural Earth · ONS</div>
+    <button id="feedback-btn">Feedback</button>
 
     <div id="legend">
       <div class="legend-title">World Cup year</div>
@@ -367,6 +401,19 @@
     <div id="no-data">
       <h2>No data yet</h2>
       <p>Run: <code>python build_data.py</code></p>
+    </div>
+  </div>
+
+  <div id="feedback-modal">
+    <div id="feedback-box">
+      <h3>Leave feedback</h3>
+      <p>Anonymous — no account needed. Suggestions, bugs, missing players, anything.</p>
+      <textarea id="feedback-text" placeholder="Your message…"></textarea>
+      <div id="feedback-actions">
+        <button id="feedback-cancel">Cancel</button>
+        <button id="feedback-submit">Send</button>
+      </div>
+      <div id="feedback-thanks">Thanks! Message received.</div>
     </div>
   </div>
 
@@ -541,7 +588,6 @@
     const layer    = L.layerGroup().addTo(map);
     const arcLayer = L.layerGroup().addTo(map);
     const arcRenderer = L.canvas({ padding: 0.5 });
-    let showArcs = false;
 
     // player name + team → Leaflet marker; rebuilt on each render()
     const playerMarkers = new Map();
@@ -1180,20 +1226,27 @@
 
     function renderArcs() {
       arcLayer.clearLayers();
-      if (!showArcs) return;
+      if (!selectedCC) return;
       const sq = viewMode === "squads";
       const source = sq ? getActiveSquads() : getActiveScorers();
-      const seen = new Set();
-      source.forEach(s => {
+      const relevant = source.filter(s =>
+        birthMatchesCC(s, selectedCC) || teamToISO(s.team) === selectedCC
+      );
+      // Aggregate by birthplace+team, keeping max year (for color)
+      const arcMap = new Map();
+      relevant.forEach(s => {
         if (!isBornAbroad(s)) return;
         const cap = TEAM_CAPITALS[s.team];
         if (!cap) return;
         const key = `${s.lat.toFixed(3)},${s.lon.toFixed(3)}|${s.team}`;
-        if (seen.has(key)) return;
-        seen.add(key);
-        const pts = curvedArcPoints(s.lat, s.lon, cap[0], cap[1]);
+        const yr = s.tournament;
+        if (!arcMap.has(key) || arcMap.get(key).year < yr)
+          arcMap.set(key, { lat: s.lat, lon: s.lon, cap, year: yr });
+      });
+      arcMap.forEach(({ lat, lon, cap, year }) => {
+        const pts = curvedArcPoints(lat, lon, cap[0], cap[1]);
         L.polyline(pts, {
-          color: "#ffffff", weight: 0.7, opacity: 0.18,
+          color: wcColor(year), weight: 1.2, opacity: 0.55,
           renderer: arcRenderer, interactive: false,
         }).addTo(arcLayer);
       });
@@ -1201,11 +1254,6 @@
 
     updateLegendBar();
     if (hasSquads) setMode("squads"); else if (typeof SCORERS !== "undefined") render();
-    document.getElementById("arcs-toggle").addEventListener("click", () => {
-      showArcs = !showArcs;
-      document.getElementById("arcs-toggle").classList.toggle("active", showArcs);
-      renderArcs();
-    });
     document.getElementById("search").addEventListener("input",   render);
     document.getElementById("minGoals").addEventListener("change", render);
     document.getElementById("colorScheme").addEventListener("change", e => {
@@ -1238,6 +1286,49 @@
       if (!row) return;
       if (row.contains(e.relatedTarget)) return;
       schedClearHighlight();
+    });
+
+    // ── Feedback ─────────────────────────────────────────────────────────
+    // Submissions go to Formspree — replace the endpoint with your own form ID
+    // Sign up free at formspree.io, create a form, and paste the endpoint here
+    const FORMSPREE = "https://formspree.io/f/YOUR_FORM_ID";
+
+    const feedbackBtn    = document.getElementById("feedback-btn");
+    const feedbackModal  = document.getElementById("feedback-modal");
+    const feedbackCancel = document.getElementById("feedback-cancel");
+    const feedbackSubmit = document.getElementById("feedback-submit");
+    const feedbackText   = document.getElementById("feedback-text");
+    const feedbackThanks = document.getElementById("feedback-thanks");
+    const feedbackActions= document.getElementById("feedback-actions");
+
+    function openFeedback() {
+      feedbackText.value = "";
+      feedbackThanks.style.display = "none";
+      feedbackActions.style.display = "flex";
+      feedbackSubmit.disabled = false;
+      feedbackModal.classList.add("open");
+      setTimeout(() => feedbackText.focus(), 50);
+    }
+    function closeFeedback() { feedbackModal.classList.remove("open"); }
+
+    feedbackBtn.addEventListener("click", openFeedback);
+    feedbackCancel.addEventListener("click", closeFeedback);
+    feedbackModal.addEventListener("click", e => { if (e.target === feedbackModal) closeFeedback(); });
+
+    feedbackSubmit.addEventListener("click", async () => {
+      const msg = feedbackText.value.trim();
+      if (!msg) return;
+      feedbackSubmit.disabled = true;
+      try {
+        await fetch(FORMSPREE, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({ message: msg }),
+        });
+      } catch (_) {}
+      feedbackActions.style.display = "none";
+      feedbackThanks.style.display = "block";
+      setTimeout(closeFeedback, 2000);
     });
   </script>
 </body>
