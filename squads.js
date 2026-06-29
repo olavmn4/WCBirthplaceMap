@@ -77216,11 +77216,11 @@ const SQUADS = [
     "team": "Ecuador",
     "tournament": 2002,
     "gender": "men",
-    "city": "Curaçao",
-    "lat": 12.2,
-    "lon": -69.0,
+    "city": "Santo Domingo de los Colorados",
+    "lat": -0.24982,
+    "lon": -79.17193,
     "wiki": "Iván_Kaviedes",
-    "cc": "NL"
+    "cc": "EC"
   },
   {
     "player": "Álex Aguinaga",
@@ -79240,11 +79240,11 @@ const SQUADS = [
     "team": "Ecuador",
     "tournament": 2006,
     "gender": "men",
-    "city": "Curaçao",
-    "lat": 12.2,
-    "lon": -69.0,
+    "city": "Santo Domingo de los Colorados",
+    "lat": -0.24982,
+    "lon": -79.17193,
     "wiki": "Iván_Kaviedes",
-    "cc": "NL"
+    "cc": "EC"
   },
   {
     "player": "Agustín Delgado",
@@ -125143,9 +125143,9 @@ const SQUADS = [
     "team": "Curaçao",
     "tournament": 2026,
     "gender": "men",
-    "city": "Curaçao",
-    "lat": 12.2,
-    "lon": -69.0,
+    "city": "Almere",
+    "lat": 52.35083,
+    "lon": 5.26528,
     "wiki": "Tyrick_Bodak",
     "cc": "NL"
   },

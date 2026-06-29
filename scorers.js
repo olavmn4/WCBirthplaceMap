@@ -1,6 +1,3 @@
-// World Cup Goal Scorers Birthplace Map
-// 2051/2285 plotted | 234 without Wikidata birthplace
-// Men's 1930-2026 | Women's 1991-2019
 const SCORERS = [
   {
     "player": "Just Fontaine",
@@ -566,7 +563,7 @@ const SCORERS = [
   {
     "player": "Lionel Messi",
     "team": "Argentina",
-    "goals": 5,
+    "goals": 6,
     "gender": "men",
     "tournament": 2026,
     "city": "Rosario",
@@ -605,17 +602,6 @@ const SCORERS = [
     "city": "Frankfurt",
     "lat": 50.11056,
     "lon": 8.68222,
-    "cc": "DE"
-  },
-  {
-    "player": "Thomas Müller",
-    "team": "Germany",
-    "goals": 5,
-    "gender": "men",
-    "tournament": 2010,
-    "city": "Weilheim in Oberbayern",
-    "lat": 47.83333,
-    "lon": 11.13333,
     "cc": "DE"
   },
   {
@@ -1114,17 +1100,6 @@ const SCORERS = [
     "cc": "AU"
   },
   {
-    "player": "Valeriy Porkujan",
-    "team": "Soviet Union",
-    "goals": 4,
-    "gender": "men",
-    "tournament": 1966,
-    "city": "Kropyvnytskyi",
-    "lat": 48.51028,
-    "lon": 32.26667,
-    "cc": "UA"
-  },
-  {
     "player": "Vinícius Júnior",
     "team": "Brazil",
     "goals": 4,
@@ -1145,17 +1120,6 @@ const SCORERS = [
     "lat": 58.34917,
     "lon": 11.93806,
     "cc": "SE"
-  },
-  {
-    "player": "Leonel Sánchez",
-    "team": "Chile",
-    "goals": 4,
-    "gender": "men",
-    "tournament": 1962,
-    "city": "Santiago",
-    "lat": -33.4375,
-    "lon": -70.65,
-    "cc": "CL"
   },
   {
     "player": "Leopoldo Luque",
@@ -1576,17 +1540,6 @@ const SCORERS = [
     "cc": "DK"
   },
   {
-    "player": "Ann Kristin Aarønes",
-    "team": "Norway",
-    "goals": 4,
-    "gender": "women",
-    "tournament": 1999,
-    "city": "Ålesund Municipality",
-    "lat": 62.47124,
-    "lon": 6.15424,
-    "cc": "NO"
-  },
-  {
     "player": "Alessandro Altobelli",
     "team": "Italy",
     "goals": 4,
@@ -1609,17 +1562,6 @@ const SCORERS = [
     "cc": "DE"
   },
   {
-    "player": "Ihor Belanov",
-    "team": "Soviet Union",
-    "goals": 4,
-    "gender": "men",
-    "tournament": 1986,
-    "city": "Odesa",
-    "lat": 46.47747,
-    "lon": 30.73262,
-    "cc": "UA"
-  },
-  {
     "player": "Wendie Renard",
     "team": "France",
     "goals": 4,
@@ -1629,28 +1571,6 @@ const SCORERS = [
     "lat": 14.61611,
     "lon": -61.10139,
     "cc": "FR"
-  },
-  {
-    "player": "Míchel",
-    "team": "Spain",
-    "goals": 4,
-    "gender": "men",
-    "tournament": 1990,
-    "city": "Madrid",
-    "lat": 40.41694,
-    "lon": -3.70333,
-    "cc": "ES"
-  },
-  {
-    "player": "Luis Hernández",
-    "team": "Mexico",
-    "goals": 4,
-    "gender": "men",
-    "tournament": 1998,
-    "city": "Poza Rica",
-    "lat": 20.53333,
-    "lon": -97.45,
-    "cc": "MX"
   },
   {
     "player": "Nándor Hidegkuti",
@@ -5164,7 +5084,7 @@ const SCORERS = [
   {
     "player": "Elijah Just",
     "team": "New Zealand",
-    "goals": 2,
+    "goals": 3,
     "gender": "men",
     "tournament": 2026,
     "city": "Palmerston North",
@@ -7364,7 +7284,7 @@ const SCORERS = [
   {
     "player": "Harry Kane",
     "team": "England",
-    "goals": 2,
+    "goals": 3,
     "gender": "men",
     "tournament": 2026,
     "city": "Walthamstow",
@@ -11159,7 +11079,7 @@ const SCORERS = [
   {
     "player": "Jude Bellingham",
     "team": "England",
-    "goals": 1,
+    "goals": 2,
     "gender": "men",
     "tournament": 2026,
     "city": "Stourbridge",
@@ -11572,17 +11492,6 @@ const SCORERS = [
     "city": "Halberstadt",
     "lat": 51.89583,
     "lon": 11.04667,
-    "cc": "DE"
-  },
-  {
-    "player": "Kaan Ayhan",
-    "team": "Turkey",
-    "goals": 1,
-    "gender": "men",
-    "tournament": 2026,
-    "city": "Gelsenkirchen",
-    "lat": 51.51028,
-    "lon": 7.09417,
     "cc": "DE"
   },
   {
@@ -14107,7 +14016,7 @@ const SCORERS = [
   {
     "player": "Marko Arnautović",
     "team": "Austria",
-    "goals": 1,
+    "goals": 2,
     "gender": "men",
     "tournament": 2026,
     "city": "Vienna",
@@ -17330,7 +17239,7 @@ const SCORERS = [
   {
     "player": "Ramin Rezaeian",
     "team": "Iran",
-    "goals": 1,
+    "goals": 2,
     "gender": "men",
     "tournament": 2026,
     "city": "Sari",
@@ -18373,17 +18282,6 @@ const SCORERS = [
     "cc": "GB-SCO"
   },
   {
-    "player": "Barış Alper Yılmaz",
-    "team": "Turkey",
-    "goals": 1,
-    "gender": "men",
-    "tournament": 2026,
-    "city": "İkizdere",
-    "lat": 40.77722,
-    "lon": 40.56083,
-    "cc": "TR"
-  },
-  {
     "player": "Roberto Carlos",
     "team": "Brazil",
     "goals": 1,
@@ -19328,17 +19226,6 @@ const SCORERS = [
     "lat": 35.58917,
     "lon": 139.57861,
     "cc": "JP"
-  },
-  {
-    "player": "Arda Güler",
-    "team": "Turkey",
-    "goals": 1,
-    "gender": "men",
-    "tournament": 2026,
-    "city": "Altındağ",
-    "lat": 39.94583,
-    "lon": 32.85611,
-    "cc": "TR"
   },
   {
     "player": "Ariane Hingst",
@@ -22115,7 +22002,7 @@ const SCORERS = [
   {
     "player": "Yoane Wissa",
     "team": "DR Congo",
-    "goals": 1,
+    "goals": 3,
     "gender": "men",
     "tournament": 2026,
     "city": "Épinay-sous-Sénart",
@@ -22562,5 +22449,247 @@ const SCORERS = [
     "lat": 44.33333,
     "lon": 23.81667,
     "cc": "RO"
+  },
+  {
+    "player": "Riyad Mahrez",
+    "team": "Algeria",
+    "goals": 2,
+    "gender": "men",
+    "tournament": 2026,
+    "city": "Clichy",
+    "lat": 48.90361,
+    "lon": 2.30556,
+    "cc": "FR"
+  },
+  {
+    "player": "Leandro Trossard",
+    "team": "Belgium",
+    "goals": 2,
+    "gender": "men",
+    "tournament": 2026,
+    "city": "Maasmechelen",
+    "lat": 50.9967,
+    "lon": 5.7025,
+    "cc": "BE"
+  },
+  {
+    "player": "Romelu Lukaku",
+    "team": "Belgium",
+    "goals": 1,
+    "gender": "men",
+    "tournament": 2026,
+    "city": "Antwerp",
+    "lat": 51.22111,
+    "lon": 4.39972,
+    "cc": "BE"
+  },
+  {
+    "player": "Petar Sučić",
+    "team": "Croatia",
+    "goals": 1,
+    "gender": "men",
+    "tournament": 2026,
+    "city": "Livno",
+    "lat": 43.82694,
+    "lon": 17.0075,
+    "cc": "BA"
+  },
+  {
+    "player": "Fiston Mayele",
+    "team": "DR Congo",
+    "goals": 1,
+    "gender": "men",
+    "tournament": 2026,
+    "city": "Mbuji-Mayi",
+    "lat": -6.1209,
+    "lon": 23.5967,
+    "cc": "CD"
+  },
+  {
+    "player": "Mahmoud Saber",
+    "team": "Egypt",
+    "goals": 1,
+    "gender": "men",
+    "tournament": 2026,
+    "city": "Desouk, Egypt",
+    "lat": 31.12823,
+    "lon": 30.6462,
+    "cc": "EG"
+  },
+  {
+    "player": "Saša Kalajdžić",
+    "team": "Austria",
+    "goals": 1,
+    "gender": "men",
+    "tournament": 2026,
+    "city": "Horn",
+    "lat": 48.66528,
+    "lon": 15.65583,
+    "cc": "AT"
+  },
+  {
+    "player": "Giovani Lo Celso",
+    "team": "Argentina",
+    "goals": 1,
+    "gender": "men",
+    "tournament": 2026,
+    "city": "Rosario",
+    "lat": -32.9575,
+    "lon": -60.63944,
+    "cc": "AR"
+  },
+  {
+    "player": "Alexis Saelemaekers",
+    "team": "Belgium",
+    "goals": 1,
+    "gender": "men",
+    "tournament": 2026,
+    "city": "Berchem-Sainte-Agathe",
+    "lat": 50.865,
+    "lon": 4.29472,
+    "cc": "BE"
+  },
+  {
+    "player": "Derrick Luckassen",
+    "team": "Ghana",
+    "goals": 1,
+    "gender": "men",
+    "tournament": 2026,
+    "city": "Amsterdam",
+    "lat": 52.36667,
+    "lon": 4.88333,
+    "cc": "NL"
+  },
+  {
+    "player": "Nikola Vlašić",
+    "team": "Croatia",
+    "goals": 1,
+    "gender": "men",
+    "tournament": 2026,
+    "city": "Split",
+    "lat": 43.51,
+    "lon": 16.44,
+    "cc": "HR"
+  },
+  {
+    "player": "Álex Baena",
+    "team": "Spain",
+    "goals": 1,
+    "gender": "men",
+    "tournament": 2026,
+    "city": "Roquetas de Mar",
+    "lat": 36.78139,
+    "lon": -2.61472,
+    "cc": "ES"
+  },
+  {
+    "player": "Lautaro Martínez",
+    "team": "Argentina",
+    "goals": 1,
+    "gender": "men",
+    "tournament": 2026,
+    "city": "Bahía Blanca",
+    "lat": -38.71824,
+    "lon": -62.26734,
+    "cc": "AR"
+  },
+  {
+    "player": "Kevin De Bruyne",
+    "team": "Belgium",
+    "goals": 1,
+    "gender": "men",
+    "tournament": 2026,
+    "city": "Drongen",
+    "lat": 51.0528,
+    "lon": 3.6617,
+    "cc": "BE"
+  },
+  {
+    "player": "Rafik Belghali",
+    "team": "Algeria",
+    "goals": 1,
+    "gender": "men",
+    "tournament": 2026,
+    "city": "Leuven",
+    "lat": 50.8775,
+    "lon": 4.70444,
+    "cc": "BE"
+  },
+  {
+    "player": "Eldor Shomurodov",
+    "team": "Uzbekistan",
+    "goals": 1,
+    "gender": "men",
+    "tournament": 2026,
+    "city": "Jarkurghon",
+    "lat": 37.51444,
+    "lon": 67.42056,
+    "cc": "UZ"
+  },
+  {
+    "player": "Marcel Sabitzer",
+    "team": "Austria",
+    "goals": 1,
+    "gender": "men",
+    "tournament": 2026,
+    "city": "Wels",
+    "lat": 48.15,
+    "lon": 14.01667,
+    "cc": "AT"
+  },
+  {
+    "player": "Stephen Eustáquio",
+    "team": "Canada",
+    "goals": 1,
+    "gender": "men",
+    "tournament": 2026,
+    "city": "Leamington",
+    "lat": 42.052,
+    "lon": -82.5999,
+    "cc": "CA"
+  },
+  {
+    "player": "Barış Alper Yılmaz",
+    "team": "Türkiye",
+    "goals": 1,
+    "gender": "men",
+    "tournament": 2026,
+    "city": "İkizdere",
+    "lat": 40.77722,
+    "lon": 40.56083,
+    "cc": "TR"
+  },
+  {
+    "player": "Musa Al-Taamari",
+    "team": "Jordan",
+    "goals": 1,
+    "gender": "men",
+    "tournament": 2026,
+    "city": "Amman",
+    "lat": 31.93098,
+    "lon": 35.92608,
+    "cc": "JO"
+  },
+  {
+    "player": "Kaan Ayhan",
+    "team": "Türkiye",
+    "goals": 1,
+    "gender": "men",
+    "tournament": 2026,
+    "city": "Gelsenkirchen",
+    "lat": 51.51028,
+    "lon": 7.09417,
+    "cc": "DE"
+  },
+  {
+    "player": "Arda Güler",
+    "team": "Türkiye",
+    "goals": 1,
+    "gender": "men",
+    "tournament": 2026,
+    "city": "Altındağ",
+    "lat": 39.94583,
+    "lon": 32.85611,
+    "cc": "TR"
   }
 ];

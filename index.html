@@ -287,8 +287,8 @@
       <span class="title">World Cup Birthplaces</span>
       <div class="controls">
         <div class="mode-toggle">
-          <button class="mode-btn active" id="mode-scorers">Scorers</button>
-          <button class="mode-btn" id="mode-squads">All players</button>
+          <button class="mode-btn" id="mode-scorers">Scorers</button>
+          <button class="mode-btn active" id="mode-squads">All players</button>
         </div>
         <input id="search" type="search" placeholder="Search player, team, or city…" autocomplete="off" />
         <select id="minGoals">
@@ -393,22 +393,69 @@
       return geojson;
     }
 
-    // ISO numeric → alpha-2 for all WC-relevant countries
+    // ISO numeric → alpha-2 (comprehensive world coverage)
     const NUMERIC_TO_ISO = {
-      "012":"DZ","024":"AO","032":"AR","036":"AU","040":"AT","056":"BE",
-      "068":"BO","070":"BA","076":"BR","100":"BG","120":"CM","124":"CA",
-      "132":"CV","152":"CL","156":"CN","170":"CO","180":"CD","188":"CR",
-      "191":"HR","192":"CU","203":"CZ","208":"DK","218":"EC","226":"GQ",
-      "250":"FR","276":"DE","288":"GH","300":"GR","320":"GT","332":"HT",
-      "340":"HN","348":"HU","352":"IS","360":"ID","364":"IR","368":"IQ",
-      "372":"IE","376":"IL","380":"IT","384":"CI","388":"JM","392":"JP",
-      "400":"JO","408":"KP","410":"KR","414":"KW","484":"MX","504":"MA",
-      "528":"NL","554":"NZ","566":"NG","578":"NO","591":"PA","600":"PY",
-      "604":"PE","616":"PL","620":"PT","634":"QA","642":"RO","643":"RU",
-      "682":"SA","686":"SN","688":"RS","703":"SK","705":"SI","710":"ZA",
-      "724":"ES","752":"SE","756":"CH","768":"TG","780":"TT","784":"AE",
-      "788":"TN","792":"TR","804":"UA","840":"US","858":"UY","860":"UZ",
-      "862":"VE",
+      // Americas
+      "028":"AG","032":"AR","044":"BS","052":"BB","084":"BZ","068":"BO",
+      "076":"BR","124":"CA","152":"CL","170":"CO","188":"CR","192":"CU",
+      "212":"DM","214":"DO","218":"EC","222":"SV","308":"GD","320":"GT",
+      "328":"GY","332":"HT","340":"HN","388":"JM","484":"MX","558":"NI",
+      "591":"PA","600":"PY","604":"PE","531":"CW","740":"SR","780":"TT",
+      "840":"US","858":"UY","862":"VE",
+      // Europe
+      "008":"AL","020":"AD","040":"AT","056":"BE","070":"BA","100":"BG",
+      "112":"BY","191":"HR","196":"CY","203":"CZ","208":"DK","233":"EE",
+      "246":"FI","250":"FR","276":"DE","300":"GR","348":"HU","352":"IS",
+      "372":"IE","376":"IL","380":"IT","428":"LV","440":"LT","442":"LU",
+      "470":"MT","498":"MD","499":"ME","528":"NL","578":"NO","616":"PL",
+      "620":"PT","642":"RO","643":"RU","688":"RS","703":"SK","705":"SI",
+      "724":"ES","752":"SE","756":"CH","804":"UA","807":"MK",
+      // Africa
+      "012":"DZ","024":"AO","072":"BW","108":"BI","120":"CM","132":"CV",
+      "140":"CF","148":"TD","174":"KM","178":"CG","180":"CD","204":"BJ",
+      "226":"GQ","231":"ET","232":"ER","266":"GA","270":"GM","288":"GH",
+      "324":"GN","384":"CI","404":"KE","426":"LS","430":"LR","434":"LY",
+      "450":"MG","454":"MW","466":"ML","478":"MR","480":"MU","504":"MA",
+      "508":"MZ","516":"NA","562":"NE","566":"NG","646":"RW","678":"ST",
+      "686":"SN","694":"SL","706":"SO","710":"ZA","716":"ZW","728":"SS",
+      "729":"SD","768":"TG","788":"TN","800":"UG","818":"EG","834":"TZ",
+      "894":"ZM",
+      // Asia & Middle East
+      "004":"AF","031":"AZ","048":"BH","050":"BD","051":"AM","064":"BT",
+      "096":"BN","104":"MM","116":"KH","144":"LK","156":"CN","275":"PS",
+      "344":"HK","356":"IN","360":"ID","364":"IR","368":"IQ","392":"JP",
+      "398":"KZ","400":"JO","408":"KP","410":"KR","414":"KW","418":"LA",
+      "422":"LB","458":"MY","496":"MN","512":"OM","524":"NP","586":"PK",
+      "608":"PH","634":"QA","682":"SA","704":"VN","760":"SY","762":"TJ",
+      "784":"AE","792":"TR","795":"TM","860":"UZ","887":"YE",
+      // Oceania
+      "036":"AU","090":"SB","242":"FJ","548":"VU","554":"NZ","598":"PG",
+      "776":"TO","882":"WS",
+    };
+
+    const COUNTRY_NAMES = {
+      "AF":"Afghanistan","AL":"Albania","AD":"Andorra","AG":"Antigua and Barbuda",
+      "AM":"Armenia","AZ":"Azerbaijan","BS":"Bahamas","BH":"Bahrain",
+      "BD":"Bangladesh","BB":"Barbados","BY":"Belarus","BZ":"Belize",
+      "BJ":"Benin","BT":"Bhutan","BW":"Botswana","BN":"Brunei",
+      "BI":"Burundi","KH":"Cambodia","CF":"Central African Republic","TD":"Chad",
+      "KM":"Comoros","CG":"Republic of Congo","CY":"Cyprus","DM":"Dominica",
+      "DO":"Dominican Republic","EE":"Estonia","ER":"Eritrea","ET":"Ethiopia",
+      "FJ":"Fiji","FI":"Finland","GA":"Gabon","GM":"Gambia","GD":"Grenada",
+      "GN":"Guinea","GY":"Guyana","HK":"Hong Kong","IN":"India","KZ":"Kazakhstan",
+      "KE":"Kenya","LA":"Laos","LV":"Latvia","LB":"Lebanon","LS":"Lesotho",
+      "LR":"Liberia","LY":"Libya","LT":"Lithuania","LU":"Luxembourg",
+      "MG":"Madagascar","MW":"Malawi","MY":"Malaysia","ML":"Mali","MT":"Malta",
+      "MR":"Mauritania","MU":"Mauritius","MD":"Moldova","MN":"Mongolia",
+      "ME":"Montenegro","MK":"North Macedonia","MM":"Myanmar","MZ":"Mozambique",
+      "NA":"Namibia","NP":"Nepal","NI":"Nicaragua","NE":"Niger",
+      "OM":"Oman","PK":"Pakistan","PG":"Papua New Guinea","PH":"Philippines",
+      "PS":"Palestine","RW":"Rwanda","WS":"Samoa","ST":"São Tomé and Príncipe",
+      "SB":"Solomon Islands","SL":"Sierra Leone","SO":"Somalia",
+      "SS":"South Sudan","SD":"Sudan","SR":"Suriname","SY":"Syria",
+      "TJ":"Tajikistan","TZ":"Tanzania","TH":"Thailand","TO":"Tonga",
+      "TM":"Turkmenistan","UG":"Uganda","VU":"Vanuatu","VN":"Vietnam",
+      "YE":"Yemen","ZM":"Zambia","ZW":"Zimbabwe","LK":"Sri Lanka",
     };
 
     // Canonical display name for a given ISO alpha-2
@@ -422,7 +469,7 @@
       for (const [name, code] of Object.entries(TEAM_TO_ISO)) {
         if (code === cc) return name;
       }
-      return cc;
+      return COUNTRY_NAMES[cc] || cc;
     }
 
     let hoveredCountry = null;
@@ -443,11 +490,12 @@
               lyr.setStyle({ fillOpacity: 0 });
               if (hoveredCountry === lyr) hoveredCountry = null;
             },
-            click: () => {
+            click: (e) => {
               const cc = ccFn
                 ? ccFn(feature)
                 : NUMERIC_TO_ISO[String(feature.id).padStart(3, "0")];
               if (!cc) return;
+              L.DomEvent.stopPropagation(e);
               if (cc === selectedCC) clearCountry();
               else selectCountry(cc, isoToName(cc));
             },
@@ -605,7 +653,7 @@
 
     const hasBirthCC = mensData.some(s => s.cc && s.cc.length > 0);
     const activeWCs  = new Set(MEN_YEARS);
-    let   viewMode   = "scorers";
+    let   viewMode   = "squads";
 
     function getActiveScorers() {
       const allOn = activeWCs.size === MEN_YEARS.length;
@@ -713,6 +761,11 @@
           const ukCC  = UK_STATES[state];
           if (ukCC) { cc = ukCC; name = state; }
         }
+
+        // Nominatim returns parent country_code for some dependent territories
+        // (e.g. Curaçao island returns country_code="nl" but country="Curacao")
+        const normN = name.normalize("NFD").replace(/[̀-ͯ]/g, "");
+        if (normN === "Curacao") { cc = "CW"; name = "Curaçao"; }
 
         if (cc === selectedCC) clearCountry();
         else                   selectCountry(cc, name);
@@ -1036,6 +1089,7 @@
         }).join("");
 
         marker.bindPopup(`<div class="popup-city">${city}</div>${rows}`, { maxWidth: 300 });
+        marker.on("click", e => L.DomEvent.stopPropagation(e));
         const top  = sorted[0];
         const more = items.length > 1 ? ` +${items.length - 1}` : "";
         marker.bindTooltip(`<b>${top.player}</b>${more} — ${city}`, { direction: "top", offset: [0, -radius] });
@@ -1049,7 +1103,7 @@
       document.getElementById("s-nations").textContent = nations.size;
     }
     updateLegendBar();
-    if (typeof SCORERS !== "undefined") render();
+    if (hasSquads) setMode("squads"); else if (typeof SCORERS !== "undefined") render();
     document.getElementById("search").addEventListener("input",   render);
     document.getElementById("minGoals").addEventListener("change", render);
     document.getElementById("colorScheme").addEventListener("change", e => {

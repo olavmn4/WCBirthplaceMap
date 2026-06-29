@@ -23290,10 +23290,10 @@
     "cc": "RS"
   },
   "Q312418": {
-    "city": "Curaçao",
-    "lat": 12.2,
-    "lon": -69.0,
-    "cc": "NL"
+    "city": "Santo Domingo de los Colorados",
+    "lat": -0.24982,
+    "lon": -79.17193,
+    "cc": "EC"
   },
   "Q314083": {
     "city": "Split",
@@ -53355,9 +53355,9 @@
     "cc": "JP"
   },
   "Q108858343": {
-    "city": "Curaçao",
-    "lat": 12.2,
-    "lon": -69.0,
+    "city": "Almere",
+    "lat": 52.35083,
+    "lon": 5.26528,
     "cc": "NL"
   },
   "Q121353909": {
