@@ -88,12 +88,12 @@
     }
 
     #feedback-btn {
-      position: absolute; bottom: 28px; right: 10px; z-index: 1000;
-      background: #1f2937; border: 1px solid #374151; color: #6b7280;
-      font-size: 0.72rem; padding: 4px 10px; cursor: pointer;
-      transition: color 0.15s, border-color 0.15s;
+      position: absolute; bottom: 6px; left: 220px; z-index: 1000;
+      background: transparent; border: none; color: rgba(255,255,255,0.25);
+      font-size: 0.65rem; padding: 0; cursor: pointer;
+      transition: color 0.15s;
     }
-    #feedback-btn:hover { color: #e5e7eb; border-color: #6b7280; }
+    #feedback-btn:hover { color: rgba(255,255,255,0.55); }
 
     #feedback-modal {
       display: none; position: fixed; inset: 0; z-index: 9000;
@@ -406,9 +406,9 @@
 
   <div id="feedback-modal">
     <div id="feedback-box">
-      <h3>Leave feedback</h3>
-      <p>Anonymous — no account needed. Suggestions, bugs, missing players, anything.</p>
-      <textarea id="feedback-text" placeholder="Your message…"></textarea>
+      <h3>Feedback</h3>
+      <p>No account needed.</p>
+      <textarea id="feedback-text" placeholder="Bug, missing player, suggestion..."></textarea>
       <div id="feedback-actions">
         <button id="feedback-cancel">Cancel</button>
         <button id="feedback-submit">Send</button>
